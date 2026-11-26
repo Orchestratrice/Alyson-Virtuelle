@@ -1,0 +1,1 @@
+https://github.com/s2b-dev/smart-second-brain.git
