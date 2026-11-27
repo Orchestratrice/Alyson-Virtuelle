@@ -1,7 +1,13 @@
 ---
+Objectif: Bases de données galerie
+aliases:
+  - Claude
 kit: project
 status: active
 created: 2026-11-27
+tags:
+  - 
+Responsable: Claude
 ---
 
 ## Principle
