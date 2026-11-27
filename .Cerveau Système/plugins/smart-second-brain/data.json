@@ -256,6 +256,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "TaskNotes/Views/tasks-default.base",
+      "lastOpenedAt": 1795745154503
+    },
+    {
       "path": "Sans titre.md",
       "lastOpenedAt": 1795744579825
     },
