@@ -4,4 +4,8 @@
 - [ ] obsidian://show-plugin?id=obsidian-importer
 - [ ] obsidian://show-plugin?id=smart-connections
 - [ ] obsidian://show-plugin?id=notebook-navigator
+- [ ] obsidian://show-plugin?id=obsidian-mind-map
+- [ ] obsidian://show-plugin?id=obsidian-day-planner
+- [ ] obsidian://show-plugin?id=advanced-canvas
+- [ ] obsidian://show-plugin?id=make-md
 - [ ] 
