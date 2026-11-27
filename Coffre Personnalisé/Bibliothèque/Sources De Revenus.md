@@ -1,12 +1,12 @@
 ---
-Objectif:
+Catégorie: Objectif
+Niveau: Finances
 Secteur: Finances
 edit:
 aliases:
   - Alyson
 tags:
 Juridiction:
-Catégorie:
 ---
 
 ![[Bibliothèque/Sans titre.base]]
