@@ -92,5 +92,18 @@ tags:
 - [ ] obsidian://show-plugin?id=day-planner-og
 - [ ] obsidian://show-plugin?id=smart-connections-visualizer
 - [ ] obsidian://show-plugin?id=social-archiver
+- [ ] obsidian://show-plugin?id=obsidian-image-layouts
+- [ ] obsidian://show-plugin?id=widgets
+- [ ] obsidian://show-plugin?id=writing-goals
+- [ ] obsidian://show-plugin?id=base-board
+- [ ] obsidian://show-plugin?id=ai-assistant
+- [ ] obsidian://show-plugin?id=canvas-css-class
+- [ ] obsidian://show-plugin?id=notion-bases
+- [ ] obsidian://show-plugin?id=ollama
+- [ ] obsidian://show-plugin?id=optimize-canvas-connections
+- [ ] obsidian://show-plugin?id=learnkit
+- [ ] obsidian://show-plugin?id=folders2graph
+- [ ] obsidian://show-plugin?id=lovely-mindmap
+- [ ] obsidian://show-plugin?id=soundscapes
 - [ ] 
 
