@@ -22,3 +22,5 @@ tags:
 - [ ] obsidian://show-plugin?id=obsidian-markmind
 - [ ] obsidian://show-plugin?id=buttons
 - [ ] obsidian://show-plugin?id=note-toolbar
+- [ ] obsidian://show-plugin?id=folder-notes
+
