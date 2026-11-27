@@ -3,7 +3,11 @@ name: objectif
 description: Déterminer l'objectif et les résultats attendus
 command: /goal
 mots_cles:
-role:
+role: Analyse
+rol:
+secteur: Personnel
+Département: Vie Personnelle
+Équipe:
 ---
 #skill 
 
