@@ -1,7 +1,7 @@
 filters:
   and:
     - file.inFolder("20_Système")
-    - 'file.ext == "md"'
+    - file.ext == "md"
 properties:
   fonction:
     displayName: Fonction
@@ -28,7 +28,7 @@ views:
     name: Plugins
     filters:
       and:
-        - 'type == "plugin"'
+        - type == "plugin"
     groupBy:
       property: priorite
       direction: ASC
@@ -41,7 +41,7 @@ views:
     name: Outils
     filters:
       and:
-        - 'type == "outil"'
+        - type == "outil"
     order:
       - file.name
       - portee

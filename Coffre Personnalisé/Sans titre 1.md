@@ -3,4 +3,3 @@ edit:
 aliases:
 ---
 
-/ta

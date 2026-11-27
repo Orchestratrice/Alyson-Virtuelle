@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sans titre 1.md",
+                "file": "90_Bases/Tasks/hfhgf.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sans titre 1"
+              "title": "hfhgf"
             }
           }
         ],
@@ -128,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sans titre 1.md",
+                "file": "90_Bases/Tasks/hfhgf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sans titre 1.md",
+                "file": "90_Bases/Tasks/hfhgf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sans titre 1.md",
+                "file": "90_Bases/Tasks/hfhgf.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -251,6 +251,8 @@
   "active": "70cc4440d1dad517",
   "lastOpenFiles": [
     "Sans titre 1.md",
+    "90_Bases/Tasks/hfhgf.md",
+    "90_Bases/Tasks",
     "90_Bases/Projects/test.md",
     "Bibliothèque.md",
     "Modèles.md",
