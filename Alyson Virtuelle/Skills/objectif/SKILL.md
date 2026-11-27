@@ -5,9 +5,8 @@ command: /goal
 mots_cles:
 role: Analyse
 rol:
-secteur: Personnel
-Département: Vie Personnelle
-Équipe:
+secteur:
+domaine:
 ---
 #skill 
 
