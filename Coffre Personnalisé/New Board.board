@@ -3,7 +3,8 @@
   "name": "New Board",
   "settings": {
     "limitTo": {
-      "mode": "all"
+      "mode": "folder",
+      "path": ""
     }
   },
   "views": [
@@ -11,14 +12,77 @@
       "id": "aeeb697f-c8c3-48ee-a951-09f82f11b96f",
       "type": "kanban",
       "name": "Kanban",
-      "triggerProperty": "status",
+      "triggerProperty": "État",
       "values": [
         "En retard",
         "Urgent",
         "Prioritaire",
-        "Éventuellement"
+        "Éventuellement",
+        "À Déléguer",
+        "À Régler",
+        "À Améliorer",
+        "À Faire",
+        "En Cours",
+        "Retardé",
+        "Bloqué",
+        "Attention Requise",
+        "À Risque",
+        "Terminé"
       ],
       "columnColors": {},
+      "cardFields": [
+        {
+          "id": "e41bcada-24a7-45c6-a235-ffa08964a002",
+          "type": "property",
+          "property": "status",
+          "paragraph": 1,
+          "header": "",
+          "end": 0,
+          "formula": "",
+          "label": "Statut",
+          "showIfMissing": true
+        }
+      ],
+      "cardInfo": [
+        {
+          "id": "__name__",
+          "kind": "name",
+          "enabled": true
+        },
+        {
+          "id": "c90b8a3a-efbb-451d-ac0b-40d5eef8d6b5",
+          "kind": "field",
+          "fieldId": "e41bcada-24a7-45c6-a235-ffa08964a002",
+          "enabled": true,
+          "showLabel": true
+        }
+      ],
+      "filters": [],
+      "sorts": [],
+      "cardColors": [
+        {
+          "id": "2a7ddd2e-8312-4c70-9162-7fa96b5f123d",
+          "source": "property",
+          "property": "status",
+          "header": "",
+          "op": "eq",
+          "value": "À Faire",
+          "enabled": true,
+          "border": {
+            "kind": "color",
+            "hex": "#ff00ae"
+          },
+          "background": {
+            "kind": "color",
+            "hex": "#e882ab"
+          }
+        }
+      ]
+    },
+    {
+      "id": "43093b2b-bc7b-4c02-b6ec-7c010ebc879e",
+      "type": "cards",
+      "name": "Cards",
       "cardFields": [],
       "cardInfo": [
         {
@@ -29,7 +93,14 @@
       ],
       "filters": [],
       "sorts": [],
-      "cardColors": []
+      "cardColors": [],
+      "cover": {
+        "mode": "none",
+        "property": "",
+        "display": "uniform",
+        "heightRatio": 0.625
+      },
+      "cardSize": "m"
     }
   ],
   "activeViewId": "aeeb697f-c8c3-48ee-a951-09f82f11b96f"
