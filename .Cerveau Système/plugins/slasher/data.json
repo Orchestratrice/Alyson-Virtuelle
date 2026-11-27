@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "commands": [
+    {
+      "id": "34d9ecd5-bbac-413d-aee4-70b21c00ac47",
+      "name": "",
+      "template": "{% command %}/goal{% endcommand %}",
+      "enabled": true
+    }
+  ]
+}

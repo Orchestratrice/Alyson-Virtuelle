@@ -1,8 +1,9 @@
 ---
 name: objectif
 description: Déterminer l'objectif et les résultats attendus
-HotKey: /goal
+command: /goal
 ---
+
 
 # Objectif
 

@@ -1,0 +1,21 @@
+{
+  "files": [
+    "Modèle — Agente.md",
+    "Modèle — Concept.md",
+    "Modèle — Conversation.md",
+    "Modèle — Direction.md",
+    "Modèle — Décision.md",
+    "Modèle — Outil.md",
+    "Modèle — Plugin.md",
+    "Modèle — Rôle.md",
+    "Modèle — Skill.md",
+    "Modèle — Source.md",
+    "Modèle — Tâche.md"
+  ],
+  "templaterFiles": [],
+  "newFileTemplates": [
+    null
+  ],
+  "openNewFileTemplateInNewPane": true,
+  "useNewFileTemplateOnFileCreation": true
+}
