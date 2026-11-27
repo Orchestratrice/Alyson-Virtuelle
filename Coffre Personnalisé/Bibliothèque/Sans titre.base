@@ -1,8 +1,8 @@
 views:
-  - type: table
+  - type: cards
     name: Vue
     order:
-      - Objectif
+      - Catégorie
     sort:
       - property: Objectif
         direction: ASC
