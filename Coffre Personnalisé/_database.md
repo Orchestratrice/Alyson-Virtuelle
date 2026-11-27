@@ -67,11 +67,33 @@ views:
     type: gallery
     filters: []
     sorts: []
-    hiddenColumns: []
+    hiddenColumns:
+      - Juridiction
+      - Niveau
+      - Secteur
+      - tags
+      - status
+      - aliases
+      - edit
+      - Objectif
     columnWidths: {}
     pinnedColumnId:
     name: Galerie
     includeSubfolders: false
+    conditionalFormats:
+      - id: 36b2b0c4-7f85-430c-b11f-690572c4fe2a
+        columnId: edit
+        operator: contains
+        value: Images
+        bgColor: "#f7026d"
+        textColor: ""
+    galleryCoverField: edit
+    activePills:
+      - id: 6a925b0f-61a4-42c4-9e95-84a0f3634bcf
+        columnId: tags
+        operator: is
+        value: ""
+        conjunction: and
 ---
 
 > [!tip] Notion Bases
