@@ -1,7 +1,7 @@
 ---
 Catégorie: Objectif
 Niveau: Finances
-Secteur: Finances
+Contexte:
 edit:
 aliases:
   - Alyson
