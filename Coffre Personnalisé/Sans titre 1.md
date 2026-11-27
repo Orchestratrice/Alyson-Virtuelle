@@ -1,0 +1,6 @@
+---
+edit:
+aliases:
+---
+
+/ta
