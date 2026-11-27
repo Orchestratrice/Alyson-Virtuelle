@@ -1,0 +1,6 @@
+views:
+  - type: kanban
+    name: Vue
+    groupBy:
+      property: file.tags
+      direction: ASC
