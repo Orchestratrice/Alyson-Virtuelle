@@ -10,4 +10,4 @@ views:
       - categorie
     sort:
       - property: type
-        direction: ASC
+        direction: DESC
