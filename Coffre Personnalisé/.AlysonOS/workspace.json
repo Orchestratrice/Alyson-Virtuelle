@@ -48,9 +48,21 @@
               "icon": "lucide-file",
               "title": "Modèles"
             }
+          },
+          {
+            "id": "b6133deee044af06",
+            "type": "leaf",
+            "state": {
+              "type": "property-board-view",
+              "state": {
+                "file": "New Board.board"
+              },
+              "icon": "layout-dashboard",
+              "title": "New Board"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -128,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Modèles.md",
+                "file": "New Board.board",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Modèles.md",
+                "file": "New Board.board",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -190,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Modèles.md",
+                "file": "New Board.board",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -245,11 +257,14 @@
       "knowledge-base-manager:Open knowledge base manager": false,
       "password-kanban:Открыть Password Kanban": false,
       "obtion:Open project status": false,
-      "obtion:Find note": false
+      "obtion:Find note": false,
+      "property-board:Create new board": false
     }
   },
-  "active": "70cc4440d1dad517",
+  "active": "b6133deee044af06",
   "lastOpenFiles": [
+    "Modèles.md",
+    "New Board.board",
     "Bibliothèque/Bibliothèque De Ressources.md",
     "Bibliothèque/Sans titre.base",
     "Sans titre.base",
@@ -259,7 +274,6 @@
     "90_Bases/Tasks",
     "90_Bases/Projects/test.md",
     "Bibliothèque.md",
-    "Modèles.md",
     "90_Bases/Projects",
     "90_Bases",
     "Sans titre.md",
@@ -267,7 +281,6 @@
     "Ressources/Plugins",
     "Ressources/Skills",
     "Ressources/Outils",
-    "Ressources",
-    "Ressources/Modèles/Sans titre"
+    "Ressources"
   ]
 }

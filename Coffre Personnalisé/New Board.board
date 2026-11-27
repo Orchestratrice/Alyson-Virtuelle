@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "name": "New Board",
+  "settings": {
+    "limitTo": {
+      "mode": "all"
+    }
+  },
+  "views": [
+    {
+      "id": "aeeb697f-c8c3-48ee-a951-09f82f11b96f",
+      "type": "kanban",
+      "name": "Kanban",
+      "triggerProperty": "status",
+      "values": [
+        "En retard",
+        "Urgent",
+        "Prioritaire",
+        "Éventuellement"
+      ],
+      "columnColors": {},
+      "cardFields": [],
+      "cardInfo": [
+        {
+          "id": "__name__",
+          "kind": "name",
+          "enabled": true
+        }
+      ],
+      "filters": [],
+      "sorts": [],
+      "cardColors": []
+    }
+  ],
+  "activeViewId": "aeeb697f-c8c3-48ee-a951-09f82f11b96f"
+}

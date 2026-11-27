@@ -1,0 +1,976 @@
+/* @settings
+name: Property Panels
+id: property-panels
+settings:
+  - id: property-panels-panel-styles
+    title: Panel styles
+    title.zh-TW: 面板樣式
+    type: heading
+    level: 2
+    collapsed: false
+  - id: property-panels-background-choice
+    title: Panel background
+    title.zh-TW: 面板背景
+    description: Choose an Obsidian theme variable or the custom color below.
+    description.zh-TW: 選擇 Obsidian 主題變數，或使用下方的自訂顏色。
+    type: variable-select
+    default: transparent
+    options:
+      - label: Transparent
+        value: transparent
+      - label: Background primary
+        value: 'var(--background-primary)'
+      - label: Background primary alt
+        value: 'var(--background-primary-alt)'
+      - label: Background secondary
+        value: 'var(--background-secondary)'
+      - label: Background secondary alt
+        value: 'var(--background-secondary-alt)'
+      - label: Interactive normal
+        value: 'var(--interactive-normal)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-background)'
+  - id: property-panels-background
+    title: Custom panel background
+    title.zh-TW: 自訂面板背景
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#ffffff'
+    default-dark: '#1e1e1e'
+  - id: property-panels-border-color-choice
+    title: Border color
+    title.zh-TW: 邊框顏色
+    description: Choose an Obsidian theme variable or the custom color below.
+    description.zh-TW: 選擇 Obsidian 主題變數，或使用下方的自訂顏色。
+    type: variable-select
+    default: 'var(--background-modifier-border)'
+    options:
+      - label: Theme border
+        value: 'var(--background-modifier-border)'
+      - label: Theme border hover
+        value: 'var(--background-modifier-border-hover)'
+      - label: Theme border focus
+        value: 'var(--background-modifier-border-focus)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Red
+        value: 'var(--color-red)'
+      - label: Orange
+        value: 'var(--color-orange)'
+      - label: Yellow
+        value: 'var(--color-yellow)'
+      - label: Green
+        value: 'var(--color-green)'
+      - label: Blue
+        value: 'var(--color-blue)'
+      - label: Purple
+        value: 'var(--color-purple)'
+      - label: Custom color
+        value: 'var(--property-panels-border-custom)'
+  - id: property-panels-border-custom
+    title: Custom border color
+    title.zh-TW: 自訂邊框顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#d0d0d0'
+    default-dark: '#505050'
+  - id: property-panels-title-color-choice
+    title: Panel title color
+    title.zh-TW: 面板標題顏色
+    type: variable-select
+    default: 'var(--text-normal)'
+    options:
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-title-custom)'
+  - id: property-panels-title-custom
+    title: Custom panel title color
+    title.zh-TW: 自訂面板標題顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#222222'
+    default-dark: '#dddddd'
+  - id: property-panels-field-styles
+    title: Field styles
+    title.zh-TW: 欄位樣式
+    type: heading
+    level: 2
+    collapsed: true
+  - id: property-panels-label-color-choice
+    title: Field label color
+    title.zh-TW: 欄位名稱顏色
+    type: variable-select
+    default: 'var(--text-muted)'
+    options:
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-label-custom)'
+  - id: property-panels-label-custom
+    title: Custom field label color
+    title.zh-TW: 自訂欄位名稱顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#666666'
+    default-dark: '#aaaaaa'
+  - id: property-panels-label-icon-color-choice
+    title: Field label icon color
+    title.zh-TW: 欄位名稱圖示顏色
+    type: variable-select
+    default: 'var(--text-faint)'
+    options:
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-label-icon-custom)'
+  - id: property-panels-label-icon-custom
+    title: Custom field label icon color
+    title.zh-TW: 自訂欄位名稱圖示顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#888888'
+    default-dark: '#888888'
+  - id: property-panels-label-icon-size
+    title: Field label icon size
+    title.zh-TW: 欄位名稱圖示大小
+    type: variable-number-slider
+    default: 16
+    min: 10
+    max: 32
+    step: 1
+    format: px
+  - id: property-panels-value-color-choice
+    title: Readonly value color
+    title.zh-TW: 唯讀值顏色
+    type: variable-select
+    default: 'var(--text-normal)'
+    options:
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-value-custom)'
+  - id: property-panels-value-custom
+    title: Custom readonly value color
+    title.zh-TW: 自訂唯讀值顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#222222'
+    default-dark: '#dddddd'
+  - id: property-panels-field-typography
+    title: Typography and inputs
+    title.zh-TW: 文字與輸入框
+    type: heading
+    level: 3
+  - id: property-panels-field-value-size-choice
+    title: Field value size
+    title.zh-TW: 欄位值字級
+    description: Choose an official Obsidian typography variable or the custom size below.
+    description.zh-TW: 選擇 Obsidian 官方字級變數，或使用下方的自訂大小。
+    type: variable-select
+    default: 'var(--font-text-size)'
+    options:
+      - label: Editor text
+        value: 'var(--font-text-size)'
+      - label: Small
+        value: 'var(--font-small)'
+      - label: Smaller
+        value: 'var(--font-smaller)'
+      - label: Smallest
+        value: 'var(--font-smallest)'
+      - label: UI large
+        value: 'var(--font-ui-large)'
+      - label: UI medium
+        value: 'var(--font-ui-medium)'
+      - label: UI small
+        value: 'var(--font-ui-small)'
+      - label: UI smaller
+        value: 'var(--font-ui-smaller)'
+      - label: Custom size
+        value: 'var(--property-panels-field-value-size-custom)'
+  - id: property-panels-field-value-size-custom
+    title: Custom field value size
+    title.zh-TW: 自訂欄位值字級
+    type: variable-number-slider
+    default: 16
+    min: 8
+    max: 32
+    step: 1
+    format: px
+  - id: property-panels-input-text-color-choice
+    title: Field input text
+    title.zh-TW: 欄位輸入文字
+    description: Choose an Obsidian theme variable or the custom color below.
+    description.zh-TW: 選擇 Obsidian 主題變數，或使用下方的自訂顏色。
+    type: variable-select
+    default: 'var(--text-normal)'
+    options:
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-input-text-custom)'
+  - id: property-panels-input-text-custom
+    title: Custom field input text
+    title.zh-TW: 自訂欄位輸入文字
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#222222'
+    default-dark: '#dddddd'
+  - id: property-panels-input-background-choice
+    title: Field input background
+    title.zh-TW: 欄位輸入框背景
+    description: Choose an Obsidian theme variable or the custom color below.
+    description.zh-TW: 選擇 Obsidian 主題變數，或使用下方的自訂顏色。
+    type: variable-select
+    default: 'var(--interactive-normal)'
+    options:
+      - label: Interactive normal
+        value: 'var(--interactive-normal)'
+      - label: Background primary
+        value: 'var(--background-primary)'
+      - label: Background primary alt
+        value: 'var(--background-primary-alt)'
+      - label: Background secondary
+        value: 'var(--background-secondary)'
+      - label: Background secondary alt
+        value: 'var(--background-secondary-alt)'
+      - label: Background modifier hover
+        value: 'var(--background-modifier-hover)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Transparent
+        value: transparent
+      - label: Custom color
+        value: 'var(--property-panels-input-background-custom)'
+  - id: property-panels-input-background-custom
+    title: Custom field input background
+    title.zh-TW: 自訂欄位輸入框背景
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#f2f2f2'
+    default-dark: '#2a2a2a'
+  - id: property-panels-select-styles
+    title: Select styles
+    title.zh-TW: 下拉選單樣式
+    type: heading
+    level: 2
+    collapsed: true
+  - id: property-panels-select-text-color-choice
+    title: Select text color
+    title.zh-TW: 下拉選單文字顏色
+    type: variable-select
+    default: 'var(--text-normal)'
+    options:
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-select-text-custom)'
+  - id: property-panels-select-text-custom
+    title: Custom select text color
+    title.zh-TW: 自訂下拉選單文字顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#222222'
+    default-dark: '#dddddd'
+  - id: property-panels-select-background-choice
+    title: Select background
+    title.zh-TW: 下拉選單背景
+    type: variable-select
+    default: 'var(--interactive-normal)'
+    options:
+      - label: Interactive normal
+        value: 'var(--interactive-normal)'
+      - label: Background primary
+        value: 'var(--background-primary)'
+      - label: Background secondary
+        value: 'var(--background-secondary)'
+      - label: Background modifier hover
+        value: 'var(--background-modifier-hover)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-select-background-custom)'
+  - id: property-panels-select-background-custom
+    title: Custom select background
+    title.zh-TW: 自訂下拉選單背景
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#f2f2f2'
+    default-dark: '#2a2a2a'
+  - id: property-panels-rating-progress-styles
+    title: Rating and progress styles
+    title.zh-TW: 評分與進度樣式
+    type: heading
+    level: 2
+    collapsed: true
+  - id: property-panels-rating-active-choice
+    title: Active rating color
+    title.zh-TW: 評分啟用顏色
+    type: variable-select
+    default: 'var(--color-yellow)'
+    options:
+      - label: Yellow
+        value: 'var(--color-yellow)'
+      - label: Orange
+        value: 'var(--color-orange)'
+      - label: Red
+        value: 'var(--color-red)'
+      - label: Green
+        value: 'var(--color-green)'
+      - label: Cyan
+        value: 'var(--color-cyan)'
+      - label: Blue
+        value: 'var(--color-blue)'
+      - label: Purple
+        value: 'var(--color-purple)'
+      - label: Pink
+        value: 'var(--color-pink)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-rating-active-custom)'
+  - id: property-panels-rating-active-custom
+    title: Custom active rating color
+    title.zh-TW: 自訂評分啟用顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#d9a400'
+    default-dark: '#f2c94c'
+  - id: property-panels-rating-inactive-choice
+    title: Inactive rating color
+    title.zh-TW: 評分未啟用顏色
+    type: variable-select
+    default: 'var(--text-faint)'
+    options:
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Theme border
+        value: 'var(--background-modifier-border)'
+      - label: Custom color
+        value: 'var(--property-panels-rating-inactive-custom)'
+  - id: property-panels-rating-inactive-custom
+    title: Custom inactive rating color
+    title.zh-TW: 自訂評分未啟用顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#b0b0b0'
+    default-dark: '#666666'
+  - id: property-panels-progress-color-choice
+    title: Progress control color
+    title.zh-TW: 進度控制元件顏色
+    type: variable-select
+    default: 'var(--interactive-accent)'
+    options:
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Red
+        value: 'var(--color-red)'
+      - label: Orange
+        value: 'var(--color-orange)'
+      - label: Yellow
+        value: 'var(--color-yellow)'
+      - label: Green
+        value: 'var(--color-green)'
+      - label: Blue
+        value: 'var(--color-blue)'
+      - label: Purple
+        value: 'var(--color-purple)'
+      - label: Custom color
+        value: 'var(--property-panels-progress-custom)'
+  - id: property-panels-progress-custom
+    title: Custom progress control color
+    title.zh-TW: 自訂進度控制元件顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#4a6ee0'
+    default-dark: '#7b9cff'
+  - id: property-panels-multiselect-styles
+    title: Multi-select styles
+    title.zh-TW: 多選樣式
+    type: heading
+    level: 2
+    collapsed: true
+  - id: property-panels-chip-background-choice
+    title: Multi-select chip background
+    title.zh-TW: 多選標籤背景
+    type: variable-select
+    default: 'var(--background-modifier-hover)'
+    options:
+      - label: Background modifier hover
+        value: 'var(--background-modifier-hover)'
+      - label: Background secondary
+        value: 'var(--background-secondary)'
+      - label: Interactive normal
+        value: 'var(--interactive-normal)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Accent
+        value: 'var(--color-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-chip-background-custom)'
+  - id: property-panels-chip-background-custom
+    title: Custom chip background
+    title.zh-TW: 自訂多選標籤背景
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#e8e8e8'
+    default-dark: '#3a3a3a'
+  - id: property-panels-grip-color-choice
+    title: Drag grip color
+    title.zh-TW: 拖曳把手顏色
+    type: variable-select
+    default: 'var(--text-faint)'
+    options:
+      - label: Text faint
+        value: 'var(--text-faint)'
+      - label: Text muted
+        value: 'var(--text-muted)'
+      - label: Text normal
+        value: 'var(--text-normal)'
+      - label: Text accent
+        value: 'var(--text-accent)'
+      - label: Interactive accent
+        value: 'var(--interactive-accent)'
+      - label: Custom color
+        value: 'var(--property-panels-grip-custom)'
+  - id: property-panels-grip-custom
+    title: Custom drag grip color
+    title.zh-TW: 自訂拖曳把手顏色
+    type: variable-themed-color
+    format: hex
+    opacity: true
+    default-light: '#999999'
+    default-dark: '#777777'
+  - id: property-panels-grip-size
+    title: Drag grip size
+    title.zh-TW: 拖曳把手大小
+    type: variable-number-slider
+    default: 16
+    min: 10
+    max: 28
+    step: 1
+    format: px
+  - id: property-panels-panel-geometry
+    title: Panel geometry
+    title.zh-TW: 面板尺寸與邊框
+    type: heading
+    level: 2
+    collapsed: true
+  - id: property-panels-radius
+    title: Border radius
+    title.zh-TW: 邊框圓角
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  - id: property-panels-border-width
+    title: Border width
+    title.zh-TW: 邊框寬度
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 8
+    step: 1
+    format: px
+  - id: property-panels-border-style
+    title: Border style
+    title.zh-TW: 邊框樣式
+    type: variable-select
+    default: solid
+    options:
+      - solid
+      - dashed
+      - dotted
+      - double
+      - none
+  - id: property-panels-padding
+    title: Panel padding
+    title.zh-TW: 面板內距
+    type: variable-number-slider
+    default: 12
+    min: 0
+    max: 40
+    step: 1
+    format: px
+  - id: property-panels-rating-size
+    title: Rating star size
+    title.zh-TW: 評分星星大小
+    type: variable-number-slider
+    default: 20
+    min: 12
+    max: 40
+    step: 1
+    format: px
+*/
+.property-panels-root { margin: var(--property-panels-panel-gap, 12px) 0; }
+.property-panels-panel {
+  background: var(--property-panels-background-choice, transparent);
+  border-color: var(--property-panels-border-color-choice, var(--background-modifier-border));
+  border-style: var(--property-panels-border-style, solid);
+  border-width: var(--property-panels-border-width, 1px);
+  border-radius: var(--property-panels-radius, 8px);
+  padding: var(--property-panels-padding, 12px);
+}
+.property-panels-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.property-panels-header.is-titleless { justify-content: flex-end; }
+.property-panels-title { font-weight: var(--font-semibold); color: var(--property-panels-title-color-choice, var(--text-normal)); }
+.property-panels-collapse { font-size: var(--font-ui-smaller); }
+.property-panels-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--property-panels-columns, 1), minmax(0, 1fr));
+  gap: var(--property-panels-field-gap, 10px);
+}
+.property-panels-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  grid-column: span var(--property-panels-field-column-span, 1);
+}
+.property-panels-label-left .property-panels-field,
+.property-panels-label-left-end .property-panels-field {
+  display: grid;
+  grid-template-columns: minmax(90px, .35fr) minmax(0, 1fr);
+  align-items: center;
+}
+.property-panels-label-left-end .property-panels-field {
+  grid-template-columns: minmax(0, var(--property-panels-label-column-width, max-content)) minmax(0, 1fr);
+}
+.property-panels-label-left-end .property-panels-field > label {
+  align-self: start;
+  min-height: var(--input-height, 30px);
+  justify-self: end;
+  text-align: end;
+}
+.property-panels-label-inline .property-panels-field { flex-direction: row; align-items: center; }
+.property-panels-label-inline .property-panels-field > :not(label) { flex: 1 1 auto; min-width: 0; }
+.property-panels-label-inline .property-panels-multiselect,
+.property-panels-label-inline .property-panels-multiselect > input[type="search"] { width: 100%; }
+.property-panels-label-inline .property-panels-field label {
+  flex: none;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+}
+.property-panels-label-inline .property-panels-label-text {
+  overflow: visible;
+  text-overflow: clip;
+}
+.property-panels-field label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2-1, 4px);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--property-panels-label-color-choice, var(--text-muted));
+  font-size: var(--font-ui-small);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.property-panels-label-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.property-panels-field :is(input[type="text"], input[type="number"], input[type="search"], input[type="date"], input[type="datetime-local"], textarea, select) { width: 100%; }
+.property-panels-field :is(input[type="text"], input[type="number"], input[type="search"], input[type="date"], input[type="datetime-local"], textarea, select, output, .property-panels-chip, .property-panels-options) {
+  font-size: var(--property-panels-field-value-size-choice, var(--font-text-size));
+}
+.property-panels-field :is(input[type="text"], input[type="number"], input[type="search"], input[type="date"], input[type="datetime-local"], textarea, select) {
+  color: var(--property-panels-input-text-color-choice, var(--text-normal));
+  background-color: var(--property-panels-input-background-choice, var(--interactive-normal));
+}
+.property-panels-field select,
+.property-panels-field select option {
+  color: var(--property-panels-select-text-color-choice, var(--text-normal));
+  background-color: var(--property-panels-select-background-choice, var(--interactive-normal));
+}
+.property-panels-field select { border-radius: 999px; }
+.property-panels-field.property-panels-field-input-borderless :is(input[type="text"], input[type="number"], input[type="search"], input[type="date"], input[type="datetime-local"], textarea, select) {
+  border-color: transparent;
+  box-shadow: none;
+}
+.property-panels-field.property-panels-field-input-borderless :is(input[type="text"], input[type="number"], input[type="search"], input[type="date"], input[type="datetime-local"], textarea, select):focus-visible {
+  outline: 1px solid var(--background-modifier-border-focus);
+  outline-offset: 1px;
+}
+.property-panels-field-divider { justify-content: center; }
+.property-panels-field-divider hr {
+  width: 100%;
+  margin: var(--size-2-2, 6px) 0;
+  border: 0;
+  border-top: 1px solid var(--background-modifier-border);
+}
+.property-panels-density-compact { padding: 8px; }
+.property-panels-density-compact .property-panels-grid { gap: 6px; }
+.property-panels-density-comfortable { padding: 18px; }
+.property-panels-progress { display: flex; align-items: center; gap: 10px; }
+.property-panels-progress input { flex: 1; accent-color: var(--property-panels-progress-color-choice, var(--interactive-accent)); }
+.property-panels-rating { display: flex; gap: 1px; }
+.property-panels-rating button { padding: 0 2px; border: 0; box-shadow: none; background: transparent; color: var(--property-panels-rating-inactive-choice, var(--text-faint)); font-size: var(--property-panels-rating-size, 20px); }
+.property-panels-rating button.is-active { color: var(--property-panels-rating-active-choice, var(--color-yellow)); }
+.property-panels-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-bottom: 5px; }
+.property-panels-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: calc(1em * 1.5);
+  overflow: clip;
+  border-radius: 999px;
+  background: var(--property-panels-chip-background-choice, var(--background-modifier-hover));
+  padding: 1px 7px;
+  line-height: 1.25;
+}
+.property-panels-chip button {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  font-size: inherit;
+  line-height: 1;
+}
+.property-panels-chip-value,
+.property-panels-chip-value .property-panels-value-text { user-select: text; line-height: inherit; }
+.property-panels-chip-value { display: inline-flex; align-items: center; min-width: 0; line-height: inherit; }
+.property-panels-chip button.property-panels-chip-drag {
+  --icon-color: var(--property-panels-grip-color-choice, var(--text-faint));
+  --icon-color-hover: var(--property-panels-grip-color-choice, var(--text-faint));
+  width: var(--property-panels-grip-size, 16px);
+  height: var(--property-panels-grip-size, 16px);
+  cursor: grab;
+  color: var(--property-panels-grip-color-choice, var(--text-faint));
+  touch-action: none;
+}
+.property-panels-chip button.property-panels-chip-drag:hover,
+.property-panels-chip button.property-panels-chip-drag:focus-visible {
+  color: var(--property-panels-grip-color-choice, var(--text-faint));
+}
+.property-panels-chip button.property-panels-chip-drag > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  stroke: currentColor;
+}
+.property-panels-chip-drag:active { cursor: grabbing; }
+.property-panels-chip .property-panels-chip-edit { width: min(240px, 45vw); min-height: 0; height: auto; padding: 0 3px; line-height: inherit; }
+.property-panels-select-control { display: flex; align-items: center; gap: var(--size-2-2, 6px); min-width: 0; }
+.property-panels-select-control select { flex: 1; min-width: 0; }
+.property-panels-link { color: var(--link-color); }
+.property-panels-link:hover { color: var(--link-color-hover); }
+.property-panels-select-open { flex: none; white-space: nowrap; font-size: var(--font-ui-smaller); }
+.property-panels-value-text { min-width: 0; max-width: 100%; }
+.property-panels-long-wrap .property-panels-value-text,
+.property-panels-long-wrap .property-panels-readonly:not(.property-panels-chips) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+.property-panels-long-truncate .property-panels-value-text,
+.property-panels-long-truncate .property-panels-readonly:not(.property-panels-chips) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.property-panels-long-truncate .property-panels-chip .property-panels-value-text { flex: 1; }
+.property-panels-multiselect { position: relative; }
+.property-panels-options { position: absolute; z-index: var(--layer-popover); width: 100%; max-height: 180px; overflow: auto; padding: 4px; border: 1px solid var(--background-modifier-border); border-radius: 6px; background: var(--background-primary); box-shadow: var(--shadow-s); }
+.property-panels-options [role="option"] { display: block; width: 100%; padding: 6px 8px; border-radius: 4px; text-align: left; cursor: pointer; }
+.property-panels-options [role="option"].is-active { background: var(--background-modifier-hover); color: var(--text-normal); }
+.property-panels-option-status { margin-top: 4px; color: var(--text-muted); font-size: var(--font-ui-smaller); }
+.property-panels-option-status.mod-error { color: var(--text-error); }
+/* Per-field layout; chip text keeps its independent long-value preference. */
+.property-panels-multiselect.is-single-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, min(calc(var(--font-text-size) * 5), 50%));
+  align-items: center;
+  gap: calc(var(--font-text-size) / 4);
+  min-width: 0;
+}
+.property-panels-multiselect.is-single-line > .property-panels-chips {
+  flex-wrap: nowrap; min-width: 0; overflow-x: auto; overflow-y: hidden;
+  margin: 0; padding: calc(var(--font-text-size) / 4) 0;
+}
+.property-panels-multiselect.is-single-line .property-panels-chip { flex: 0 0 auto; }
+.property-panels-multiselect.is-single-line.has-entry-button { grid-template-columns: minmax(0, 1fr) auto; }
+.property-panels-multiselect.has-entry-button > input[type="search"],
+.property-panels-multiselect .property-panels-option-status,
+.property-panels-multiselect.is-single-line > .property-panels-chips:empty + input { grid-column: 1 / -1; }
+.property-panels-multiselect > .property-panels-chips:empty { display: none; }
+.property-panels-multiselect.is-single-line > .property-panels-options { top: calc(100% + var(--font-text-size) / 4); left: 0; right: 0; width: auto; box-sizing: border-box; }
+.property-panels-add-value { display: inline-flex; align-items: center; justify-content: center; padding: 4px; }
+.property-panels-long-scroll > .property-panels-readonly,
+.property-panels-long-scroll .property-panels-chip-value { overflow-x: auto; white-space: nowrap; min-width: 0; }
+.property-panels-long-scroll .property-panels-value-text { white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.property-panels-long-scroll > .property-panels-readonly:not(.property-panels-chips) { display: block; }
+.property-panels-panel { container-type: inline-size; }
+.property-panels-group { display: grid; min-width: 0; grid-column: span var(--property-panels-group-column-span, 1); }
+.property-panels-group-horizontal { grid-template-columns: var(--property-panels-group-columns); }
+.property-panels-group-vertical { grid-template-columns: minmax(0, 1fr); }
+.property-panels-group > .property-panels-group { grid-column: auto; }
+.property-panels-group > .property-panels-field { grid-column: auto; }
+@container (max-width: 480px) {
+  .property-panels-group-horizontal.property-panels-group-stack { grid-template-columns: minmax(0, 1fr); }
+}
+.property-panels-title-edit { height: auto; text-align: start; background: transparent; box-shadow: none; }
+.property-panels-heading { margin: 0; color: var(--text-normal); }
+.property-panels-page-card { padding: 0 16px; background: var(--background-secondary); border-radius: var(--radius-l); }
+.property-panels-content-editor { --property-panels-content-indent: 1.5rem; }
+.property-panels-content-editor .property-panels-content-row { padding-inline: 0; }
+.property-panels-content-editor .property-panels-content-group {
+  margin: 0;
+  padding: 0;
+  padding-inline-start: var(--property-panels-content-indent);
+  border: none;
+  border-inline-start: 1px solid var(--background-modifier-border);
+}
+.property-panels-content-group-children { padding: 0; border: none; }
+.property-panels-content-group > summary { cursor: pointer; color: var(--text-muted); padding-block: .375rem; list-style-position: inside; }
+.property-panels-content-group-children > .setting-item { padding-inline: 0; }
+.property-panels-content-row .setting-item-control { flex-wrap: wrap; }
+.property-panels-edit-modal { width: min(760px, 95vw); }
+.property-panels-edit-modal .property-panels-editor-grid { display: block; }
+@media (max-width: 600px) {
+  .property-panels-page-card { padding: 0 8px; }
+  .property-panels-content-editor { --property-panels-content-indent: 1rem; }
+}
+.property-panels-readonly { overflow-wrap: anywhere; color: var(--property-panels-value-color-choice, var(--text-normal)); }
+.property-panels-field > label.property-panels-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  border: 0;
+  pointer-events: none;
+}
+.property-panels-label-icon {
+  display: inline-flex;
+  flex: none;
+  width: var(--property-panels-label-icon-size, 16px);
+  height: var(--property-panels-label-icon-size, 16px);
+  color: var(--property-panels-label-icon-color-choice, var(--text-faint));
+}
+.property-panels-label-icon svg { display: block; width: 100%; height: 100%; }
+.property-panels-icon-suggest-preview {
+  display: inline-flex;
+  width: var(--icon-size, 18px);
+  height: var(--icon-size, 18px);
+  margin-inline-end: var(--size-2-2, 6px);
+  vertical-align: middle;
+}
+.property-panels-icon-suggest-preview svg { display: block; width: 100%; height: 100%; }
+.property-panels-settings { --property-panels-editor-border: var(--background-modifier-border); }
+.property-panels-editor-section { margin: 24px 0; padding-top: 4px; }
+.property-panels-editor-section > .setting-item-heading { margin-bottom: 4px; }
+.property-panels-editor-panel,
+.property-panels-editor-rule {
+  margin: 10px 0;
+  border: 1px solid var(--property-panels-editor-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+.property-panels-editor-panel > summary,
+.property-panels-editor-rule > summary,
+.property-panels-advanced-json > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+}
+.property-panels-editor-summary-meta { color: var(--text-muted); font-size: var(--font-ui-smaller); font-weight: normal; }
+.property-panels-editor-panel-body,
+.property-panels-editor-rule-body { padding: 0 12px 12px; }
+.property-panels-editor-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 6px; margin: 6px 0 12px; }
+.property-panels-editor-actions button { font-size: var(--font-ui-smaller); }
+.property-panels-editor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+.property-panels-editor-grid > .setting-item { min-width: 0; }
+.property-panels-editor-card {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid var(--property-panels-editor-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+}
+.property-panels-editor-card-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.property-panels-field-editor > summary { cursor: pointer; }
+.property-panels-editor-card-header .property-panels-editor-actions { margin: 0; }
+.property-panels-editor-subsection,
+.property-panels-editor-layout { margin: 10px 0 0; padding: 8px 10px; border-radius: 6px; background: var(--background-secondary); }
+.property-panels-editor-subsection h6 { margin: 2px 0 4px; }
+.property-panels-editor-layout > summary { cursor: pointer; color: var(--text-muted); font-weight: var(--font-medium); }
+.property-panels-editor-empty { padding: 12px; border: 1px dashed var(--property-panels-editor-border); border-radius: 6px; color: var(--text-muted); }
+.property-panels-editor-subsection textarea { width: min(420px, 100%); min-height: 100px; font-family: var(--font-monospace); }
+.property-panels-folder-suggest-name { font-weight: var(--font-medium); }
+.property-panels-folder-suggest-path { display: block; color: var(--text-muted); }
+.property-panels-modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+@media (max-width: 600px) {
+  .property-panels-grid { grid-template-columns: 1fr; }
+  .property-panels-field { grid-column: span 1; }
+  .property-panels-label-left .property-panels-field,
+  .property-panels-label-left-end .property-panels-field { display: flex; }
+  .property-panels-label-left-end .property-panels-field > label {
+    align-self: stretch;
+    min-height: 0;
+    text-align: start;
+  }
+  .property-panels-editor-grid { grid-template-columns: 1fr; }
+  .property-panels-editor-panel > summary,
+  .property-panels-editor-rule > summary { align-items: flex-start; flex-direction: column; }
+}
+
+.property-panels-long-scroll .property-panels-heading { white-space: nowrap; overflow-x: auto; }
+.property-panels-long-truncate .property-panels-heading { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.property-panels-grid .property-panels-field.property-panels-label-is-hidden { display: flex; flex-direction: column; }
+/* Keep the active panel's suggestion list above neighboring panel containers. */
+.property-panels-root:focus-within { position: relative; z-index: var(--layer-popover, 100); }
+
+.property-panels-settings .property-panels-custom-setting-definition { display: block; min-width: 0; }
+
+.property-panels-settings .property-panels-navigation-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--size-4-2, 8px);
+}
+.property-panels-settings .property-panels-navigation-row > .setting-item-info {
+  flex: none;
+  width: 100%;
+  margin-inline-end: 0;
+}
+.property-panels-settings :is(.property-panels-navigation-row, .property-panels-back-row) > .setting-item-control {
+  flex: none;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-inline-start: 0;
+  width: 100%;
+}
+.property-panels-settings .property-panels-back-row > .setting-item-info { display: none; }
+
+/* Image and Title share normal field input colors and per-field border behavior. */
+.property-panels-display-control { min-width: 0; }
+.property-panels-display-control.is-image { display: flex; flex-direction: column; gap: .5rem; }
+.property-panels-image-preview { display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: var(--radius-s); }
+.property-panels-image-preview img { display: block; width: 100%; min-width: 0; }
+.property-panels-image-preview.is-fill { position: relative; flex: 1 1 auto; min-height: 7.5rem; }
+.property-panels-image-preview.is-fill img { position: absolute; inset: 0; }
+.property-panels-image-preview[tabindex]:focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 2px; }
+.property-panels-suggestion-editor { position: relative; min-width: 0; }
+.property-panels-suggestion-editor > .property-panels-options { top: calc(100% + .25rem); left: 0; box-sizing: border-box; font-size: var(--font-text-size); font-weight: normal; line-height: var(--line-height-normal, 1.5); }
+.property-panels-image-path { display: block; color: var(--text-muted); overflow-wrap: anywhere; }
+.property-panels-field-title .property-panels-display-control.is-title {
+  font-size: var(--property-panels-heading-size);
+  font-weight: var(--property-panels-heading-weight);
+  line-height: var(--property-panels-heading-line-height);
+}
+.property-panels-field-title :is(.property-panels-title-surface, .property-panels-heading, textarea.property-panels-title-editor) {
+  font-size: inherit; font-weight: inherit; line-height: inherit; font-family: inherit;
+}
+.property-panels-field-title .property-panels-title-surface {
+  display: block; width: 100%; min-height: 0; margin: 0;
+  padding: .15em .25em; box-sizing: border-box;
+  border-width: var(--input-border-width, 1px); border-style: solid;
+  white-space: pre-wrap; overflow-wrap: anywhere; letter-spacing: inherit;
+}
+.property-panels-field-title .property-panels-title-surface:not(textarea) { border-color: transparent; }
+.property-panels-field-title .property-panels-heading { padding: 0; border: none; letter-spacing: inherit; }
+.property-panels-field-title textarea.property-panels-title-editor {
+  resize: none; overflow: hidden;
+}
+.property-panels-field-title .property-panels-option-status { font-size: var(--font-ui-small); font-weight: normal; }
+@media (max-width: 600px) { .property-panels-grid > .property-panels-group { grid-column: span 1; } }
+
+.property-panels-field-image > .property-panels-display-control { flex: 1 1 auto; }

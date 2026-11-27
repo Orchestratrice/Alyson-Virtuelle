@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "fieldDefaults": {
+    "multiSelectLayout": "wrap",
+    "multiSelectEntry": "button",
+    "longText": "wrap",
+    "inputStyle": "theme"
+  },
+  "panelOrder": {
+    "before-properties": [],
+    "after-properties": [],
+    "before-content": [],
+    "after-content": [],
+    "before-linked-mentions": [],
+    "after-linked-mentions": []
+  },
+  "defaultConfig": {
+    "panels": [],
+    "layout": {
+      "columns": 1,
+      "density": "normal",
+      "labelPosition": "top",
+      "fieldGap": 10,
+      "panelGap": 12
+    }
+  },
+  "rules": [],
+  "behavior": {
+    "textSaveDelay": 500,
+    "deleteEmptyValues": false,
+    "showInSourceView": false,
+    "debugLogging": false
+  }
+}

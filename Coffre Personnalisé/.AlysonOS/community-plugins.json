@@ -8,5 +8,8 @@
   "obtion",
   "bases-templates",
   "view-tabs-for-bases",
-  "rich-property"
+  "rich-property",
+  "property-board",
+  "property-panels",
+  "property-organizer"
 ]
