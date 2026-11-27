@@ -54,14 +54,19 @@
       "dossier": "Brain In A Box",
       "accueil": "Brain In A Box/Brain In A Box.md",
       "onglets": [
-        "Brain In A Box/Brain In A Box.md"
+        "Brain In A Box/03_Roxxy — Second cerveau/Fiche — Alyson Virtuelle — Orchestratrice Centrale.md"
       ]
     },
     {
       "nom": "Alyson Virtuelle",
       "icone": "sparkles",
       "dossier": "Alyson Virtuelle",
-      "accueil": "Alyson Virtuelle/AGENT.md"
+      "accueil": "Alyson Virtuelle/AGENT.md",
+      "onglets": [
+        "Alyson Virtuelle/README.md"
+      ]
     }
-  ]
+  ],
+  "synchroAuto": true,
+  "synchroDelai": 60
 }
