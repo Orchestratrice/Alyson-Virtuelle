@@ -3,8 +3,7 @@ name: objectif
 description: Déterminer l'objectif et les résultats attendus
 command: /goal
 mots_cles:
-role: Analyse
-rol:
+role:
 secteur:
 domaine:
 ---
