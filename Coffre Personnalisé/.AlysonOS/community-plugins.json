@@ -1,5 +1,7 @@
 [
   "multi-properties",
   "cascade-templates",
-  "knowledge-base-manager"
+  "knowledge-base-manager",
+  "base-template",
+  "bases-multi-edit"
 ]
