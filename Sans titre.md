@@ -88,5 +88,6 @@ tags:
 - [ ] obsidian://show-plugin?id=smart-context
 - [ ] obsidian://show-plugin?id=map-of-content
 - [ ] obsidian://show-plugin?id=obsidian-image-gallery
+- [ ] obsidian://show-plugin?id=image-window
 - [ ] 
 
