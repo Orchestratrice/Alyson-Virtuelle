@@ -3,7 +3,7 @@ filters:
     - or:
         - file.inFolder("30_Connaissances")
         - file.inFolder("Brain In A Box")
-    - 'file.ext == "md"'
+    - file.ext == "md"
 properties:
   statut:
     displayName: Statut
@@ -18,7 +18,7 @@ views:
     name: Décisions
     filters:
       and:
-        - 'type == "decision"'
+        - type == "decision"
     order:
       - file.name
       - domaine
@@ -29,7 +29,7 @@ views:
     name: Sources
     filters:
       and:
-        - 'type == "source"'
+        - type == "source"
     order:
       - ordre
       - file.name
@@ -38,7 +38,7 @@ views:
     name: Glossaire
     filters:
       and:
-        - 'type == "concept"'
+        - type == "concept"
     order:
       - file.name
       - fonction

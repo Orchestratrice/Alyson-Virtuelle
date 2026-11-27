@@ -1,0 +1,15 @@
+{
+  "sleepingTime": 300,
+  "pluginCmdr": [
+    {
+      "id": "open-plugin-settings",
+      "name": "Open Plugin Settings",
+      "commandName": "Open Plugin Settings"
+    },
+    {
+      "id": "smart-second-brain",
+      "name": "Smart Second Brain",
+      "commandName": "Smart Second Brain"
+    }
+  ]
+}

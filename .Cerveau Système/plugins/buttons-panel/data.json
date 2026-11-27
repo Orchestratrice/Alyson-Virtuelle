@@ -1,0 +1,20 @@
+{
+  "categories": [],
+  "panelConfig": {
+    "displayStyle": "icon_top",
+    "panelViewType": "list",
+    "enableAnimation": true,
+    "showButtonTooltip": true,
+    "interactionMode": "edit",
+    "showTopNavBar": true,
+    "tabsWrap": true,
+    "listAutoCollapse": false,
+    "folderDetailNameEditable": true,
+    "folderShowBtnCount": true,
+    "folderCloseOnBlankClick": true
+  },
+  "pathConfig": {
+    "templateFolderPath": "99_Modèles",
+    "scriptFolderPath": "scripts/"
+  }
+}
