@@ -3,5 +3,6 @@
   "cascade-templates",
   "knowledge-base-manager",
   "base-template",
-  "bases-multi-edit"
+  "bases-multi-edit",
+  "bases-view-tabs"
 ]

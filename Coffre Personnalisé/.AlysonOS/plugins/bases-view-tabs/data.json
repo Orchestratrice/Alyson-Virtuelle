@@ -1,4 +1,8 @@
 {
+  "wrap": true,
+  "rememberView": true,
+  "appearances": {},
+  "lastViews": {},
   "notemodsHello": {
     "lastVersion": "1.3.2",
     "show": true
