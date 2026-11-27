@@ -1,5 +1,5 @@
 {
-  "espaceActif": 6,
+  "espaceActif": 1,
   "memoriserOnglets": true,
   "masquerCaches": true,
   "espaces": [
@@ -36,7 +36,7 @@
       "dossier": "20_Système",
       "accueil": "",
       "onglets": [
-        "00_Pilotage/Tableau de bord.md"
+        "20_Système/Plugins/Plugin — Homepage.md"
       ]
     },
     {
@@ -63,14 +63,35 @@
       "dossier": "Alyson Virtuelle",
       "accueil": "Alyson Virtuelle/AGENT.md",
       "onglets": [
-        "Alyson Virtuelle/README.md"
+        "Alyson Virtuelle/Alyson Virtuelle/AGENT.md"
       ]
     },
     {
-      "nom": "Objectifs",
-      "icone": "",
-      "dossier": "",
-      "accueil": ""
+      "nom": "Objectifs Personnels",
+      "icone": "target",
+      "dossier": "Objectifs Personnels",
+      "accueil": "",
+      "onglets": [
+        "Alyson Virtuelle/Alyson Virtuelle/AGENT.md"
+      ]
+    },
+    {
+      "nom": "Navigateur",
+      "icone": "globe",
+      "dossier": "Navigateur",
+      "accueil": "",
+      "onglets": [
+        "Alyson Virtuelle/Alyson Virtuelle/AGENT.md"
+      ]
+    },
+    {
+      "nom": "Fonctionnalités",
+      "icone": "gear",
+      "dossier": "Fonctionnalités",
+      "accueil": "",
+      "onglets": [
+        "Alyson Virtuelle/Alyson Virtuelle/AGENT.md"
+      ]
     }
   ],
   "synchroAuto": true,
