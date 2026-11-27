@@ -1,0 +1,279 @@
+.ScannerModal {
+
+    /* AI: E4 — minimal scanner summary / empty state, native typography. */
+    & > p.scanner-summary {
+        color: var(--text-muted);
+        font-size: var(--font-ui-small);
+        margin: var(--size-4-1) 0 var(--size-4-3);
+    }
+
+    & > p.scanner-empty {
+        color: var(--text-muted);
+        margin: var(--size-4-4) 0;
+    }
+
+    & details {
+        background-color: var(--main-color);
+        margin-bottom: 2px;
+        
+        &>summary {
+            width: 100%;
+
+            background-color: var(--side-color);
+
+            display: flex;
+            align-items: center;
+
+            &>svg {
+                margin: 8px;
+            }
+
+            &>span.title {
+                flex: 1;
+                font-size: 16px;
+                padding-left: 0px;
+            }
+
+        }
+
+        &>.item-container {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 34px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+
+            margin-left: 16px;
+            border-left: solid #fff 1px;
+
+            &:nth-child(2) {
+                border-image: linear-gradient(to top, #fff 0%, #fff 80%, #00000000 95%) 1;
+            }
+
+            &:last-child {
+                border-image: linear-gradient(to bottom, #fff 0%, #fff 80%, #00000000 90%) 1;
+            }
+
+            &>.name {
+                flex: 1;
+                padding-left: 16px;
+                text-decoration: none;
+            }
+
+        }
+
+        & span.clickable-icon {
+            margin-right: 4px;
+            font-family: monospace;
+            
+            &.btn-fix {
+                aspect-ratio: 1/1;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+/* AI: per-view metadata panel toolbar (Sessione C).
+   Layout: [status] [Add property] [reconform] [back] inside .metadata-content.
+   Only native Obsidian variables are used so light/dark/custom themes work. */
+.cascade-templates-status {
+    display: inline-flex;
+    align-items: center;
+    margin-left: var(--size-2-2);
+    margin-right: 0;
+
+    transform: scale(1.05);
+    &.is-missing {
+        transform: scale(1.12);
+    }
+
+    /* status modifier emitted by metadataPanel.ts (one at a time) */
+    &.is-ok {
+        color: var(--text-success);
+    }
+
+    &.is-extra {
+        color: var(--text-warning);
+    }
+
+    &.is-missing {
+        color: var(--text-error);
+    }
+
+    &.is-none {
+        color: var(--text-faint);
+    }
+
+    /* Root template (no ancestor template): the cascade starts here. It is a
+       VALID terminal state, so it shares the success tone; the dedicated crown
+       icon keeps it distinguishable from the coherent check states. */
+    &.is-root {
+        color: var(--text-success);
+    }
+
+    /* Clickable reference badge: only states that point at a template can
+       navigate (root/neutral have no target). Hover and focus use native
+       Obsidian variables so light/dark/custom themes stay consistent. */
+    &.is-actionable {
+        cursor: pointer;
+        border-radius: var(--radius-s);
+        transition: background-color 0.15s ease-in-out;
+
+        /* AI: touch devices report hover after a tap (the style sticks). Only
+           real hover-capable pointers get the background. */
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--background-modifier-hover);
+            }
+        }
+
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+        }
+    }
+
+    /* D1 — "only when a template applies": the whole injected toolbar is hidden. */
+    &.cascade-templates-hidden {
+        display: none;
+    }
+}
+
+.cascade-templates-toolbar {
+    display: inline-flex;
+    align-items: center;
+    /* TODO 
+    gap: var(--size-4-1);*/
+    margin-left: var(--size-2-3);
+    border-bottom: 2px solid #333;
+
+    /* D1 — see above: hidden together with the status indicator. */
+    &.cascade-templates-hidden {
+        display: none;
+    }
+
+    /* AI: see the status hover note: no sticky hover on touch. */
+    @media (hover: hover) {
+        &:hover {
+            border-color: #444;
+        }
+    }
+
+}
+
+.cascade-templates-action {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-2-2);
+
+    padding: var(--size-2-2);
+    padding-inline-start: var(--size-2-3);
+    border-radius: var(--button-radius);
+
+    color: var(--text-muted);
+
+    /* AI: mirror the native "Add property" button exactly. Obsidian renders that
+       button as a `.text-icon-button` styled by the metadata panel typography
+       (--metadata-label-font / --metadata-label-font-size = 0.875em -> 14px)
+       and by the panel line height. The base idle/hover/focus/icon states are
+       intentionally NOT redefined here: they already come from the native
+       `.text-icon-button` class this element also carries, so the injected
+       controls stay visually and behaviourally indistinguishable from the
+       native one (same padding, radius, gap, hover, :focus-visible ring). */
+    font-size: var(--metadata-label-font-size);
+    /* font-family: var(--metadata-label-font); */
+    font-weight: var(--input-font-weight);
+    line-height: var(--line-height-normal);
+
+    white-space: nowrap;
+    cursor: var(--cursor);
+    user-select: none;
+    
+    font-family: monospace;
+
+    /* H5: only the reconform button has a variable label ("Reconform" /
+       "Remove extra" / "Reset"). Reserve the longest in `ch` so the control
+       never jumps when the phase changes. Not applied to Back. */
+    &.cascade-templates-reconform {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        & > .text-button-label {
+            min-width: 5ch;
+        }
+    }
+
+    &.cascade-templates-back {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    /* ICON COLOR FIX */
+    &.cascade-templates-reconform > .text-button-icon,
+    &.cascade-templates-back > .text-button-icon {
+        color: inherit;
+    }
+
+    /* H4 level 2 — a live action that would change nothing (no-op): attenuated,
+       still in the default grey palette, still interactive (a press advances
+       the cursor and pushes a step). */
+    &.cascade-templates-noop {
+        color: var(--text-faint);
+    }
+
+    /* H4 level 3 — classic disabled: no template to work from, or the cursor at
+       the end of the sequence. Fainter than the no-op level and non-interactive
+       (default cursor, not the aggressive native `not-allowed`). */
+    &.cascade-templates-disabled {
+        color: var(--text-faint);
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+/* AI: fix Obsidian's "+ Add property" so it visually joins our toolbar.
+   D1 — the `.cascade-templates-add-button` marker is set by metadataPanel.ts
+   only while the toolbar is actually visible: under "Only when a template
+   applies" a note without a template keeps the native button untouched. */
+.metadata-add-button.text-icon-button.cascade-templates-add-button {
+    margin-left: var(--size-4-2);
+    padding-left: 3px;
+    font-family: monospace;
+    border-bottom: 2px solid var(--background-modifier-border, #333);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    /* AI: see the status hover note: no sticky hover on touch. */
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--background-modifier-border-hover, #444);
+        }
+    }
+}
+
+/* AI: compact toolbar on phones.
+   Obsidian marks the phone UI with `is-phone` on the body: it is the phone
+   environment marker, more accurate than a viewport media query (a desktop pane
+   can be just as narrow, but it is not a phone). The injected toolbar shares
+   the row with the native "Add property" button; on a phone the Back label is
+   redundant (the undo arrow is unambiguous), so hiding it recovers the space
+   needed to keep the row together. The accessible name is preserved by the
+   `aria-label` set in `createActionButton`. */
+body.is-phone .cascade-templates-back > .text-button-label {
+    display: none;
+}
+
+body.is-phone .cascade-templates-action {
+    padding-inline: var(--size-2-2);
+    gap: var(--size-2-1);
+}
+
+/* AI: error tone for the "template already exists" Notice (command palette).
+   The class is added to `Notice.messageEl` in folderTemplateMenu.ts, so only
+   the message text turns red while the container keeps Obsidian's native
+   notice background and border in every theme. */
+.cascade-templates-notice-error {
+    color: var(--text-error);
+}
