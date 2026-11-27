@@ -4,5 +4,7 @@ views:
     order:
       - Objectif
     sort:
+      - property: Objectif
+        direction: ASC
       - property: file.name
         direction: ASC
