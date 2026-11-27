@@ -1,0 +1,10 @@
+views:
+  - type: bases-multi-edit
+    name: Vue
+    viewTabsForBases:
+      color: pink
+  - type: cards
+    name: Vue 2
+    viewTabsForBases:
+      color: pink
+    image: note.tags

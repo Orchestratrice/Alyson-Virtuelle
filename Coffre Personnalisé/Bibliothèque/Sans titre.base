@@ -1,0 +1,8 @@
+views:
+  - type: table
+    name: Vue
+    order:
+      - Objectif
+    sort:
+      - property: file.name
+        direction: ASC
