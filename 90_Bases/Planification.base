@@ -1,0 +1,50 @@
+filters:
+  and:
+    - file.inFolder("00_Planification")
+    - 'file.ext == "md"'
+properties:
+  statut:
+    displayName: Statut
+  responsable:
+    displayName: Responsable
+  echeance:
+    displayName: Échéance
+  fonction:
+    displayName: Objectif
+  porte:
+    displayName: Porte de sortie
+views:
+  - type: table
+    name: Tâches ouvertes
+    filters:
+      and:
+        - 'type == "tache"'
+        - 'statut != "Fait"'
+    groupBy:
+      property: responsable
+      direction: ASC
+    order:
+      - file.name
+      - statut
+      - phase
+      - echeance
+  - type: table
+    name: Phases
+    filters:
+      and:
+        - 'type == "phase"'
+    order:
+      - phase
+      - file.name
+      - statut
+      - porte
+  - type: table
+    name: Tâches par phase
+    filters:
+      and:
+        - 'type == "tache"'
+        - 'phase == this.phase'
+    order:
+      - file.name
+      - statut
+      - responsable

@@ -1,0 +1,43 @@
+/* Alyson Virtuelle — module Espaces */
+.av-espaces { padding: 0 !important; display: flex; flex-direction: column; }
+
+.av-onglets {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  padding: 8px; border-bottom: 1px solid var(--background-modifier-border);
+}
+.av-onglet {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 8px; border-radius: var(--radius-m);
+  cursor: pointer; color: var(--text-muted); font-size: var(--font-ui-small);
+}
+.av-onglet:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.av-onglet.is-active { background: var(--interactive-accent); color: var(--text-on-accent); }
+.av-onglet-icone { display: flex; }
+.av-onglet-icone svg { width: 14px; height: 14px; }
+
+.av-tete { display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 4px; }
+.av-titre { font-weight: 600; font-size: var(--font-ui-medium); }
+.av-bouton { cursor: pointer; color: var(--text-muted); display: flex; padding: 2px; border-radius: var(--radius-s); }
+.av-bouton:hover { color: var(--text-normal); background: var(--background-modifier-hover); }
+
+.av-arbre { padding: 4px 4px 16px; overflow-y: auto; }
+.av-ligne {
+  display: flex; align-items: center; gap: 4px;
+  padding-top: 3px; padding-bottom: 3px; padding-right: 8px;
+  border-radius: var(--radius-s); cursor: pointer;
+  color: var(--nav-item-color, var(--text-muted)); font-size: var(--font-ui-small);
+}
+.av-ligne:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.av-ligne.is-active { background: var(--background-modifier-active-hover); color: var(--text-normal); }
+.av-dossier { color: var(--text-normal); font-weight: 500; }
+.av-chevron { display: flex; color: var(--text-faint); }
+.av-chevron svg { width: 12px; height: 12px; }
+.av-nom { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.av-ext {
+  margin-left: auto; font-size: 0.75em; color: var(--text-faint);
+  border: 1px solid var(--background-modifier-border); border-radius: 4px; padding: 0 4px;
+}
+.av-vide { padding: 12px; color: var(--text-faint); font-size: var(--font-ui-small); }
+
+.av-reglage-espace .setting-item-control { flex-wrap: wrap; gap: 6px; }
+.av-reglage-espace input[type="text"] { width: 150px; }

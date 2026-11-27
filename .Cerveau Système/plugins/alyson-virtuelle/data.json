@@ -1,0 +1,67 @@
+{
+  "espaceActif": 6,
+  "memoriserOnglets": true,
+  "masquerCaches": true,
+  "espaces": [
+    {
+      "nom": "Pilotage",
+      "icone": "layout-dashboard",
+      "dossier": "00_Pilotage",
+      "accueil": "00_Pilotage/Tableau de bord.md",
+      "onglets": [
+        "00_Pilotage/Tableau de bord.md"
+      ]
+    },
+    {
+      "nom": "Planification",
+      "icone": "calendar-check",
+      "dossier": "00_Planification",
+      "accueil": "",
+      "onglets": [
+        "00_Pilotage/Tableau de bord.md"
+      ]
+    },
+    {
+      "nom": "Organisation",
+      "icone": "network",
+      "dossier": "10_Organisation",
+      "accueil": "",
+      "onglets": [
+        "00_Pilotage/Tableau de bord.md"
+      ]
+    },
+    {
+      "nom": "Système",
+      "icone": "settings-2",
+      "dossier": "20_Système",
+      "accueil": "",
+      "onglets": [
+        "00_Pilotage/Tableau de bord.md"
+      ]
+    },
+    {
+      "nom": "Connaissances",
+      "icone": "library",
+      "dossier": "30_Connaissances",
+      "accueil": "",
+      "onglets": [
+        "00_Pilotage/Tableau de bord.md"
+      ]
+    },
+    {
+      "nom": "Brain In A Box",
+      "icone": "brain",
+      "dossier": "Brain In A Box",
+      "accueil": "Brain In A Box/Brain In A Box.md",
+      "onglets": [
+        "Brain In A Box/Brain In A Box.md"
+      ]
+    },
+    {
+      "nom": "Alyson Virtuelle",
+      "icone": "sparkles",
+      "dossier": "Alyson Virtuelle",
+      "accueil": "Alyson Virtuelle/AGENT.md"
+    }
+  ]
+}

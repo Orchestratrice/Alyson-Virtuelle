@@ -174,24 +174,108 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Alyson Virtuelle/README.md",
+      "lastOpenedAt": 1795740825513
+    },
+    {
+      "path": "Alyson Virtuelle/AGENT.md",
+      "lastOpenedAt": 1795740318965
+    },
+    {
+      "path": "Brain In A Box/Brain In A Box.md",
+      "lastOpenedAt": 1795740316466
+    },
+    {
+      "path": "00_Pilotage/Tableau de bord.md",
+      "lastOpenedAt": 1795740221239
+    },
+    {
+      "path": "Tâches Claude/Requêtes Claude.md",
+      "lastOpenedAt": 1795739892770
+    },
+    {
+      "path": "Diagramme-évolutif-demandé.md",
+      "lastOpenedAt": 1795739835236
+    },
+    {
+      "path": "Alyson Virtuelle/Sans titre.md",
+      "lastOpenedAt": 1795738912678
+    },
+    {
+      "path": "Tâches Claude/Sans titre.md",
+      "lastOpenedAt": 1795737375294
+    },
+    {
       "path": "Sans titre.md",
-      "lastOpenedAt": 1795728161540
+      "lastOpenedAt": 1795737341777
     },
     {
       "path": "Tableau de bord.md",
-      "lastOpenedAt": 1795727938153
+      "lastOpenedAt": 1795736975923
+    },
+    {
+      "path": "80_Canevas/Organigramme Alyson Virtuelle.canvas",
+      "lastOpenedAt": 1795736937706
+    },
+    {
+      "path": "90_Bases/Organisation.base",
+      "lastOpenedAt": 1795736933234
+    },
+    {
+      "path": "00_Pilotage/Plugins et paramètres de départ.md",
+      "lastOpenedAt": 1795736922310
+    },
+    {
+      "path": "00_Pilotage/Journal des modifications.md",
+      "lastOpenedAt": 1795736919030
+    },
+    {
+      "path": "00_Pilotage/Guide du coffre.md",
+      "lastOpenedAt": 1795736910241
+    },
+    {
+      "path": "Alyson Virtuelle/Orchestratrice Système/Orchestratrice Système.md",
+      "lastOpenedAt": 1795736885801
+    },
+    {
+      "path": "Tâches.md",
+      "lastOpenedAt": 1795736807755
+    },
+    {
+      "path": "Plugin De Départ.md",
+      "lastOpenedAt": 1795736777705
+    },
+    {
+      "path": "Planification/Projets.md",
+      "lastOpenedAt": 1795735200597
+    },
+    {
+      "path": "Orchestratrice Système/Sans titre.md",
+      "lastOpenedAt": 1795732736198
+    },
+    {
+      "path": "Planification/Sans titre.md",
+      "lastOpenedAt": 1795732256451
+    },
+    {
+      "path": "Alyson Virtuelle/Memories/User.md",
+      "lastOpenedAt": 1795732182453
     },
     {
       "path": "Alyson Virtuelle/Chats/New Chat.chat",
-      "lastOpenedAt": 1795727823388
+      "lastOpenedAt": 1795728961213
+    },
+    {
+      "path": "README.md",
+      "lastOpenedAt": 1795728672700
+    },
+    {
+      "path": "image.png",
+      "lastOpenedAt": 1795728658632
     },
     {
       "path": "Chats/New Chat.chat",
       "lastOpenedAt": 1795726949694
-    },
-    {
-      "path": "Plugin De Départ.md",
-      "lastOpenedAt": 1795726738225
     }
   ],
   "embeddingIndexes": [],

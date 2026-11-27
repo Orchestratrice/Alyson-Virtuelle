@@ -1,0 +1,29 @@
+{
+  "types": {
+    "type": "text",
+    "statut": "text",
+    "phase": "number",
+    "niveau": "number",
+    "role": "text",
+    "fonction": "text",
+    "direction": "text",
+    "parent": "text",
+    "relations": "multitext",
+    "portee": "text",
+    "mots_cles": "multitext",
+    "aliases": "aliases",
+    "tags": "tags",
+    "source": "text",
+    "cree": "date",
+    "maj": "date",
+    "date": "date",
+    "echeance": "date",
+    "responsable": "text",
+    "priorite": "number",
+    "categorie": "text",
+    "domaine": "text",
+    "ordre": "number",
+    "origine": "text",
+    "porte": "text"
+  }
+}

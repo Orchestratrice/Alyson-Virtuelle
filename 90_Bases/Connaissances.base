@@ -1,0 +1,45 @@
+filters:
+  and:
+    - or:
+        - file.inFolder("30_Connaissances")
+        - file.inFolder("Brain In A Box")
+    - 'file.ext == "md"'
+properties:
+  statut:
+    displayName: Statut
+  fonction:
+    displayName: Définition
+  domaine:
+    displayName: Domaine
+  ordre:
+    displayName: Ordre
+views:
+  - type: table
+    name: Décisions
+    filters:
+      and:
+        - 'type == "decision"'
+    order:
+      - file.name
+      - domaine
+      - date
+      - statut
+      - source
+  - type: table
+    name: Sources
+    filters:
+      and:
+        - 'type == "source"'
+    order:
+      - ordre
+      - file.name
+      - statut
+  - type: table
+    name: Glossaire
+    filters:
+      and:
+        - 'type == "concept"'
+    order:
+      - file.name
+      - fonction
+      - statut

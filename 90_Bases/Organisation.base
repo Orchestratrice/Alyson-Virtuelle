@@ -1,0 +1,61 @@
+filters:
+  and:
+    - file.inFolder("10_Organisation")
+    - file.ext == "md"
+properties:
+  role:
+    displayName: Rôle
+  fonction:
+    displayName: Fonction
+  niveau:
+    displayName: Niveau
+  portee:
+    displayName: Portée
+  statut:
+    displayName: Statut
+views:
+  - type: table
+    name: Organigramme
+    groupBy:
+      property: niveau
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - role
+      - fonction
+      - parent
+      - portee
+      - statut
+  - type: cards
+    name: Directions
+    filters:
+      and:
+        - type == "direction"
+    order:
+      - file.name
+      - statut
+      - fonction
+  - type: table
+    name: Agentes et rôles
+    filters:
+      or:
+        - type == "agente"
+        - type == "role"
+    order:
+      - file.name
+      - type
+      - role
+      - fonction
+      - statut
+  - type: table
+    name: Skills
+    filters:
+      and:
+        - type == "skill"
+    order:
+      - file.name
+      - role
+      - direction
+      - fonction
+      - statut

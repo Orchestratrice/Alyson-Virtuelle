@@ -350,5 +350,181 @@
       "slowestSkillFolderMs": 2
     },
     "timestamp": "2026-11-26T21:00:53.326Z"
+  },
+  {
+    "label": "S2B startup",
+    "totalMs": 795,
+    "phases": [
+      {
+        "kind": "mark",
+        "name": "onload:start",
+        "offset": 0,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "span",
+        "name": "data:load",
+        "offset": 0,
+        "duration": 30,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "onload:registrations-done",
+        "offset": 34,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "span",
+        "name": "pendingChanges:load",
+        "offset": 34,
+        "duration": 2,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "onload:end",
+        "offset": 36,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "layoutReady:start",
+        "offset": 276,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:startInit",
+        "offset": 285,
+        "duration": 1,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "vectorstore:startInit",
+        "offset": 286,
+        "duration": 1,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate",
+        "offset": 287,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-core",
+        "offset": 287,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-manage-skills",
+        "offset": 288,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-manage-notes",
+        "offset": 288,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:miniSearch.open",
+        "offset": 286,
+        "duration": 5,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:loadFromStorage",
+        "offset": 290,
+        "duration": 47,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:bootstrap",
+        "offset": 288,
+        "duration": 102,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:discover",
+        "offset": 390,
+        "duration": 265,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:init",
+        "offset": 287,
+        "duration": 369,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "promptFiles:init",
+        "offset": 655,
+        "duration": 75,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "agent:chatManager.load",
+        "offset": 731,
+        "duration": 62,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "agent:init",
+        "offset": 731,
+        "duration": 64,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "vectorstore:ready",
+        "offset": 795,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "mark",
+        "name": "deferred:end",
+        "offset": 795,
+        "duration": 0,
+        "blocking": false
+      }
+    ],
+    "meta": {
+      "rendererToOnloadMs": 1166,
+      "obsidianPreLayoutMs": 241,
+      "platform": "windows",
+      "enabledCommunityPlugins": 3,
+      "usedJSHeapMB": 62,
+      "jsHeapLimitMB": 4096,
+      "lexicalIndexDocs": 93,
+      "lexicalIndexBytes": 0,
+      "lexicalIndexLoadedFromCache": true,
+      "vaultFileCount": 104,
+      "skillFolderCount": 7,
+      "slowestSkillFolder": "widgets",
+      "slowestSkillFolderMs": 64
+    },
+    "timestamp": "2026-11-27T00:53:46.050Z"
   }
 ]

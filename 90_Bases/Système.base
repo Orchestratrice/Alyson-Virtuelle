@@ -1,0 +1,48 @@
+filters:
+  and:
+    - file.inFolder("20_Système")
+    - 'file.ext == "md"'
+properties:
+  fonction:
+    displayName: Fonction
+  portee:
+    displayName: Portée
+  priorite:
+    displayName: Priorité
+  categorie:
+    displayName: Catégorie
+  statut:
+    displayName: Statut
+views:
+  - type: table
+    name: Local ou cloud
+    groupBy:
+      property: portee
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - fonction
+      - statut
+  - type: table
+    name: Plugins
+    filters:
+      and:
+        - 'type == "plugin"'
+    groupBy:
+      property: priorite
+      direction: ASC
+    order:
+      - file.name
+      - categorie
+      - statut
+      - fonction
+  - type: cards
+    name: Outils
+    filters:
+      and:
+        - 'type == "outil"'
+    order:
+      - file.name
+      - portee
+      - fonction

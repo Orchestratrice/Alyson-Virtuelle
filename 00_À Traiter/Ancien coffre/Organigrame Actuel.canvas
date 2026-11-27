@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"2dcb79171a3b6080","type":"file","file":"Cerveau Système.md","x":103,"y":-271,"width":400,"height":400},
+		{"id":"8cab16aa9dea9444","type":"text","text":"C:\\Users\\adminpc\\Cerveau Système","x":-280,"y":-280,"width":250,"height":60},
+		{"id":"5c30dbecbb7e5cbd","type":"file","file":"Situation Actuelle.md","x":103,"y":-740,"width":400,"height":400},
+		{"id":"556129738376bf44","type":"file","file":"AlysonOS.md","x":-1360,"y":280,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"0322cb3f7e5d9b99","fromNode":"8cab16aa9dea9444","fromSide":"right","toNode":"2dcb79171a3b6080","toSide":"left"},
+		{"id":"3a9aab600ceac648","fromNode":"5c30dbecbb7e5cbd","fromSide":"left","toNode":"8cab16aa9dea9444","toSide":"top"}
+	]
+}

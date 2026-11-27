@@ -1,0 +1,15 @@
+filters:
+  and:
+    - file.inFolder("00_Pilotage")
+    - 'file.ext == "md"'
+views:
+  - type: table
+    name: Conversations
+    filters:
+      and:
+        - 'type == "conversation"'
+    order:
+      - file.name
+      - date
+      - phase
+      - statut

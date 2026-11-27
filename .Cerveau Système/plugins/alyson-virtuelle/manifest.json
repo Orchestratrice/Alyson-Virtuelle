@@ -1,0 +1,9 @@
+{
+  "id": "alyson-virtuelle",
+  "name": "Alyson Virtuelle",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Plugin maison d'Alyson qui regroupe peu à peu les fonctions du système. Module 1 : Espaces (onglets par espace de travail, inspiré de Portals).",
+  "author": "Alyson",
+  "isDesktopOnly": false
+}
