@@ -1,5 +1,5 @@
 {
-  "espaceActif": 1,
+  "espaceActif": 0,
   "memoriserOnglets": true,
   "masquerCaches": true,
   "espaces": [
@@ -18,7 +18,7 @@
       "dossier": "00_Planification",
       "accueil": "",
       "onglets": [
-        "00_Pilotage/Tableau de bord.md"
+        "00_Planification/Tâches/Valider les directions et rôles proposés.md"
       ]
     },
     {
