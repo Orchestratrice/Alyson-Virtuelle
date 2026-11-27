@@ -105,5 +105,10 @@ tags:
 - [ ] obsidian://show-plugin?id=folders2graph
 - [ ] obsidian://show-plugin?id=lovely-mindmap
 - [ ] obsidian://show-plugin?id=soundscapes
+- [ ] obsidian://show-plugin?id=metadata-extractor
+- [ ] obsidian://show-plugin?id=taskbone-ocr-plugin
+- [ ] obsidian://show-plugin?id=media-notes
+- [ ] obsidian://show-plugin?id=mxmind
+- [ ] obsidian://show-plugin?id=smart-templates
+- [ ] obsidian://show-plugin?id=emoji-magic
 - [ ] 
-
