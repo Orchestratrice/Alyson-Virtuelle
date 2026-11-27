@@ -1,0 +1,994 @@
+{
+  "version": 1,
+  "styling": true,
+  "blank": false,
+  "customSchema": {
+    "schemaVersion": 2,
+    "typeField": "type",
+    "reserved": [
+      "excalidraw-plugin",
+      "kanban-plugin",
+      "cssclasses",
+      "aliases",
+      "banner",
+      "banner_x",
+      "highlighter",
+      "lineNumbers",
+      "transition",
+      "theme",
+      "css",
+      "drawings"
+    ],
+    "rules": [
+      {
+        "id": "review-needs-agent",
+        "match": "all",
+        "when": [
+          {
+            "field": "author",
+            "in": [
+              "agent",
+              "mixed"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "review",
+            "effect": "available"
+          }
+        ]
+      },
+      {
+        "id": "reviewed-needs-review",
+        "match": "all",
+        "when": [
+          {
+            "field": "review",
+            "in": [
+              "reviewed",
+              "changed"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "reviewed",
+            "effect": "available"
+          }
+        ]
+      },
+      {
+        "id": "status-for-brief",
+        "match": "all",
+        "when": [
+          {
+            "field": "type",
+            "in": [
+              "brief"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "status",
+            "effect": "values",
+            "values": [
+              {
+                "value": "planned",
+                "color": "orange"
+              },
+              {
+                "value": "active",
+                "color": "green"
+              },
+              {
+                "value": "paused",
+                "color": "orange"
+              },
+              {
+                "value": "done",
+                "color": "green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "status-for-solution",
+        "match": "all",
+        "when": [
+          {
+            "field": "type",
+            "in": [
+              "solution"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "status",
+            "effect": "values",
+            "values": [
+              {
+                "value": "draft",
+                "color": "orange"
+              },
+              {
+                "value": "stable",
+                "color": "green"
+              },
+              {
+                "value": "superseded",
+                "color": "neutral"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "status-for-task",
+        "match": "all",
+        "when": [
+          {
+            "field": "type",
+            "in": [
+              "task"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "status",
+            "effect": "values",
+            "values": [
+              {
+                "value": "todo",
+                "color": "purple"
+              },
+              {
+                "value": "doing",
+                "color": "blue"
+              },
+              {
+                "value": "blocked",
+                "color": "red"
+              },
+              {
+                "value": "done",
+                "color": "green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "status-for-decision",
+        "match": "all",
+        "when": [
+          {
+            "field": "type",
+            "in": [
+              "decision"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "status",
+            "effect": "values",
+            "values": [
+              {
+                "value": "proposed",
+                "color": "orange"
+              },
+              {
+                "value": "accepted",
+                "color": "green"
+              },
+              {
+                "value": "superseded",
+                "color": "neutral"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "status-for-output",
+        "match": "all",
+        "when": [
+          {
+            "field": "type",
+            "in": [
+              "output"
+            ]
+          }
+        ],
+        "then": [
+          {
+            "field": "status",
+            "effect": "values",
+            "values": [
+              {
+                "value": "draft",
+                "color": "orange"
+              },
+              {
+                "value": "final",
+                "color": "green"
+              },
+              {
+                "value": "superseded",
+                "color": "neutral"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fields": {
+      "type": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "capture",
+              "color": "purple",
+              "description": "i18n:val.type.capture"
+            },
+            {
+              "value": "reference",
+              "color": "purple",
+              "description": "i18n:val.type.reference"
+            },
+            {
+              "value": "output",
+              "color": "purple",
+              "description": "i18n:val.type.output"
+            },
+            {
+              "value": "decision",
+              "color": "purple",
+              "description": "i18n:val.type.decision"
+            },
+            {
+              "value": "task",
+              "color": "purple",
+              "description": "i18n:val.type.task"
+            },
+            {
+              "value": "devlog",
+              "color": "purple",
+              "description": "i18n:val.type.devlog"
+            },
+            {
+              "value": "solution",
+              "color": "purple",
+              "description": "i18n:val.type.solution"
+            },
+            {
+              "value": "period",
+              "color": "purple",
+              "description": "i18n:val.type.period"
+            },
+            {
+              "value": "knowledge",
+              "color": "purple",
+              "description": "i18n:val.type.knowledge"
+            },
+            {
+              "value": "brief",
+              "color": "purple",
+              "description": "i18n:val.type.brief"
+            },
+            {
+              "value": "moc",
+              "color": "purple",
+              "description": "i18n:val.type.moc"
+            },
+            {
+              "value": "rules",
+              "color": "purple",
+              "description": "i18n:val.type.rules"
+            }
+          ]
+        },
+        "description": "i18n:desc.type"
+      },
+      "review": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "none",
+              "color": "orange",
+              "description": "i18n:val.review.none"
+            },
+            {
+              "value": "reviewed",
+              "color": "green",
+              "description": "i18n:val.review.reviewed"
+            },
+            {
+              "value": "changed",
+              "color": "red",
+              "description": "i18n:val.review.changed"
+            }
+          ]
+        },
+        "description": "i18n:desc.review"
+      },
+      "reviewed": {
+        "kind": "date",
+        "description": "i18n:desc.reviewed"
+      },
+      "author": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "human",
+              "color": "purple"
+            },
+            {
+              "value": "agent",
+              "color": "purple"
+            },
+            {
+              "value": "mixed",
+              "color": "purple"
+            }
+          ]
+        },
+        "description": "i18n:desc.author"
+      },
+      "audience": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "ai",
+              "color": "purple",
+              "description": "i18n:val.audience.ai"
+            },
+            {
+              "value": "both",
+              "color": "purple",
+              "description": "i18n:val.audience.both"
+            },
+            {
+              "value": "human",
+              "color": "orange",
+              "description": "i18n:val.audience.human"
+            }
+          ]
+        },
+        "description": "i18n:desc.audience"
+      },
+      "ai-edit": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "forbidden",
+              "color": "red",
+              "description": "i18n:val.edit.forbidden"
+            },
+            {
+              "value": "ask",
+              "color": "orange",
+              "description": "i18n:val.edit.ask"
+            },
+            {
+              "value": "allowed",
+              "color": "green",
+              "description": "i18n:val.edit.allowed"
+            }
+          ]
+        },
+        "description": "i18n:desc.ai-edit"
+      },
+      "project": {
+        "kind": "enum",
+        "source": {
+          "kind": "vault-dir",
+          "paths": [
+            "2-projects"
+          ],
+          "requireFile": "brief.md",
+          "depth": 2
+        },
+        "types": [
+          "brief",
+          "solution",
+          "task",
+          "decision",
+          "devlog",
+          "output"
+        ],
+        "description": "i18n:desc.project"
+      },
+      "project-mode": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "full",
+              "color": "neutral",
+              "description": "i18n:val.project-mode.full"
+            },
+            {
+              "value": "light",
+              "color": "cyan",
+              "description": "i18n:val.project-mode.light"
+            }
+          ]
+        },
+        "types": [
+          "brief"
+        ],
+        "placeholder": true,
+        "description": "i18n:desc.project-mode"
+      },
+      "customer": {
+        "kind": "text",
+        "types": [
+          "brief"
+        ],
+        "description": "i18n:desc.customer"
+      },
+      "platform": {
+        "kind": "text-list",
+        "types": [
+          "brief"
+        ],
+        "description": "i18n:desc.platform"
+      },
+      "status": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "planned",
+              "color": "orange"
+            },
+            {
+              "value": "active",
+              "color": "green"
+            },
+            {
+              "value": "paused",
+              "color": "orange"
+            },
+            {
+              "value": "done",
+              "color": "green"
+            },
+            {
+              "value": "draft",
+              "color": "orange"
+            },
+            {
+              "value": "stable",
+              "color": "green"
+            },
+            {
+              "value": "superseded",
+              "color": "neutral"
+            },
+            {
+              "value": "todo",
+              "color": "purple"
+            },
+            {
+              "value": "doing",
+              "color": "blue"
+            },
+            {
+              "value": "blocked",
+              "color": "red"
+            },
+            {
+              "value": "proposed",
+              "color": "orange"
+            },
+            {
+              "value": "accepted",
+              "color": "green"
+            },
+            {
+              "value": "final",
+              "color": "green"
+            }
+          ]
+        },
+        "types": [
+          "brief",
+          "solution",
+          "task",
+          "decision",
+          "output"
+        ],
+        "description": "i18n:desc.status"
+      },
+      "priority": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "low",
+              "color": "purple"
+            },
+            {
+              "value": "medium",
+              "color": "orange"
+            },
+            {
+              "value": "high",
+              "color": "red"
+            }
+          ]
+        },
+        "types": [
+          "task"
+        ],
+        "description": "i18n:desc.priority"
+      },
+      "supersedes": {
+        "kind": "link",
+        "source": {
+          "kind": "note-search",
+          "folders": [
+            "decisions",
+            "output"
+          ]
+        },
+        "types": [
+          "decision",
+          "output"
+        ],
+        "description": "i18n:desc.supersedes"
+      },
+      "superseded_by": {
+        "kind": "link",
+        "source": {
+          "kind": "note-search",
+          "folders": [
+            "decisions",
+            "output"
+          ]
+        },
+        "types": [
+          "decision",
+          "output"
+        ],
+        "description": "i18n:desc.superseded_by"
+      },
+      "related": {
+        "kind": "link-list",
+        "source": {
+          "kind": "note-search"
+        },
+        "types": [
+          "solution",
+          "task",
+          "decision",
+          "output"
+        ],
+        "description": "i18n:desc.related"
+      },
+      "verified-at": {
+        "kind": "text-list",
+        "pattern": "^[^@\\s]+@[^:\\s]+:[0-9a-f]{10}$",
+        "patternHint": "<repo>@<branch>:<10 hex>",
+        "types": [
+          "solution"
+        ],
+        "description": "i18n:desc.verified-at"
+      },
+      "date": {
+        "kind": "date",
+        "types": [
+          "devlog"
+        ],
+        "description": "i18n:desc.date"
+      },
+      "tasks": {
+        "kind": "link-list",
+        "source": {
+          "kind": "note-search"
+        },
+        "types": [
+          "devlog"
+        ],
+        "description": "i18n:desc.tasks"
+      },
+      "range": {
+        "kind": "date-range",
+        "types": [
+          "period"
+        ],
+        "description": "i18n:desc.range"
+      },
+      "deadline": {
+        "kind": "date",
+        "types": [
+          "brief",
+          "task"
+        ],
+        "description": "i18n:desc.deadline"
+      },
+      "dir-accepts": {
+        "kind": "multi-enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "capture",
+              "color": "purple",
+              "description": "i18n:val.type.capture"
+            },
+            {
+              "value": "reference",
+              "color": "purple",
+              "description": "i18n:val.type.reference"
+            },
+            {
+              "value": "output",
+              "color": "purple",
+              "description": "i18n:val.type.output"
+            },
+            {
+              "value": "decision",
+              "color": "purple",
+              "description": "i18n:val.type.decision"
+            },
+            {
+              "value": "task",
+              "color": "purple",
+              "description": "i18n:val.type.task"
+            },
+            {
+              "value": "devlog",
+              "color": "purple",
+              "description": "i18n:val.type.devlog"
+            },
+            {
+              "value": "solution",
+              "color": "purple",
+              "description": "i18n:val.type.solution"
+            },
+            {
+              "value": "period",
+              "color": "purple",
+              "description": "i18n:val.type.period"
+            },
+            {
+              "value": "knowledge",
+              "color": "purple",
+              "description": "i18n:val.type.knowledge"
+            },
+            {
+              "value": "brief",
+              "color": "purple",
+              "description": "i18n:val.type.brief"
+            },
+            {
+              "value": "moc",
+              "color": "purple",
+              "description": "i18n:val.type.moc"
+            },
+            {
+              "value": "rules",
+              "color": "purple",
+              "description": "i18n:val.type.rules"
+            }
+          ]
+        },
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-accepts"
+      },
+      "dir-audience": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "ai",
+              "color": "purple",
+              "description": "i18n:val.audience.ai"
+            },
+            {
+              "value": "both",
+              "color": "purple",
+              "description": "i18n:val.audience.both"
+            },
+            {
+              "value": "human",
+              "color": "orange",
+              "description": "i18n:val.audience.human"
+            }
+          ]
+        },
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-audience"
+      },
+      "dir-ai-edit": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "forbidden",
+              "color": "red",
+              "description": "i18n:val.edit.forbidden"
+            },
+            {
+              "value": "ask",
+              "color": "orange",
+              "description": "i18n:val.edit.ask"
+            },
+            {
+              "value": "allowed",
+              "color": "green",
+              "description": "i18n:val.edit.allowed"
+            }
+          ]
+        },
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-ai-edit"
+      },
+      "dir-ai-create": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "forbidden",
+              "color": "red",
+              "description": "i18n:val.edit.forbidden"
+            },
+            {
+              "value": "ask",
+              "color": "orange",
+              "description": "i18n:val.edit.ask"
+            },
+            {
+              "value": "allowed",
+              "color": "green",
+              "description": "i18n:val.edit.allowed"
+            }
+          ]
+        },
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-ai-create"
+      },
+      "dir-review": {
+        "kind": "bool",
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-review"
+      },
+      "dir-lifecycle": {
+        "kind": "enum",
+        "source": {
+          "kind": "static",
+          "values": [
+            {
+              "value": "active",
+              "color": "purple"
+            },
+            {
+              "value": "archived",
+              "color": "neutral",
+              "description": "i18n:val.lifecycle.archived"
+            }
+          ]
+        },
+        "types": [
+          "rules"
+        ],
+        "description": "i18n:desc.dir-lifecycle"
+      },
+      "created": {
+        "kind": "datetime",
+        "description": "i18n:desc.created"
+      },
+      "updated": {
+        "kind": "datetime",
+        "description": "i18n:desc.updated"
+      },
+      "schema": {
+        "kind": "int",
+        "description": "i18n:desc.schema"
+      },
+      "connaissance": {
+        "kind": "enum",
+        "description": "i18n:desc.tags",
+        "source": {
+          "kind": "tag-vocab",
+          "axes": [
+            {
+              "label": "Wi-Fi",
+              "prefix": "wifi",
+              "values": [
+                {
+                  "value": "p2p",
+                  "color": "purple"
+                },
+                {
+                  "value": "whc",
+                  "color": "purple"
+                },
+                {
+                  "value": "fw",
+                  "color": "purple"
+                },
+                {
+                  "value": "mesh",
+                  "color": "purple"
+                },
+                {
+                  "value": "dfs",
+                  "color": "purple"
+                }
+              ],
+              "allowBare": true,
+              "bare": {
+                "color": "purple"
+              }
+            },
+            {
+              "label": "Software component",
+              "prefix": "sw",
+              "values": [
+                {
+                  "value": "zephyr",
+                  "color": "purple"
+                },
+                {
+                  "value": "freertos",
+                  "color": "purple"
+                },
+                {
+                  "value": "linux",
+                  "color": "purple"
+                }
+              ]
+            },
+            {
+              "label": "Architecture",
+              "prefix": "arch",
+              "values": [
+                {
+                  "value": "arm",
+                  "color": "purple"
+                },
+                {
+                  "value": "riscv",
+                  "color": "purple"
+                }
+              ]
+            },
+            {
+              "label": "Hardware IP",
+              "prefix": "ip",
+              "values": [
+                {
+                  "value": "sdio",
+                  "color": "purple"
+                },
+                {
+                  "value": "gspi",
+                  "color": "purple"
+                },
+                {
+                  "value": "uart",
+                  "color": "purple"
+                },
+                {
+                  "value": "dma",
+                  "color": "purple"
+                },
+                {
+                  "value": "cache",
+                  "color": "purple"
+                },
+                {
+                  "value": "flash",
+                  "color": "purple"
+                },
+                {
+                  "value": "mpu",
+                  "color": "purple"
+                },
+                {
+                  "value": "pmc",
+                  "color": "purple"
+                },
+                {
+                  "value": "otp",
+                  "color": "purple"
+                },
+                {
+                  "value": "ipc",
+                  "color": "purple"
+                }
+              ]
+            },
+            {
+              "label": "System",
+              "prefix": "sys",
+              "values": [
+                {
+                  "value": "security",
+                  "color": "purple"
+                },
+                {
+                  "value": "power",
+                  "color": "purple"
+                },
+                {
+                  "value": "mcuboot",
+                  "color": "purple"
+                },
+                {
+                  "value": "bootloader",
+                  "color": "purple"
+                },
+                {
+                  "value": "tfm",
+                  "color": "purple"
+                }
+              ]
+            },
+            {
+              "label": "Misc",
+              "prefix": "misc",
+              "values": [
+                {
+                  "value": "debug",
+                  "color": "purple"
+                },
+                {
+                  "value": "tools",
+                  "color": "purple"
+                },
+                {
+                  "value": "build",
+                  "color": "purple"
+                },
+                {
+                  "value": "test",
+                  "color": "purple"
+                }
+              ]
+            }
+          ]
+        },
+        "types": [
+          "knowledge"
+        ]
+      }
+    }
+  },
+  "blankSchema": null
+}

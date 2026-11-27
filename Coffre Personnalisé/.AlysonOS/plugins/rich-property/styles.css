@@ -1,0 +1,459 @@
+/* Rich Property */
+
+.rp-on .metadata-property[data-rp-state] {
+	border-left: 3px solid var(--color-red);
+	background-color: rgba(var(--color-red-rgb), 0.1);
+}
+
+.rp-on .metadata-property[data-rp-state] .metadata-property-key-input,
+.rp-on .metadata-property[data-rp-state] .metadata-input-longtext,
+.rp-on .metadata-property[data-rp-state] .metadata-input,
+.rp-on .metadata-property[data-rp-state] .multi-select-pill-content,
+.rp-on .metadata-property[data-rp-state] .metadata-link-inner {
+	color: var(--color-red);
+}
+
+.rp-on .metadata-property[data-rp-state] .metadata-property-key-input {
+	text-decoration: underline wavy var(--color-red);
+	text-underline-offset: 3px;
+}
+
+/* A colored value, whether a single value or a pill in a list. The color sets three variables, then one rule uses them. */
+.rp-on .metadata-property .metadata-property-value[data-rp-color] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color] {
+	flex: 0 1 auto;
+	width: auto;
+	max-width: 100%;
+	border: 1px solid var(--rp-edge);
+	border-radius: var(--radius-m);
+	padding: 0 var(--size-4-2);
+	font-weight: var(--font-medium);
+	color: var(--rp-fg);
+	background-color: var(--rp-bg);
+}
+
+/* The native pill spaces its text with margins, so it takes no side padding of its own. The container loses its own padding and border so a pill starts exactly where a single value does. */
+.rp-on .metadata-property .multi-select-pill[data-rp-color] {
+	padding: var(--pill-padding-y) 0;
+}
+
+.rp-on .metadata-property .metadata-property-value[data-rp-list] .multi-select-container {
+	padding-inline: 0;
+	border-inline: 0;
+}
+
+.rp-on .metadata-property .multi-select-pill[data-rp-color] .multi-select-pill-content,
+.rp-on .metadata-property .multi-select-pill[data-rp-color] .multi-select-pill-remove-button {
+	color: inherit;
+}
+
+.rp-on .metadata-property .metadata-property-value[data-rp-color="red"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="red"] { --rp-fg: var(--color-red); --rp-bg: rgba(var(--color-red-rgb), 0.15); --rp-edge: var(--color-red); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="red"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="red"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-red); --rp-edge: var(--color-red); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="orange"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="orange"] { --rp-fg: var(--color-orange); --rp-bg: rgba(var(--color-orange-rgb), 0.15); --rp-edge: var(--color-orange); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="orange"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="orange"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-orange); --rp-edge: var(--color-orange); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="yellow"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="yellow"] { --rp-fg: var(--color-yellow); --rp-bg: rgba(var(--color-yellow-rgb), 0.15); --rp-edge: var(--color-yellow); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="yellow"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="yellow"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-yellow); --rp-edge: var(--color-yellow); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="green"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="green"] { --rp-fg: var(--color-green); --rp-bg: rgba(var(--color-green-rgb), 0.15); --rp-edge: var(--color-green); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="green"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="green"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-green); --rp-edge: var(--color-green); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="cyan"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="cyan"] { --rp-fg: var(--color-cyan); --rp-bg: rgba(var(--color-cyan-rgb), 0.15); --rp-edge: var(--color-cyan); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="cyan"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="cyan"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-cyan); --rp-edge: var(--color-cyan); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="blue"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="blue"] { --rp-fg: var(--color-blue); --rp-bg: rgba(var(--color-blue-rgb), 0.15); --rp-edge: var(--color-blue); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="blue"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="blue"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-blue); --rp-edge: var(--color-blue); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="purple"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="purple"] { --rp-fg: var(--color-purple); --rp-bg: rgba(var(--color-purple-rgb), 0.15); --rp-edge: var(--color-purple); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="purple"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="purple"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-purple); --rp-edge: var(--color-purple); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="pink"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="pink"] { --rp-fg: var(--color-pink); --rp-bg: rgba(var(--color-pink-rgb), 0.15); --rp-edge: var(--color-pink); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="pink"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="pink"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--color-pink); --rp-edge: var(--color-pink); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="neutral"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="neutral"] { --rp-fg: var(--text-muted); --rp-bg: var(--background-modifier-hover); --rp-edge: var(--text-muted); }
+.rp-on .metadata-property .metadata-property-value[data-rp-color="neutral"][data-rp-fill="solid"] .metadata-input-longtext,
+.rp-on .metadata-property .multi-select-pill[data-rp-color="neutral"][data-rp-fill="solid"] { --rp-fg: var(--text-on-accent); --rp-bg: var(--text-faint); --rp-edge: var(--text-faint); }
+
+.rp-schema-errors {
+	margin-top: var(--size-4-4);
+	padding: var(--size-4-3);
+	border-left: 3px solid var(--color-red);
+	background-color: rgba(var(--color-red-rgb), 0.08);
+}
+
+.rp-on .rp-placeholders {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+	padding: var(--size-4-2) 0;
+}
+
+.rp-on .rp-placeholder {
+	min-height: var(--input-height);
+	padding: 0 var(--size-4-3);
+	border: 1px dashed var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	background: transparent;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	cursor: pointer;
+}
+
+.rp-on .rp-placeholder:hover {
+	color: var(--text-normal);
+	border-color: var(--interactive-accent);
+}
+
+.rp-on .rp-placeholder:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+.rp-hidden {
+	display: none;
+}
+
+.rp-chips {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--size-4-1);
+}
+
+.rp-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	padding: 0 var(--size-4-1) 0 var(--size-4-2);
+	border: 1px solid var(--interactive-accent);
+	border-radius: var(--radius-m);
+	background-color: rgba(var(--color-accent-rgb), 0.12);
+	color: var(--text-normal);
+}
+
+.rp-chip-remove,
+.rp-chip-add {
+	padding: 0 var(--size-4-2);
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.rp-chip-remove {
+	height: auto;
+	padding: 0 var(--size-4-1);
+}
+
+.rp-chip-add {
+	border: 1px dashed var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.rp-chip-remove:hover,
+.rp-chip-add:hover {
+	color: var(--text-normal);
+}
+
+.rp-chip-remove:focus-visible,
+.rp-chip-add:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+
+/* Values editor: one line per value. */
+.rp-opts {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	margin: var(--size-4-2) 0 var(--size-4-3);
+}
+
+.rp-opt {
+	display: grid;
+	grid-template-columns: auto auto minmax(6em, 14em) 1fr auto;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: 2px var(--size-4-2);
+	border-radius: var(--radius-s);
+}
+
+.rp-opt:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.rp-opt.is-invalid {
+	outline: 1px solid var(--text-error);
+}
+
+.rp-opt.is-dragging {
+	opacity: 0.5;
+}
+
+.rp-opt-grip {
+	color: var(--text-faint);
+	cursor: grab;
+	user-select: none;
+}
+
+.rp-opt-dot {
+	width: 16px;
+	height: 16px;
+	min-height: 0;
+	padding: 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 50%;
+	background: transparent;
+	box-shadow: none;
+}
+
+.rp-opt-text {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: text;
+}
+
+.rp-opt-desc {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.rp-opt-text.is-placeholder {
+	color: var(--text-faint);
+}
+
+.rp-opt-input {
+	min-width: 0;
+	width: 100%;
+	height: auto;
+	padding: 0 var(--size-4-1);
+}
+
+.rp-opt-remove {
+	padding: 0 var(--size-4-2);
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-faint);
+	cursor: pointer;
+}
+
+.rp-opt-remove:hover {
+	color: var(--text-error);
+}
+
+.rp-opt-add {
+	align-self: flex-start;
+	margin-top: var(--size-4-1);
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.rp-opt-add:hover {
+	color: var(--text-normal);
+}
+
+.rp-opt-dot:focus-visible,
+.rp-opt-remove:focus-visible,
+.rp-opt-add:focus-visible,
+.rp-opt-text:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+.rp-setting-block {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* Rule editor: two blocks on one grid, every row starting at the same left edge. */
+.rp-rule-modal {
+	width: min(760px, 92vw);
+}
+
+.rp-rule {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-3);
+}
+
+.rp-rule-block {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-2);
+	padding: var(--size-4-3);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.rp-rule-head {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-3);
+}
+
+.rp-rule-label {
+	min-width: 2.5em;
+	font-weight: var(--font-semibold);
+}
+
+.rp-rule-row {
+	display: grid;
+	grid-template-columns: 11em 11em 1fr auto;
+	align-items: start;
+	gap: var(--size-4-2);
+}
+
+.rp-rule-select {
+	width: 100%;
+}
+
+.rp-rule-values {
+	min-width: 0;
+}
+
+.rp-rule-note {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.rp-rule-add {
+	align-self: flex-start;
+	background: transparent;
+	box-shadow: none;
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.rp-rule-add:hover {
+	color: var(--text-normal);
+}
+
+.rp-rule-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: var(--size-4-2);
+	margin-top: var(--size-4-3);
+}
+
+/* The dot shows a value's color; a filled dot means solid. */
+.rp-opt-dot[data-color="red"] { border-color: var(--color-red); background-color: rgba(var(--color-red-rgb), 0.25); }
+.rp-opt-dot[data-color="red"][data-solid="true"] { background-color: var(--color-red); }
+.rp-opt-dot[data-color="orange"] { border-color: var(--color-orange); background-color: rgba(var(--color-orange-rgb), 0.25); }
+.rp-opt-dot[data-color="orange"][data-solid="true"] { background-color: var(--color-orange); }
+.rp-opt-dot[data-color="yellow"] { border-color: var(--color-yellow); background-color: rgba(var(--color-yellow-rgb), 0.25); }
+.rp-opt-dot[data-color="yellow"][data-solid="true"] { background-color: var(--color-yellow); }
+.rp-opt-dot[data-color="green"] { border-color: var(--color-green); background-color: rgba(var(--color-green-rgb), 0.25); }
+.rp-opt-dot[data-color="green"][data-solid="true"] { background-color: var(--color-green); }
+.rp-opt-dot[data-color="cyan"] { border-color: var(--color-cyan); background-color: rgba(var(--color-cyan-rgb), 0.25); }
+.rp-opt-dot[data-color="cyan"][data-solid="true"] { background-color: var(--color-cyan); }
+.rp-opt-dot[data-color="blue"] { border-color: var(--color-blue); background-color: rgba(var(--color-blue-rgb), 0.25); }
+.rp-opt-dot[data-color="blue"][data-solid="true"] { background-color: var(--color-blue); }
+.rp-opt-dot[data-color="purple"] { border-color: var(--color-purple); background-color: rgba(var(--color-purple-rgb), 0.25); }
+.rp-opt-dot[data-color="purple"][data-solid="true"] { background-color: var(--color-purple); }
+.rp-opt-dot[data-color="pink"] { border-color: var(--color-pink); background-color: rgba(var(--color-pink-rgb), 0.25); }
+.rp-opt-dot[data-color="pink"][data-solid="true"] { background-color: var(--color-pink); }
+.rp-opt-dot[data-color="neutral"] { border-color: var(--text-faint); background-color: var(--background-modifier-hover); }
+.rp-opt-dot[data-color="neutral"][data-solid="true"] { background-color: var(--text-faint); }
+
+.rp-menu-desc {
+	color: var(--text-muted);
+	font-size: var(--font-ui-smaller);
+}
+
+/* Tag vocabulary: collapsible axes. */
+.rp-axes {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+	margin: var(--size-4-2) 0 var(--size-4-3);
+}
+
+.rp-axis {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.rp-axis-head {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-3);
+	padding: var(--size-4-1) var(--size-4-2);
+}
+
+.rp-axis-toggle {
+	flex: 1;
+	justify-content: flex-start;
+	background: transparent;
+	box-shadow: none;
+	text-align: left;
+	cursor: pointer;
+}
+
+.rp-axis-prefix {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.rp-axis-body {
+	padding: 0 var(--size-4-3) var(--size-4-2);
+}
+
+.rp-axis-names {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--size-4-3);
+	margin-bottom: var(--size-4-2);
+}
+
+.rp-axis-field {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.rp-axis-bare {
+	display: block;
+	margin-bottom: var(--size-4-2);
+	font-size: var(--font-ui-small);
+}
+
+.rp-axis-toggle:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+}
+
+/* Folder list in the property editor. */
+.rp-folders {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+	margin: var(--size-4-2) 0 var(--size-4-3);
+}
+
+.rp-folder {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+.rp-folder-input.is-missing {
+	border-color: var(--text-error);
+}
