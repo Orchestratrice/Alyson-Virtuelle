@@ -89,5 +89,8 @@ tags:
 - [ ] obsidian://show-plugin?id=map-of-content
 - [ ] obsidian://show-plugin?id=obsidian-image-gallery
 - [ ] obsidian://show-plugin?id=image-window
+- [ ] obsidian://show-plugin?id=day-planner-og
+- [ ] obsidian://show-plugin?id=smart-connections-visualizer
+- [ ] obsidian://show-plugin?id=social-archiver
 - [ ] 
 
