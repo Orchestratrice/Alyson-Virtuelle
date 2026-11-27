@@ -48,7 +48,11 @@
           "supportsVision": true
         }
       },
-      "skills": {},
+      "skills": {
+        "tasknotes": {
+          "enabled": true
+        }
+      },
       "toolsConfig": {
         "search_notes": {
           "enabled": true,
@@ -124,7 +128,9 @@
       "subAgentIds": [
         "default-agent"
       ],
-      "pluginExecTools": {}
+      "pluginExecTools": {
+        "exec:tasknotes": true
+      }
     },
     "01a21aa9-9fda-7368-b002-11ca343a4e5d": {
       "id": "01a21aa9-9fda-7368-b002-11ca343a4e5d",
@@ -242,7 +248,7 @@
   "thinkingProcessExpanded": true,
   "showActiveAgentsInStatusBar": true,
   "overrideMobileNavbarSearch": false,
-  "suppressIntegrationPrivacyWarning": false,
+  "suppressIntegrationPrivacyWarning": true,
   "enableLangSmith": false,
   "langSmithApiKeyId": "",
   "langSmithProject": "obsidian-agent",
