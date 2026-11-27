@@ -5,6 +5,9 @@ views:
       color: pink
   - type: cards
     name: Vue 2
+    groupBy:
+      property: Objectif
+      direction: ASC
     viewTabsForBases:
       color: pink
       size: large

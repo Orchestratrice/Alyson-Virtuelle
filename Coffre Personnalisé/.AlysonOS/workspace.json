@@ -39,13 +39,14 @@
             "id": "70cc4440d1dad517",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Sans titre.base",
-                "viewName": "Vue 2"
+                "file": "Bibliothèque.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Sans titre"
+              "icon": "lucide-file",
+              "title": "Bibliothèque"
             }
           },
           {
@@ -141,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Bibliothèque.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -160,7 +161,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Bibliothèque.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -203,7 +204,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Bibliothèque.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -264,9 +265,9 @@
   },
   "active": "70cc4440d1dad517",
   "lastOpenFiles": [
-    "Bibliothèque/Sans titre.base",
-    "Sans titre 2.md",
     "Sans titre.base",
+    "Sans titre 2.md",
+    "Bibliothèque/Sans titre.base",
     "Sans titre 1.md",
     "Modèles.md",
     "New Board.board",

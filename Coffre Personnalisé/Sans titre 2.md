@@ -1,9 +1,11 @@
 ---
 edit:
 aliases:
+  - Alyson
 tags:
-  - Modèle
+  - Objectif
 type: capture
+Objectif:
 ---
 
 ![[Bibliothèque/Sans titre.base]]

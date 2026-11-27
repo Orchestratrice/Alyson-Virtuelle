@@ -4,6 +4,9 @@ aliases:
 status: à analyser
 tags:
   - contexte
+Secteur: Personnel
+Domaine: Juridique
+Catégorie: Civil
 ---
 
 Espace de travail pour déposer des documents que je (Claude) dois analyser.
