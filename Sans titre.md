@@ -25,5 +25,7 @@ tags:
 - [ ] obsidian://show-plugin?id=folder-notes
 - [ ] obsidian://show-plugin?id=pretty-properties
 - [ ] obsidian://show-plugin?id=obsidian-banners
-- [ ] 
+- [ ] obsidian://show-plugin?id=file-tree-alternative
+- [ ] obsidian://show-plugin?id=datacore
+- [ ] obsidian://show-plugin?id=obsidian-custom-frames
 
