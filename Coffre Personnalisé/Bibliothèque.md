@@ -1,3 +1,10 @@
+---
+edit:
+aliases:
+status: à analyser
+tags:
+  - contexte
+---
 
 Espace de travail pour déposer des documents que je (Claude) dois analyser.
 
