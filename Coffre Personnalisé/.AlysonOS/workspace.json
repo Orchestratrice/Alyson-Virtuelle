@@ -61,9 +61,20 @@
               "icon": "lucide-layout-grid",
               "title": "Sans titre"
             }
+          },
+          {
+            "id": "2582ac5ebdc113fc",
+            "type": "leaf",
+            "state": {
+              "type": "notion-bases-view",
+              "state": {
+                "dbFilePath": "_database.md"
+              },
+              "icon": "table"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -259,11 +270,13 @@
       "password-kanban:Открыть Password Kanban": false,
       "obtion:Open project status": false,
       "obtion:Find note": false,
-      "property-board:Create new board": false
+      "property-board:Create new board": false,
+      "notion-bases:Notion Bases": false
     }
   },
-  "active": "b6133deee044af06",
+  "active": "2582ac5ebdc113fc",
   "lastOpenFiles": [
+    "_database.md",
     "Bibliothèque/Sources De Revenus.md",
     "Sans titre.base",
     "Sans titre 2.md",
