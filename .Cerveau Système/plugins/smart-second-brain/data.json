@@ -256,6 +256,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Chats/New Chat.chat",
+      "lastOpenedAt": 1795749048301
+    },
+    {
       "path": "Sans titre.md",
       "lastOpenedAt": 1795745444216
     },
@@ -286,10 +290,6 @@
     {
       "path": "Alyson Virtuelle/README.md",
       "lastOpenedAt": 1795743784535
-    },
-    {
-      "path": "Chats/New Chat.chat",
-      "lastOpenedAt": 1795743594432
     },
     {
       "path": "20_Système/Plugins/Plugin — Propriétés.md",
