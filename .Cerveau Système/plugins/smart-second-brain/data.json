@@ -262,6 +262,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Sans titre.base",
+      "lastOpenedAt": 1795770635610
+    },
+    {
       "path": "90_Bases/Sans titre.base",
       "lastOpenedAt": 1795762496345
     },
@@ -316,10 +320,6 @@
     {
       "path": "AlysonOS/Sans titre.md",
       "lastOpenedAt": 1795745440448
-    },
-    {
-      "path": "Sans titre.base",
-      "lastOpenedAt": 1795744465567
     },
     {
       "path": "Alyson Virtuelle/New Agent/AGENT.md",
