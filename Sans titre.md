@@ -40,5 +40,27 @@ tags:
 - [ ] obsidian://show-plugin?id=metaedit
 - [ ] obsidian://show-plugin?id=folder-note-plugin
 - [ ] obsidian://show-plugin?id=calendar-bases
+- [ ] obsidian://show-plugin?id=obsidian-icons-plugin
+- [ ] obsidian://show-plugin?id=workspaces-plus
+- [ ] obsidian://show-plugin?id=css-editor
+- [ ] obsidian://show-plugin?id=obsidian-timeline
+- [ ] obsidian://show-plugin?id=vertical-tabs
+- [ ] obsidian://show-plugin?id=open-tab-settings
+- [ ] obsidian://show-plugin?id=hearth
+- [ ] obsidian://show-plugin?id=custom-font-loader
+- [ ] obsidian://show-plugin?id=task-board
+- [ ] obsidian://show-plugin?id=obsidian-plugin-todo
+- [ ] obsidian://show-plugin?id=tasks-calendar-wrapper
+- [ ] obsidian://show-plugin?id=modalforms
+- [ ] obsidian://show-plugin?id=karpathywiki
+- [ ] obsidian://show-plugin?id=customjs
+- [ ] obsidian://show-plugin?id=js-engine
+- [ ] obsidian://show-plugin?id=vscode-editor
+- [ ] obsidian://show-plugin?id=mcp-tools-istefox
+- [ ] obsidian://show-plugin?id=chronology
+- [ ] obsidian://show-plugin?id=beautitab
+- [ ] obsidian://show-plugin?id=ai-providers
+- [ ] obsidian://show-plugin?id=chronos
+- [ ] obsidian://show-plugin?id=apex-dashboard
 - [ ] 
 
