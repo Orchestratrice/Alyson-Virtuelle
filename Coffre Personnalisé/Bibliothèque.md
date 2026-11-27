@@ -6,7 +6,7 @@ tags:
   - contexte
 Secteur: Personnel
 Domaine: Juridique
-Catégorie: Civil
+Niveau: Civil
 ---
 
 Espace de travail pour déposer des documents que je (Claude) dois analyser.
