@@ -1,0 +1,665 @@
+/* 00-core.css */
+/* Shared tokens. Use Obsidian CSS variables only; no hard-coded colors. */
+.obtion-muted {
+	color: var(--text-muted);
+}
+
+/* database.css */
+.obtion-database {
+	max-width: 100%;
+	min-width: 0;
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+}
+
+.obtion-database .obtion-database-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	gap: var(--size-4-2);
+}
+
+.obtion-database .obtion-database-control {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+	min-width: 0;
+	max-width: 100%;
+}
+
+.obtion-database .obtion-database-muted {
+	color: var(--text-muted);
+}
+
+.obtion-database .obtion-database-customize {
+	margin-block: var(--size-4-3);
+	padding: var(--size-4-2);
+	border: var(--border-width) solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.obtion-database .obtion-database-customize summary {
+	cursor: pointer;
+	font-weight: var(--font-semibold);
+	margin-bottom: var(--size-4-2);
+}
+
+.obtion-database .obtion-database-fields {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+}
+
+.obtion-database .obtion-database-field {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	flex-wrap: wrap;
+}
+
+.obtion-database .obtion-database-field label {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	flex: 1;
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.obtion-database .obtion-database-table-scroll {
+	max-width: 100%;
+	overflow-x: auto;
+	border: var(--border-width) solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.obtion-database table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.obtion-database th,
+.obtion-database td {
+	padding: var(--size-4-2);
+	text-align: start;
+	vertical-align: top;
+	border-bottom: var(--border-width) solid var(--background-modifier-border);
+}
+
+.obtion-database th {
+	background: var(--background-secondary);
+	font-weight: var(--font-semibold);
+}
+
+.obtion-database input[type="text"],
+.obtion-database select {
+	max-width: 100%;
+	min-width: 0;
+}
+
+.obtion-database td input[type="text"] {
+	min-width: 8em;
+}
+
+.obtion-database .obtion-database-board,
+.obtion-database .obtion-database-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr));
+	gap: var(--size-4-3);
+	align-items: start;
+}
+
+.obtion-database .obtion-database-column {
+	min-width: 0;
+	padding: var(--size-4-2);
+	border-radius: var(--radius-m);
+	background: var(--background-secondary);
+	min-height: 6em;
+}
+
+.obtion-database .obtion-database-column h3 {
+	font-size: var(--font-ui-small);
+	margin-block: var(--size-4-1) var(--size-4-3);
+	overflow-wrap: anywhere;
+}
+
+.obtion-database .obtion-database-card {
+	min-width: 0;
+	padding: var(--size-4-3);
+	margin-bottom: var(--size-4-2);
+	border: var(--border-width) solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--background-primary);
+	overflow-wrap: anywhere;
+}
+
+.obtion-database .obtion-database-note {
+	white-space: normal;
+	height: auto;
+	text-align: start;
+	overflow-wrap: anywhere;
+	max-width: 100%;
+	color: var(--link-color);
+}
+
+.obtion-database .obtion-database-property {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-1);
+	margin-block: var(--size-4-2);
+}
+
+.obtion-database .obtion-database-cover {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: var(--radius-s);
+	margin-bottom: var(--size-4-2);
+}
+
+.obtion-database .obtion-database-filter {
+	border-bottom: var(--border-width) solid var(--background-modifier-border);
+	margin-bottom: var(--size-4-3);
+}
+
+.obtion-database .setting-item {
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+}
+
+.obtion-database .setting-item-control {
+	min-width: 0;
+	max-width: 100%;
+	flex-wrap: wrap;
+}
+
+.obtion-database td:first-child,
+.obtion-database th:first-child {
+	min-width: 10em;
+}
+
+.obtion-database td:first-child button {
+	white-space: normal;
+	overflow-wrap: normal;
+	word-break: keep-all;
+	text-align: left;
+	height: auto;
+}
+
+.obtion-database .obtion-database-sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* navigation.css */
+.obtion-navigation .obtion-navigation-controls {
+	padding: var(--size-4-2) var(--size-4-3);
+	border-bottom: var(--border-width) solid var(--background-modifier-border);
+}
+
+.obtion-navigation .obtion-navigation-heading,
+.obtion-navigation .obtion-navigation-fields {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: var(--size-4-1) var(--size-4-2);
+}
+
+.obtion-navigation .obtion-navigation-title {
+	font-weight: var(--font-semibold);
+	color: var(--text-normal);
+}
+
+.obtion-navigation .obtion-navigation-badge {
+	font-size: var(--font-smallest);
+	color: var(--text-accent);
+	background: var(--background-secondary);
+	border-radius: var(--radius-s);
+	padding: var(--size-2-1) var(--size-4-1);
+}
+
+.obtion-navigation .obtion-navigation-fields,
+.obtion-navigation .obtion-navigation-path {
+	font-size: var(--font-smaller);
+	margin-top: var(--size-4-1);
+}
+
+.obtion-navigation .obtion-navigation-muted,
+.obtion-navigation .obtion-navigation-path,
+.obtion-navigation .obtion-navigation-label {
+	color: var(--text-muted);
+}
+
+.obtion-navigation .suggestion-item,
+.obtion-navigation .prompt-instruction,
+.obtion-navigation .setting-item-info,
+.obtion-navigation .obtion-navigation-heading > *,
+.obtion-navigation .obtion-navigation-fields > *,
+.obtion-navigation .obtion-navigation-path {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.obtion-navigation .prompt-instruction {
+	white-space: normal;
+}
+
+.obtion-navigation .setting-item,
+.obtion-navigation .setting-item-control,
+.obtion-navigation .prompt-instructions {
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+}
+
+.obtion-navigation .setting-item-control input[type='text'],
+.obtion-navigation .setting-item-control select {
+	max-width: 100%;
+	min-width: 0;
+}
+
+/* relations.css */
+.obtion-relations {
+	min-width: 0;
+	overflow-wrap: anywhere;
+	color: var(--text-normal);
+}
+
+.obtion-relations .obtion-relations-customize {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	padding: var(--size-4-2);
+}
+
+.obtion-relations .setting-item {
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+}
+
+.obtion-relations .setting-item-info,
+.obtion-relations .setting-item-control {
+	min-width: 0;
+}
+
+.obtion-relations .setting-item-control {
+	flex-wrap: wrap;
+	max-width: 100%;
+}
+
+.obtion-relations input,
+.obtion-relations select,
+.obtion-relations progress {
+	max-width: 100%;
+}
+
+.obtion-relations .obtion-relations-group {
+	border-top: 1px solid var(--background-modifier-border);
+	padding-block: var(--size-4-2);
+}
+
+.obtion-relations .obtion-relations-note {
+	background: var(--background-secondary);
+	border-radius: var(--radius-s);
+	padding: var(--size-4-3);
+	margin-block: var(--size-4-2);
+}
+
+.obtion-relations .obtion-relations-fields {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	gap: var(--size-2-2) var(--size-4-2);
+	font-size: var(--font-smallest);
+}
+
+.obtion-relations .obtion-relations-fields dd {
+	margin: 0;
+}
+
+.obtion-relations .obtion-relations-fields dt,
+.obtion-relations .obtion-relations-muted {
+	color: var(--text-muted);
+}
+
+.obtion-relations .obtion-relations-counts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+	font-size: var(--font-smallest);
+}
+
+.obtion-relations progress {
+	width: 100%;
+	accent-color: var(--interactive-accent);
+}
+
+/* status-board.css */
+.obtion-status-board {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-4-3);
+	container-type: inline-size;
+}
+
+.obtion-status-board__toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+}
+
+.obtion-status-board__heading {
+	margin: 0;
+	font-size: var(--h3-size);
+}
+
+.obtion-status-board__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--size-4-2);
+}
+
+.obtion-status-board__count {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.obtion-status-board__customize {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: var(--size-4-3);
+	padding: var(--size-4-3);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	background: var(--background-secondary);
+}
+
+.obtion-status-board__section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-2-2);
+}
+
+.obtion-status-board__section-title {
+	font-weight: var(--font-semibold);
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.obtion-status-board__field-row {
+	display: flex;
+	align-items: center;
+	gap: var(--size-2-1);
+}
+
+.obtion-status-board__field-row label {
+	flex: 1;
+	min-width: 0;
+}
+
+.obtion-status-board__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	align-items: start;
+	gap: var(--size-4-3);
+}
+
+.obtion-status-board__card {
+	padding: var(--size-4-3) var(--size-4-4);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-l);
+	background: var(--background-primary);
+}
+
+.obtion-status-board__card-head {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	min-width: 0;
+}
+
+.obtion-status-board__title {
+	font-size: var(--font-ui-large);
+	font-weight: var(--font-semibold);
+	color: var(--text-normal);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+
+.obtion-status-board__title:hover {
+	color: var(--text-accent);
+}
+
+.obtion-status-board__pill {
+	flex: none;
+	padding: 0 var(--size-4-2);
+	border-radius: var(--radius-s);
+	font-size: var(--font-ui-smaller);
+	line-height: 1.6;
+	background: var(--background-modifier-hover);
+	color: var(--text-muted);
+}
+
+.obtion-status-board__pill.is-active {
+	background: rgba(var(--color-green-rgb), 0.18);
+	color: var(--color-green);
+}
+
+.obtion-status-board__pill.is-paused {
+	background: rgba(var(--color-yellow-rgb), 0.18);
+	color: var(--color-yellow);
+}
+
+.obtion-status-board__pill.is-done {
+	background: rgba(var(--color-blue-rgb), 0.18);
+	color: var(--color-blue);
+}
+
+.obtion-status-board__pill.is-unknown {
+	border: 1px dashed var(--background-modifier-border);
+}
+
+.obtion-status-board__pct {
+	margin-left: auto;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	font-variant-numeric: tabular-nums;
+}
+
+.obtion-status-board__bar {
+	height: 6px;
+	margin: var(--size-4-2) 0 var(--size-4-3);
+	border-radius: var(--radius-s);
+	background: var(--background-modifier-border);
+	overflow: hidden;
+}
+
+.obtion-status-board__bar.is-empty {
+	background: repeating-linear-gradient(90deg, var(--background-modifier-border) 0 6px, transparent 6px 10px);
+}
+
+.obtion-status-board__bar-fill {
+	width: var(--obtion-progress, 0%);
+	height: 100%;
+	background: var(--interactive-accent);
+}
+
+.obtion-status-board__rows {
+	display: grid;
+	grid-template-columns: minmax(110px, 34%) 1fr;
+	gap: var(--size-2-3) var(--size-4-3);
+	padding-top: var(--size-4-2);
+	border-top: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-small);
+}
+
+.obtion-status-board__label {
+	color: var(--text-muted);
+}
+
+.obtion-status-board__value {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.obtion-status-board__value.is-unset {
+	color: var(--text-faint);
+	font-style: italic;
+}
+
+.obtion-status-board__chip {
+	display: inline-block;
+	margin-left: var(--size-2-2);
+	padding: 0 var(--size-2-3);
+	border-radius: var(--radius-s);
+	background: var(--background-modifier-hover);
+	color: var(--text-accent);
+	text-decoration: none;
+	font-size: var(--font-ui-smaller);
+}
+
+.obtion-status-board__foot {
+	margin-top: var(--size-4-3);
+	padding-top: var(--size-4-2);
+	border-top: 1px solid var(--background-modifier-border);
+}
+
+.obtion-status-board__open {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--size-2-3);
+	color: var(--text-accent);
+	text-decoration: none;
+	font-size: var(--font-ui-small);
+}
+
+.obtion-status-board__empty {
+	padding: var(--size-4-4);
+	border: 1px dashed var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	text-align: center;
+}
+
+@container (max-width: 360px) {
+	.obtion-status-board__rows {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+
+	.obtion-status-board__value {
+		margin-bottom: var(--size-2-3);
+	}
+}
+
+/* transfer.css */
+.obtion-transfer { overflow-wrap: anywhere; min-width: 0; }
+.obtion-transfer .setting-item { flex-wrap: wrap; gap: var(--size-4-2); }
+.obtion-transfer .setting-item-info { min-width: 0; }
+.obtion-transfer .setting-item-control { flex-wrap: wrap; max-width: 100%; }
+.obtion-transfer input, .obtion-transfer select { max-width: 100%; min-width: 0; }
+.obtion-transfer .obtion-transfer-muted { color: var(--text-muted); }
+.obtion-transfer .obtion-transfer-preview { max-height: 40vh; overflow-y: auto; }
+.obtion-transfer .obtion-transfer-row { padding: var(--size-4-2); margin-block: var(--size-4-2); border: var(--border-width) solid var(--background-modifier-border); border-radius: var(--radius-s); }
+.obtion-transfer summary { cursor: pointer; color: var(--text-accent); margin-block: var(--size-4-2); }
+
+/* wiki.css */
+.obtion-wiki {
+	color: var(--text-normal);
+	font-size: var(--font-ui-small);
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.obtion-wiki .obtion-wiki-list {
+	list-style: none;
+	margin: var(--size-4-2) 0;
+	padding: 0;
+}
+
+.obtion-wiki .obtion-wiki-nested {
+	margin-inline-start: var(--size-4-2);
+	border-inline-start: var(--border-width) solid var(--background-modifier-border);
+	padding-inline-start: var(--size-4-1);
+}
+
+.obtion-wiki .obtion-wiki-row,
+.obtion-wiki .obtion-wiki-field-control {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-1);
+	flex-wrap: wrap;
+	margin-block: var(--size-4-1);
+}
+
+.obtion-wiki .obtion-wiki-row a {
+	min-width: 0;
+	flex: 1;
+}
+
+.obtion-wiki .obtion-wiki-active {
+	background: var(--background-modifier-active-hover);
+	color: var(--text-accent);
+	font-weight: var(--font-semibold);
+}
+
+.obtion-wiki .obtion-wiki-fields {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	gap: var(--size-2-1) var(--size-4-2);
+	margin: var(--size-4-1) 0 var(--size-4-3);
+}
+
+.obtion-wiki .obtion-wiki-fields dt,
+.obtion-wiki .obtion-wiki-muted {
+	color: var(--text-muted);
+}
+
+.obtion-wiki .obtion-wiki-fields dd {
+	margin: 0;
+	white-space: pre-wrap;
+}
+
+.obtion-wiki .obtion-wiki-customize,
+.obtion-wiki .obtion-wiki-issues {
+	padding: var(--size-4-2);
+	border: var(--border-width) solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	margin-block: var(--size-4-2);
+}
+
+.obtion-wiki summary {
+	cursor: pointer;
+}
+
+.obtion-wiki .setting-item {
+	flex-wrap: wrap;
+	gap: var(--size-4-2);
+}
+
+.obtion-wiki .setting-item-control {
+	flex-wrap: wrap;
+	min-width: 0;
+}
+
+.obtion-wiki input,
+.obtion-wiki select {
+	max-width: 100%;
+}
+
+.obtion-wiki .obtion-wiki-field-control label {
+	flex: 1;
+	min-width: 0;
+}
+
+.obtion-wiki .obtion-wiki-breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-4-1);
+}

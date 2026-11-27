@@ -1,0 +1,37 @@
+{
+  "rootFolder": "90_Bases",
+  "headings": {
+    "principle": "Principle",
+    "todo": "À Faire",
+    "done": "Fait",
+    "limits": "Verification limits"
+  },
+  "features": {
+    "relations": {
+      "templates": {
+        "folder": "Organisation",
+        "fields": {
+          "shown": [
+            "next",
+            "due",
+            "owner",
+            "status",
+            "priority",
+            "project",
+            "decision",
+            "related",
+            "verified"
+          ]
+        },
+        "picker": {
+          "shown": [
+            "title",
+            "path"
+          ]
+        },
+        "filter": "",
+        "sort": "path"
+      }
+    }
+  }
+}
