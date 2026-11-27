@@ -2,8 +2,9 @@
 name: objectif
 description: Déterminer l'objectif et les résultats attendus
 command: /goal
+mots_cles:
 ---
-
+#skill 
 
 # Objectif
 

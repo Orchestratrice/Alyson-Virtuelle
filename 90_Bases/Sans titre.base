@@ -1,8 +1,16 @@
 views:
   - type: table
     name: Vue
+    groupBy:
+      property: mots_cles
+      direction: ASC
+    groupOrder:
+      - - jumelle numérique
     order:
       - tags
+      - categorie
+      - file.name
+      - file.basename
     sort:
-      - property: tags
+      - property: file.basename
         direction: ASC
