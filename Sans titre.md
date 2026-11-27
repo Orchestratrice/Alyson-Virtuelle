@@ -24,5 +24,6 @@ tags:
 - [ ] obsidian://show-plugin?id=note-toolbar
 - [ ] obsidian://show-plugin?id=folder-notes
 - [ ] obsidian://show-plugin?id=pretty-properties
+- [ ] obsidian://show-plugin?id=obsidian-banners
 - [ ] 
 
