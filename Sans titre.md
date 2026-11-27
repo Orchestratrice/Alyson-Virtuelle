@@ -28,4 +28,7 @@ tags:
 - [ ] obsidian://show-plugin?id=file-tree-alternative
 - [ ] obsidian://show-plugin?id=datacore
 - [ ] obsidian://show-plugin?id=obsidian-custom-frames
+- [ ] obsidian://show-plugin?id=multi-column-markdown
+- [ ] obsidian://show-plugin?id=google-drive-sync
+- [ ] 
 
