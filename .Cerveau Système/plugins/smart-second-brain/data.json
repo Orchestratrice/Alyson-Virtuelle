@@ -256,6 +256,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Sans titre.md",
+      "lastOpenedAt": 1795743954666
+    },
+    {
       "path": "Alyson Virtuelle/New Agent/AGENT.md",
       "lastOpenedAt": 1795743818040
     },
@@ -346,10 +350,6 @@
     {
       "path": "Tâches Claude/Sans titre.md",
       "lastOpenedAt": 1795737375294
-    },
-    {
-      "path": "Sans titre.md",
-      "lastOpenedAt": 1795737341777
     },
     {
       "path": "Tableau de bord.md",

@@ -1,0 +1,7 @@
+- [ ] obsidian://show-plugin?id=dataview
+- [ ] obsidian://show-plugin?id=obsidian-tasks-plugin
+- [ ] obsidian://show-plugin?id=obsidian-kanban
+- [ ] obsidian://show-plugin?id=obsidian-importer
+- [ ] obsidian://show-plugin?id=smart-connections
+- [ ] obsidian://show-plugin?id=notebook-navigator
+- [ ] 
