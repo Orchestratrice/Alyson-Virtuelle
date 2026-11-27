@@ -30,5 +30,15 @@ tags:
 - [ ] obsidian://show-plugin?id=obsidian-custom-frames
 - [ ] obsidian://show-plugin?id=multi-column-markdown
 - [ ] obsidian://show-plugin?id=google-drive-sync
+- [ ] obsidian://show-plugin?id=pexels-banner
+- [ ] obsidian://show-plugin?id=operon
+- [ ] obsidian://show-plugin?id=card-board
+- [ ] obsidian://show-plugin?id=obsidian-task-progress-bar
+- [ ] obsidian://show-plugin?id=canvas-mindmap
+- [ ] obsidian://show-plugin?id=journals
+- [ ] obsidian://show-plugin?id=rss-dashboard
+- [ ] obsidian://show-plugin?id=metaedit
+- [ ] obsidian://show-plugin?id=folder-note-plugin
+- [ ] obsidian://show-plugin?id=calendar-bases
 - [ ] 
 
