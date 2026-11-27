@@ -62,5 +62,31 @@ tags:
 - [ ] obsidian://show-plugin?id=ai-providers
 - [ ] obsidian://show-plugin?id=chronos
 - [ ] obsidian://show-plugin?id=apex-dashboard
+- [ ] obsidian://show-plugin?id=aprils-automatic-timelinesobsidian://show-plugin?id=aprils-automatic-timelines
+- [ ] obsidian://show-plugin?id=recipe-view
+- [ ] obsidian://show-plugin?id=whisper
+- [ ] obsidian://show-plugin?id=obisidian-note-linker
+- [ ] obsidian://show-plugin?id=storyline
+- [ ] obsidian://show-plugin?id=open-gate
+- [ ] obsidian://show-plugin?id=periodic-para
+- [ ] obsidian://show-plugin?id=open-vscode
+- [ ] obsidian://show-plugin?id=persistent-graph
+- [ ] obsidian://show-plugin?id=life-tracker
+- [ ] obsidian://show-plugin?id=markwhen
+- [ ] obsidian://show-plugin?id=hide-folders
+- [ ] obsidian://show-plugin?id=obsidian-plugin-groups
+- [ ] obsidian://show-plugin?id=task-list-kanban
+- [ ] obsidian://show-plugin?id=feed-bases
+- [ ] obsidian://show-plugin?id=creases
+- [ ] obsidian://show-plugin?id=color-folders-files
+- [ ] obsidian://show-plugin?id=kanban-bases-view
+- [ ] obsidian://show-plugin?id=tabs
+- [ ] obsidian://show-plugin?id=voice
+- [ ] obsidian://show-plugin?id=obsidian-task-collector
+- [ ] obsidian://show-plugin?id=fileorganizer2000
+- [ ] obsidian://show-plugin?id=note-gallery
+- [ ] obsidian://show-plugin?id=smart-context
+- [ ] obsidian://show-plugin?id=map-of-content
+- [ ] obsidian://show-plugin?id=obsidian-image-gallery
 - [ ] 
 
