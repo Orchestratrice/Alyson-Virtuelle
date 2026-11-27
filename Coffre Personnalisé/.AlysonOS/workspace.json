@@ -11,10 +11,14 @@
             "id": "682cc6f9ce6b779a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Bibliothèque.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "Bibliothèque"
             }
           }
         ]
@@ -95,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Bibliothèque.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Bibliothèque.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Bibliothèque.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -186,6 +193,13 @@
   },
   "active": "a91cdcd948521bdd",
   "lastOpenFiles": [
-    "Sans titre"
+    "Bibliothèque.md",
+    "Ressources/Plugins",
+    "Ressources/Skills",
+    "Ressources/Outils",
+    "Ressources",
+    "Ressources/Modèles/Sans titre",
+    "Ressources/Modèles",
+    "Bibliothèque"
   ]
 }

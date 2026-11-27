@@ -1,0 +1,10 @@
+{
+  "templateBasename": "Modèles",
+  "autoApply": "full",
+  "panelVisibility": "always",
+  "scannerExcludeFolders": [],
+  "scannerTargets": {
+    "notes": true,
+    "templates": true
+  }
+}
