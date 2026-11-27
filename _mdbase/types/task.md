@@ -21,14 +21,14 @@ schema:
         type: string
         minLength: 1
       status:
-        enum: &a1
+        enum:
           - none
           - open
           - in-progress
           - done
         default: open
       priority:
-        enum: &a3
+        enum:
           - none
           - low
           - normal
@@ -210,13 +210,16 @@ schema:
           format: date
       tasknotes_manual_order:
         type: string
+      custom:
+        title: Nouvelle propriété
+        type: string
     allOf:
       - if:
           required:
             - status
           properties:
             status:
-              enum: &a2
+              enum:
                 - done
           not:
             required:
@@ -331,9 +334,14 @@ implements:
         storage: filename
         filename_format: title
       status:
-        values: *a1
+        values:
+          - none
+          - open
+          - in-progress
+          - done
         default: open
-        completed_values: *a2
+        completed_values:
+          - done
         skipped_values: []
         definitions:
           - value: none
@@ -361,7 +369,11 @@ implements:
             is_skipped: false
             order: 3
       priority:
-        values: *a3
+        values:
+          - none
+          - low
+          - normal
+          - high
         default: normal
         definitions:
           - value: none
@@ -405,6 +417,7 @@ x-tasknotes-generator:
     - complete_instances
     - completedDate
     - contexts
+    - custom
     - dateCreated
     - dateModified
     - due

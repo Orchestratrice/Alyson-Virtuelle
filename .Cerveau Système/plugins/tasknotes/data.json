@@ -293,7 +293,14 @@
   "apiPort": 8080,
   "enableMCP": false,
   "webhooks": [],
-  "userFields": [],
+  "userFields": [
+    {
+      "id": "f12265b0-e9bc-481f-a8c7-da1bcd0dec09",
+      "key": "custom",
+      "displayName": "Nouvelle propriété",
+      "type": "text"
+    }
+  ],
   "modalFieldsConfig": {
     "version": 1,
     "fields": [
@@ -397,6 +404,16 @@
         "visibleInEdit": true,
         "order": 1,
         "enabled": true
+      },
+      {
+        "id": "f12265b0-e9bc-481f-a8c7-da1bcd0dec09",
+        "fieldType": "user",
+        "group": "custom",
+        "displayName": "Nouvelle propriété",
+        "visibleInCreation": true,
+        "visibleInEdit": true,
+        "enabled": true,
+        "order": 0
       }
     ],
     "groups": [
