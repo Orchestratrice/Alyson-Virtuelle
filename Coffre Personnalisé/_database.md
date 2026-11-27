@@ -87,13 +87,7 @@ views:
         value: Images
         bgColor: "#f7026d"
         textColor: ""
-    galleryCoverField: edit
-    activePills:
-      - id: 6a925b0f-61a4-42c4-9e95-84a0f3634bcf
-        columnId: tags
-        operator: is
-        value: ""
-        conjunction: and
+    activePills: []
 ---
 
 > [!tip] Notion Bases
