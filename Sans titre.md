@@ -111,4 +111,11 @@ tags:
 - [ ] obsidian://show-plugin?id=mxmind
 - [ ] obsidian://show-plugin?id=smart-templates
 - [ ] obsidian://show-plugin?id=emoji-magic
+- [ ] obsidian://show-plugin?id=chatgpt-prompt
+- [ ] obsidian://show-plugin?id=obsidian-chat-view
+- [ ] obsidian://show-plugin?id=better-plugins-manager
+- [ ] obsidian://show-plugin?id=deepl
+- [ ] obsidian://show-plugin?id=storyteller-suite
+- [ ] obsidian://show-plugin?id=obsidian-audio-player
+- [ ] obsidian://show-plugin?id=marp
 - [ ] 
