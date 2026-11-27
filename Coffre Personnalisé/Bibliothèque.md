@@ -5,8 +5,8 @@ status: à analyser
 tags:
   - contexte
 Secteur: Juridique
-Domaine: Personnel
-Niveau: Civil
+Niveau: Personnel
+Juridiction: Civil
 ---
 
 Espace de travail pour déposer des documents que je (Claude) dois analyser.
