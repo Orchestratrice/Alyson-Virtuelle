@@ -4,8 +4,8 @@ aliases:
 status: à analyser
 tags:
   - contexte
-Secteur: Personnel
-Domaine: Juridique
+Secteur: Juridique
+Domaine: Personnel
 Niveau: Civil
 ---
 
