@@ -55,9 +55,19 @@
               "icon": "lucide-list",
               "title": "Alyson Suprême"
             }
+          },
+          {
+            "id": "c1840fc51933c40c",
+            "type": "leaf",
+            "state": {
+              "type": "smart-second-brain-onboarding",
+              "state": {},
+              "icon": "zap",
+              "title": "Bienvenue"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -225,24 +235,77 @@
       "pexels-banner:🚩 Pixel Banner Menu": false,
       "workspaces:Gérer les dispositions des espaces de travail": false,
       "gallery-view-dashboard:Open Library Gallery": false,
-      "note-database:Note Database": false
+      "note-database:Note Database": false,
+      "smart-second-brain:Nouveau chat": false,
+      "smart-second-brain:Rechercher dans les notes": false,
+      "smart-second-brain:Ouvrir le graphe intelligent": false
     }
   },
-  "active": "8cd6cbc62393bb5a",
+  "floating": {
+    "id": "3516597cfe049c86",
+    "type": "floating",
+    "children": [
+      {
+        "id": "6b9a9029ae49de73",
+        "type": "window",
+        "children": [
+          {
+            "id": "97aa5d9b53fe64fb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "117d15197713c4fa",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://accounts.google.ca/accounts/SetSID",
+                    "title": "Redirection",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Redirection"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 448,
+        "y": 116,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "117d15197713c4fa",
   "lastOpenFiles": [
-    "00_/00_.base",
-    "00_/Sans titre.base",
-    "00_",
-    "Sans titre/Sans titre.base",
-    "Sans titre",
-    "Directrice Générale Système/Directrice Générale Système.base",
-    "Directrice Générale Système/New Agent.base",
-    "Directrice Générale Système/Alyson Virtuelle.base",
-    "Directrice Générale Système/Alyson Orchestratrice.base",
+    "Orchestratrice Système/Alyson Suprême.base",
+    "Agents/Memories/Memories.base",
+    "Agents/S2B Agent/S2B Agent.base",
+    "Agents/Skills/canvas/canvas.base",
+    "Agents/Skills/bases/bases.base",
+    "Agents/Skills/widgets/widgets.base",
+    "Agents/Skills/web/web.base",
+    "Agents/Skills/manage-skills/manage-skills.base",
+    "Agents/Skills/manage-notes/manage-notes.base",
+    "Agents/Skills/explore-vault/explore-vault.base",
+    "Agents/Skills/tasknotes/tasknotes.base",
+    "Agents/Memories/User.md",
+    "Agents/S2B Agent/AGENT.md",
+    "Agents/Skills/canvas/SKILL.md",
+    "Agents/Skills/bases/SKILL.md",
+    "Agents/Skills/widgets/SKILL.md",
+    "Agents/Skills/web/SKILL.md",
+    "Agents/Skills/manage-skills/SKILL.md",
+    "Agents/Skills/manage-notes/SKILL.md",
+    "Agents/Skills/explore-vault/SKILL.md",
+    "Agents/Skills/tasknotes/SKILL.md",
+    "Agents/Skills/objectif/SKILL.md",
     "Directrice Générale Système/AGENT.md",
-    "Directrice Générale Système",
     "Alyson Directrice Principale/Centrale Alyson/Administration.md",
-    "Alyson Virtuelle/Alyson Virtuelle.base",
     "Alyson Virtuelle/AGENT.md",
     "Orchestratrice Système/AGENT.md",
     "Orchestratrice Système/AGENT 1.md",
