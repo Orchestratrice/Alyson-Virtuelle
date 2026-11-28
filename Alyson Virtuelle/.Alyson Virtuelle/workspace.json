@@ -49,7 +49,7 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "Alyson Suprême/Alyson Suprême.base",
+                "file": "Orchestratrice Système/Alyson Suprême.base",
                 "viewName": "List"
               },
               "icon": "lucide-list",
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Alyson Suprême/Alyson Suprême.base",
+                "file": "Orchestratrice Système/Alyson Suprême.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Alyson Suprême/Alyson Suprême.base",
+                "file": "Orchestratrice Système/Alyson Suprême.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -197,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Alyson Suprême/Alyson Suprême.base",
+                "file": "Orchestratrice Système/Alyson Suprême.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -228,22 +228,24 @@
       "note-database:Note Database": false
     }
   },
-  "active": "bb0d525dc0ae5c41",
+  "active": "8cd6cbc62393bb5a",
   "lastOpenFiles": [
+    "00_/00_.base",
+    "00_/Sans titre.base",
+    "00_",
+    "Sans titre/Sans titre.base",
+    "Sans titre",
+    "Directrice Générale Système/Directrice Générale Système.base",
+    "Directrice Générale Système/New Agent.base",
+    "Directrice Générale Système/Alyson Virtuelle.base",
+    "Directrice Générale Système/Alyson Orchestratrice.base",
+    "Directrice Générale Système/AGENT.md",
+    "Directrice Générale Système",
     "Alyson Directrice Principale/Centrale Alyson/Administration.md",
     "Alyson Virtuelle/Alyson Virtuelle.base",
-    "Alyson Virtuelle/New Agent.base",
-    "Alyson Virtuelle/Alyson Orchestratrice.base",
     "Alyson Virtuelle/AGENT.md",
-    "Alyson Virtuelle",
-    "Alyson Suprême/Alyson Suprême.base",
-    "Alyson Suprême/Sans titre.base",
-    "Alyson Suprême/Alyson Virtuelle.base",
-    "Alyson Suprême/AGENT.md",
-    "Alyson Suprême/AGENT 1.md",
-    "Alyson Suprême",
-    "Alyson Orchestratrice/Alyson Orchestratrice.base",
-    "Alyson Orchestratrice/New Agent.base",
+    "Orchestratrice Système/AGENT.md",
+    "Orchestratrice Système/AGENT 1.md",
     "Alyson Orchestratrice/AGENT.md",
     "New Agent/AGENT.md",
     "database/records/Task planner/Review finished work.md",
