@@ -65,9 +65,23 @@
               "icon": "zap",
               "title": "Bienvenue"
             }
+          },
+          {
+            "id": "ac8ae9c211f960a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Agents/Skills/conceptrice-syst-me/SKILL.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SKILL"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -241,20 +255,21 @@
       "smart-second-brain:Ouvrir le graphe intelligent": false
     }
   },
-  "active": "c1840fc51933c40c",
+  "active": "ac8ae9c211f960a2",
   "lastOpenFiles": [
+    "Agents/Skills/conceptrice-syst-me/conceptrice-syst-me.base",
+    "Orchestratrice Système/Alyson Suprême.base",
+    "Agents/Skills/conceptrice-syst-me/SKILL.md",
+    "Agents/Skills/conceptrice-syst-me",
     "Agents/Skills/spaces/spaces.base",
     "Agents/Skills/spaces/SKILL.md",
     "Agents/Skills/spaces",
-    "Orchestratrice Système/Alyson Suprême.base",
     "Agents/Memories/Memories.base",
     "Agents/Alyson En Chef/S2B Agent.base",
     "Agents/Skills/canvas/canvas.base",
     "Agents/Skills/bases/bases.base",
     "Agents/Skills/widgets/widgets.base",
     "Agents/Skills/web/web.base",
-    "Agents/Skills/manage-skills/manage-skills.base",
-    "Agents/Skills/manage-notes/manage-notes.base",
     "Agents/Memories/User.md",
     "Agents/Alyson En Chef/AGENT.md",
     "Agents/Skills/canvas/SKILL.md",
