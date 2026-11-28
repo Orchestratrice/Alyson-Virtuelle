@@ -206,13 +206,14 @@
             "id": "fbb8da7fd6a19540",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Agents/Agents.base",
-                "viewName": "List"
+                "file": "Cerveau Système/Directrice Générale - Système.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-list",
-              "title": "Agents"
+              "icon": "lucide-file",
+              "title": "Directrice Générale - Système"
             }
           }
         ],
@@ -383,7 +384,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Agents/Agents.base"
+                "file": "Cerveau Système/Directrice Générale - Système.md"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -451,8 +452,9 @@
       }
     ]
   },
-  "active": "8cd6cbc62393bb5a",
+  "active": "fbb8da7fd6a19540",
   "lastOpenFiles": [
+    "Agents/Agents.base",
     "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
     "Bases De Données/00_Cerveau Système/Sans titre/Sans titre.base",
     "Bases De Données/00_Cerveau Système/Sans titre",
@@ -465,7 +467,6 @@
     "Cerveau Système/Directrice Générale - Système.md",
     "database/records/records.base",
     "Bases De Données/00_Cerveau Système/00_Système.base",
-    "Bases De Données/00_Cerveau Système",
     "Bases De Données/Enregistré/Tâches/artwork/database-cover.svg",
     "Bases De Données/Enregistré/Tâches/Untitled.md",
     "Bases De Données/Enregistré/Tâches/Untitled 1.md",

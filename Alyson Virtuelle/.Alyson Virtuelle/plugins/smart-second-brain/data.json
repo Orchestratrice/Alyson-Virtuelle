@@ -183,6 +183,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Cerveau Système/Directrice Générale - Système.md",
+      "lastOpenedAt": 1795847045983
+    },
+    {
       "path": "Agents/Agents.base",
       "lastOpenedAt": 1795846928247
     },
@@ -213,10 +217,6 @@
     {
       "path": "Bases De Données/Bases De Données.base",
       "lastOpenedAt": 1795846660551
-    },
-    {
-      "path": "Cerveau Système/Directrice Générale - Système.md",
-      "lastOpenedAt": 1795846648666
     },
     {
       "path": "database/records/records.base",
