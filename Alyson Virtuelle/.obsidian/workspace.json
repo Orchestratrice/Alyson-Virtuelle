@@ -11,10 +11,13 @@
             "id": "75070459513de318",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "type": "bases",
+              "state": {
+                "file": "Sans titre.base",
+                "viewName": "Vue"
+              },
+              "icon": "lucide-table",
+              "title": "Sans titre"
             }
           }
         ]
@@ -95,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Sans titre.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Sans titre.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Sans titre.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -178,9 +184,12 @@
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Créer une nouvelle base": false
+      "bases:Créer une nouvelle base": false,
+      "workspaces:Gérer les dispositions des espaces de travail": false
     }
   },
   "active": "75070459513de318",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Sans titre.base"
+  ]
 }
