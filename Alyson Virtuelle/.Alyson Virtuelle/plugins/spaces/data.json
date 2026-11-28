@@ -18,6 +18,7 @@
     "useThemeIconColor": true,
     "autoAssignColor": true,
     "customColors": [
+      "#f1068f",
       "#fa0663"
     ]
   },
@@ -29,6 +30,19 @@
       "color": "#fa0663",
       "root": "Alyson Virtuelle",
       "members": []
+    },
+    {
+      "id": "alyson-orchestratrice",
+      "name": "Alyson Orchestratrice",
+      "icon": "star",
+      "color": "#f1068f",
+      "root": "Alyson Directrice Principale",
+      "members": [
+        {
+          "kind": "file",
+          "path": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base"
+        }
+      ]
     }
   ]
 }

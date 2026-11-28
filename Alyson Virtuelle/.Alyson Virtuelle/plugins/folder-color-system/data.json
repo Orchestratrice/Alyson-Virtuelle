@@ -47,12 +47,22 @@
       "borderColor": null,
       "borderOpacity": null,
       "borderSides": null
+    },
+    "Alyson Directrice Principale/Centrale Alyson": {
+      "color": "#fc036f",
+      "bgOpacity": 1,
+      "inherit": false,
+      "borderEnabled": false,
+      "borderColor": null,
+      "borderOpacity": null,
+      "borderSides": null
     }
   },
   "folderIconOverrides": {},
   "fileColorOverrides": {
     "Alyson Virtuelle/AGENT.md": null,
-    "Alyson Virtuelle/AGENT 1.md": "#fc0388"
+    "Alyson Virtuelle/AGENT 1.md": null,
+    "Alyson Virtuelle/Sans titre.base": null
   },
   "fileIconOverrides": {},
   "folderTextColorOverrides": {},

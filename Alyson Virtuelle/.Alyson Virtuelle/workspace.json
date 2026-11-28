@@ -8,16 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e2873f7ac3bab8cc",
+            "id": "2da431989bd746d7",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
-                "viewName": "Cards"
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Alyson Virtuelle"
+              "icon": "lucide-file",
+              "title": "Administration"
             }
           }
         ]
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -160,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -187,8 +188,10 @@
       "bases:Créer une nouvelle base": false
     }
   },
-  "active": "e2873f7ac3bab8cc",
+  "active": "2da431989bd746d7",
   "lastOpenFiles": [
+    "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+    "Alyson Directrice Principale/Centrale Alyson/Administration.md",
     "Alyson Virtuelle/Alyson Virtuelle.base"
   ]
 }
