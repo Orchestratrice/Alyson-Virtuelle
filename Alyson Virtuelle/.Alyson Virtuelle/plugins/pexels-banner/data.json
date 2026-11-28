@@ -14,7 +14,7 @@
   "xPosition": 50,
   "yPosition": 60,
   "customBannerField": [
-    "banner"
+    "banni"
   ],
   "customXPositionField": [
     "banner-x",
@@ -108,7 +108,40 @@
   "customBannerConfettiField": [
     "banner-confetti"
   ],
-  "folderImages": [],
+  "folderImages": [
+    {
+      "folder": "Alyson Directrice Principale/Images",
+      "image": "Ban",
+      "imageDisplay": "cover",
+      "imageRepeat": false,
+      "yPosition": 60,
+      "xPosition": 50,
+      "contentStartPosition": 355,
+      "bannerHeight": 350,
+      "fade": -40,
+      "borderRadius": 17,
+      "titleColor": "var(--inline-title-color)",
+      "directChildrenOnly": false,
+      "enableImageShuffle": false,
+      "shuffleFolder": ""
+    },
+    {
+      "folder": "",
+      "image": "",
+      "imageDisplay": "cover",
+      "imageRepeat": false,
+      "yPosition": 60,
+      "xPosition": 50,
+      "contentStartPosition": 355,
+      "bannerHeight": 350,
+      "fade": -40,
+      "borderRadius": 17,
+      "titleColor": "var(--inline-title-color)",
+      "directChildrenOnly": false,
+      "enableImageShuffle": false,
+      "shuffleFolder": ""
+    }
+  ],
   "contentStartPosition": 355,
   "imageDisplay": "cover",
   "imageRepeat": false,

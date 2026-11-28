@@ -20,8 +20,22 @@
               "icon": "lucide-file",
               "title": "Administration"
             }
+          },
+          {
+            "id": "9d764a97003554bb",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "Centrale Alyson"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -99,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -185,13 +199,14 @@
       "daily-notes:Ouvrir la note quotidienne": false,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Créer une nouvelle base": false
+      "bases:Créer une nouvelle base": false,
+      "pexels-banner:🚩 Pixel Banner Menu": false
     }
   },
-  "active": "2da431989bd746d7",
+  "active": "9d764a97003554bb",
   "lastOpenFiles": [
-    "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
     "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+    "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
     "Alyson Virtuelle/Alyson Virtuelle.base"
   ]
 }
