@@ -79,6 +79,9 @@ database:
     - key: effort
       label: Effort
       type: number
+    - key: task
+      label: Tâche
+      type: text
   computedFields: []
   statusPresets:
     - id: general
@@ -144,8 +147,9 @@ database:
       sourceFolder: ""
       sourceRules: []
       sourceLogic: and
-      recordIconFieldOverrideEnabled: false
-      recordIconField: ""
+      showRecordIcon: true
+      recordIconFieldOverrideEnabled: true
+      recordIconField: task
       newRecordFolder: ""
       displayWidth: default
       sortColumn: ""
@@ -159,6 +163,7 @@ database:
         - priority
         - due
         - effort
+        - task
       columnWidths: {}
       hiddenColumns: []
       sortColumnOrder: ""
@@ -177,6 +182,8 @@ database:
           database/records/Task planner/Set weekly priorities.md: FV00
           database/records/Task planner/Prepare the next milestone.md: V000
           database/records/Task planner/Review finished work.md: kV00
+          database/records/Task planner/Untitled.md: kV00V
+          database/records/Task planner/Untitled 1.md: kV00VV
       galleryImageField: ""
       boardImageField: ""
       statusPresets: []

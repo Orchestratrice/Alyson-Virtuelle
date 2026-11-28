@@ -3,5 +3,6 @@
   "newFileFolderPath": "Alyson Virtuelle",
   "attachmentFolderPath": "Alyson Virtuelle",
   "alwaysUpdateLinks": true,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "propertiesInDocument": "source"
 }

@@ -1,3 +1,5 @@
 {
-  "showRibbon": true
+  "showRibbon": true,
+  "accentColor": "#fb046f",
+  "nativeMenus": true
 }
