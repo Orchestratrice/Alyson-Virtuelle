@@ -70,6 +70,19 @@
             }
           },
           {
+            "id": "d4f87be343233893",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "database/database.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "database"
+            }
+          },
+          {
             "id": "c1840fc51933c40c",
             "type": "leaf",
             "state": {
@@ -202,7 +215,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -369,7 +382,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Cerveau Système/Cerveau Système.base"
+                "file": "database/records/records.base"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -402,12 +415,55 @@
       "zk-prefixer:Créer une nouvelle note unique": true
     }
   },
-  "active": "ed6076e76f0c6a53",
+  "floating": {
+    "id": "3516597cfe049c86",
+    "type": "floating",
+    "children": [
+      {
+        "id": "6f90914bb235715f",
+        "type": "window",
+        "children": [
+          {
+            "id": "72585c8b4e9995b1",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "6f42ca7c4ea4cb20",
+                "type": "leaf",
+                "state": {
+                  "type": "bases",
+                  "state": {
+                    "file": "database/records/records.base",
+                    "viewName": "List"
+                  },
+                  "icon": "lucide-list",
+                  "title": "records"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 563,
+        "y": 118,
+        "width": 1276,
+        "height": 1032,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "6f42ca7c4ea4cb20",
   "lastOpenFiles": [
+    "database/Suivi Des Tâches.md",
+    "database/Task planner.md",
+    "database/Tâches.md",
+    "database/records/records.base",
+    "database/database.base",
+    "Cerveau Système/Cerveau Système.base",
     "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
     "database/records/Task planner/Untitled 1.md",
     "database/records/Task planner/Untitled.md",
-    "Cerveau Système/Cerveau Système.base",
     "Cerveau Système/Directrice Générale - Système.md",
     "Cerveau Système",
     "Directrice Générale Système/00_À Faire/AGENT 1.md",
@@ -416,8 +472,6 @@
     "Directrice Générale Système/00_À Faire",
     "Directrice Générale Système/Sans titre/Sans titre.base",
     "Directrice Générale Système/Sans titre",
-    "Memories/Alyson Virtuelle/Alyson Virtuelle.base",
-    "Memories/Alyson Suprême/Alyson Suprême.base",
     "Memories/Memories/User.md",
     "Memories/Alyson Virtuelle/AGENT.md",
     "Memories/Alyson Suprême/AGENT.md",
@@ -437,8 +491,6 @@
     "Agents/Skills/widgets/SKILL.md",
     "Agents/Skills/web/SKILL.md",
     "Agents/Skills/manage-skills/SKILL.md",
-    "Agents/Skills/manage-notes/SKILL.md",
-    "Agents/Skills/explore-vault/SKILL.md",
     "database/records/Task planner/artwork/database-cover.svg"
   ]
 }
