@@ -11,12 +11,29 @@
       "chatModels": {},
       "embedModels": {},
       "trustedForPrivateData": false
+    },
+    "ollama": {
+      "isConfigured": true,
+      "auth": {
+        "values": {
+          "baseUrl": "http://localhost:11434"
+        },
+        "secretIds": {},
+        "authMode": "apiKey"
+      },
+      "chatModels": {},
+      "embedModels": {},
+      "trustedForPrivateData": true
     }
   },
   "providerMeta": {
     "openai": {
       "templateId": "openai",
       "displayName": "OpenAI"
+    },
+    "ollama": {
+      "templateId": "ollama",
+      "displayName": "Ollama"
     }
   },
   "agents": {
@@ -165,6 +182,10 @@
   "searchShowMatchContext": true,
   "searchShowKeyboardHints": true,
   "recentNotes": [
+    {
+      "path": "Chats/New Chat.chat",
+      "lastOpenedAt": 1795841669472
+    },
     {
       "path": "Agents/Skills/conceptrice-syst-me/SKILL.md",
       "lastOpenedAt": 1795841615337

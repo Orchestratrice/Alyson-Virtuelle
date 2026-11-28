@@ -229,13 +229,25 @@
               "icon": "lucide-list",
               "title": "Plan"
             }
+          },
+          {
+            "id": "c20ced66b9d3ed40",
+            "type": "leaf",
+            "state": {
+              "type": "smart-second-brain-chat",
+              "state": {
+                "file": "Chats/New Chat.chat"
+              },
+              "icon": "message-square",
+              "title": "New Chat"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -255,11 +267,11 @@
       "smart-second-brain:Ouvrir le graphe intelligent": false
     }
   },
-  "active": "ac8ae9c211f960a2",
+  "active": "c20ced66b9d3ed40",
   "lastOpenFiles": [
+    "Agents/Skills/conceptrice-syst-me/SKILL.md",
     "Agents/Skills/conceptrice-syst-me/conceptrice-syst-me.base",
     "Orchestratrice Système/Alyson Suprême.base",
-    "Agents/Skills/conceptrice-syst-me/SKILL.md",
     "Agents/Skills/conceptrice-syst-me",
     "Agents/Skills/spaces/spaces.base",
     "Agents/Skills/spaces/SKILL.md",
@@ -269,7 +281,6 @@
     "Agents/Skills/canvas/canvas.base",
     "Agents/Skills/bases/bases.base",
     "Agents/Skills/widgets/widgets.base",
-    "Agents/Skills/web/web.base",
     "Agents/Memories/User.md",
     "Agents/Alyson En Chef/AGENT.md",
     "Agents/Skills/canvas/SKILL.md",
