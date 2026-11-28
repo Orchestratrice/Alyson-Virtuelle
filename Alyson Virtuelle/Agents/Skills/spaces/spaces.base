@@ -1,0 +1,28 @@
+filters:
+  and:
+    - file.inFolder("Agents/Skills/spaces")
+    - file.ext == "md"
+views:
+  - type: list
+    name: List
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+  - type: table
+    name: Table
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - file.mtime
+  - type: cards
+    name: Cards
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - file.mtime

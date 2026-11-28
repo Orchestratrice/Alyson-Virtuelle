@@ -2,7 +2,7 @@
   "schemaVersion": 16,
   "providerConfig": {
     "openai": {
-      "isConfigured": false,
+      "isConfigured": true,
       "auth": {
         "values": {},
         "secretIds": {},
@@ -22,12 +22,23 @@
   "agents": {
     "default-agent": {
       "id": "default-agent",
-      "name": "S2B Agent",
+      "name": "Alyson En Chef",
       "icon": "brain",
-      "chatModel": null,
+      "chatModel": {
+        "provider": "openai",
+        "model": "gpt-5.6-terra",
+        "modelConfig": {
+          "contextWindow": 272000,
+          "supportsVision": true
+        }
+      },
       "summarizationModel": null,
       "titleModel": null,
-      "skills": {},
+      "skills": {
+        "spaces": {
+          "enabled": true
+        }
+      },
       "toolsConfig": {
         "search_notes": {
           "enabled": true,
@@ -100,7 +111,12 @@
         }
       },
       "mcpServers": {},
-      "subAgentIds": []
+      "subAgentIds": [
+        "default-agent"
+      ],
+      "pluginExecTools": {
+        "exec:spaces": true
+      }
     }
   },
   "defaultAgentId": "default-agent",
@@ -136,7 +152,7 @@
   "thinkingProcessExpanded": true,
   "showActiveAgentsInStatusBar": true,
   "overrideMobileNavbarSearch": false,
-  "suppressIntegrationPrivacyWarning": false,
+  "suppressIntegrationPrivacyWarning": true,
   "enableLangSmith": false,
   "langSmithApiKeyId": "",
   "langSmithProject": "obsidian-agent",
@@ -148,7 +164,12 @@
   "searchShowMatchBadges": true,
   "searchShowMatchContext": true,
   "searchShowKeyboardHints": true,
-  "recentNotes": [],
+  "recentNotes": [
+    {
+      "path": "Orchestratrice Système/Alyson Suprême.base",
+      "lastOpenedAt": 1795841411009
+    }
+  ],
   "embeddingIndexes": [],
   "searchEmbedIndex": null,
   "graphEmbedIndex": null,

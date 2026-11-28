@@ -241,60 +241,22 @@
       "smart-second-brain:Ouvrir le graphe intelligent": false
     }
   },
-  "floating": {
-    "id": "3516597cfe049c86",
-    "type": "floating",
-    "children": [
-      {
-        "id": "6b9a9029ae49de73",
-        "type": "window",
-        "children": [
-          {
-            "id": "97aa5d9b53fe64fb",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "117d15197713c4fa",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://accounts.google.ca/accounts/SetSID",
-                    "title": "Redirection",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Redirection"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 448,
-        "y": 116,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "117d15197713c4fa",
+  "active": "c1840fc51933c40c",
   "lastOpenFiles": [
+    "Agents/Skills/spaces/spaces.base",
+    "Agents/Skills/spaces/SKILL.md",
+    "Agents/Skills/spaces",
     "Orchestratrice Système/Alyson Suprême.base",
     "Agents/Memories/Memories.base",
-    "Agents/S2B Agent/S2B Agent.base",
+    "Agents/Alyson En Chef/S2B Agent.base",
     "Agents/Skills/canvas/canvas.base",
     "Agents/Skills/bases/bases.base",
     "Agents/Skills/widgets/widgets.base",
     "Agents/Skills/web/web.base",
     "Agents/Skills/manage-skills/manage-skills.base",
     "Agents/Skills/manage-notes/manage-notes.base",
-    "Agents/Skills/explore-vault/explore-vault.base",
-    "Agents/Skills/tasknotes/tasknotes.base",
     "Agents/Memories/User.md",
-    "Agents/S2B Agent/AGENT.md",
+    "Agents/Alyson En Chef/AGENT.md",
     "Agents/Skills/canvas/SKILL.md",
     "Agents/Skills/bases/SKILL.md",
     "Agents/Skills/widgets/SKILL.md",
