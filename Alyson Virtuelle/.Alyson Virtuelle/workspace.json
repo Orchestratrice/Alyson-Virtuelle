@@ -34,9 +34,19 @@
               "icon": "lucide-file",
               "title": "Administration"
             }
+          },
+          {
+            "id": "ac7885efbd1d553c",
+            "type": "leaf",
+            "state": {
+              "type": "note-database-view",
+              "state": {},
+              "icon": "database",
+              "title": "Note database"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -201,11 +211,27 @@
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
       "bases:Créer une nouvelle base": false,
-      "pexels-banner:🚩 Pixel Banner Menu": false
+      "pexels-banner:🚩 Pixel Banner Menu": false,
+      "workspaces:Gérer les dispositions des espaces de travail": false,
+      "gallery-view-dashboard:Open Library Gallery": false,
+      "note-database:Note Database": false
     }
   },
-  "active": "9d764a97003554bb",
+  "active": "ac7885efbd1d553c",
   "lastOpenFiles": [
+    "database/records/Task planner/artwork/artwork.base",
+    "database/records/Task planner/Task planner.base",
+    "database/records/records.base",
+    "database/database.base",
+    "database/records/Task planner/Review finished work.md",
+    "database/records/Task planner/Prepare the next milestone.md",
+    "database/records/Task planner/Set weekly priorities.md",
+    "database/records/Task planner/artwork/database-cover.svg",
+    "database/records/Task planner/artwork",
+    "database/records/Task planner",
+    "database/records",
+    "database/Task planner.md",
+    "database",
     "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
     "Alyson Directrice Principale/Centrale Alyson/Administration.md",
     "Alyson Virtuelle/Alyson Virtuelle.base"
