@@ -70,19 +70,6 @@
             }
           },
           {
-            "id": "d4f87be343233893",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "database/database.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "database"
-            }
-          },
-          {
             "id": "c1840fc51933c40c",
             "type": "leaf",
             "state": {
@@ -215,7 +202,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -431,13 +418,10 @@
                 "id": "6f42ca7c4ea4cb20",
                 "type": "leaf",
                 "state": {
-                  "type": "bases",
-                  "state": {
-                    "file": "database/records/records.base",
-                    "viewName": "List"
-                  },
-                  "icon": "lucide-list",
-                  "title": "records"
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "Nouvel onglet"
                 }
               }
             ]
@@ -453,30 +437,35 @@
       }
     ]
   },
-  "active": "6f42ca7c4ea4cb20",
+  "active": "c1840fc51933c40c",
   "lastOpenFiles": [
-    "database/records/Tâches/Tâches.base",
-    "database/records/Tâches/artwork/artwork.base",
+    "Bases De Données/00_Système/00_Système.base",
+    "Bases De Données/00_Système/Sans titre.base",
+    "Bases De Données/00_Système",
+    "Bases De Données/Sans titre/Sans titre.base",
+    "Bases De Données/Sans titre",
+    "Bases De Données/records/Tâches/artwork/artwork.base",
+    "Bases De Données/Bases De Données.base",
+    "Bases De Données/records/Tâches/artwork/database-cover.svg",
+    "Bases De Données/records/Tâches/Task planner.base",
+    "Bases De Données/records/Tâches/Untitled.md",
+    "Bases De Données/records/Tâches/Untitled 1.md",
+    "Bases De Données/records/Tâches/Tâches.base",
+    "Bases De Données/records/Tâches/artwork",
+    "Bases De Données/records/Tâches/Prepare the next milestone.md",
+    "Bases De Données/records/Tâches",
+    "Bases De Données/Suivi Des Tâches.md",
     "database/records/Tâches/artwork/database-cover.svg",
     "database/records/Tâches/Untitled.md",
     "database/records/Tâches/Untitled 1.md",
-    "database/records/Tâches/Task planner.base",
     "database/records/Tâches/Prepare the next milestone.md",
-    "database/records/Tâches/artwork",
-    "database/records/Tâches",
     "database/Suivi Des Tâches.md",
     "database/Task planner.md",
     "database/Tâches.md",
-    "database/records/records.base",
-    "database/database.base",
-    "Cerveau Système/Cerveau Système.base",
-    "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
     "database/records/Task planner/Untitled 1.md",
     "database/records/Task planner/Untitled.md",
     "Cerveau Système/Directrice Générale - Système.md",
-    "Cerveau Système",
     "Directrice Générale Système/00_À Faire/AGENT 1.md",
-    "Directrice Générale Système/00_À Faire/00_À Faire.base",
     "Memories/Memories/User.md",
     "Memories/Alyson Virtuelle/AGENT.md",
     "Memories/Alyson Suprême/AGENT.md",
@@ -488,10 +477,6 @@
     "Memories/Skills/manage-notes/SKILL.md",
     "Memories/Skills/explore-vault/SKILL.md",
     "Agents/Skills/conceptrice-syst-me/SKILL.md",
-    "Agents/Skills/spaces/SKILL.md",
-    "Agents/Memories/User.md",
-    "Agents/Alyson En Chef/AGENT.md",
-    "Agents/Skills/canvas/SKILL.md",
     "database/records/Task planner/artwork/database-cover.svg"
   ]
 }

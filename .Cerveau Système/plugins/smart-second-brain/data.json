@@ -285,12 +285,48 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
-      "path": "Alyson Virtuelle/database/records/Tâches/artwork/database-cover.svg",
-      "lastOpenedAt": 1795845903738
+      "path": "TaskNotes/Views/tasks-default.base",
+      "lastOpenedAt": 1795846613028
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/Bases De Données.base",
+      "lastOpenedAt": 1795846607254
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/Suivi Des Tâches.md",
+      "lastOpenedAt": 1795846605977
+    },
+    {
+      "path": "Alyson Virtuelle/Cerveau Système/Directrice Générale - Système.md",
+      "lastOpenedAt": 1795846598966
+    },
+    {
+      "path": "Alyson Virtuelle/Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
+      "lastOpenedAt": 1795846597461
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/database.base",
+      "lastOpenedAt": 1795846587357
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/records/Tâches/Tâches.base",
+      "lastOpenedAt": 1795846574688
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/records/records.base",
+      "lastOpenedAt": 1795846572535
+    },
+    {
+      "path": "Alyson Virtuelle/Bases De Données/00_Système/00_Système.base",
+      "lastOpenedAt": 1795846566078
     },
     {
       "path": "Alyson Virtuelle/database/records/Tâches/artwork/artwork.base",
-      "lastOpenedAt": 1795845902179
+      "lastOpenedAt": 1795846495509
+    },
+    {
+      "path": "Alyson Virtuelle/database/records/Tâches/artwork/database-cover.svg",
+      "lastOpenedAt": 1795845903738
     },
     {
       "path": "Alyson Virtuelle/database/database.base",
@@ -307,10 +343,6 @@
     {
       "path": "Alyson Virtuelle/database/Task planner.md",
       "lastOpenedAt": 1795845726886
-    },
-    {
-      "path": "Alyson Virtuelle/Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
-      "lastOpenedAt": 1795842604121
     },
     {
       "path": "Alyson Virtuelle/Directrice Générale Système/00_À Faire/AGENT 1.md",
@@ -463,10 +495,6 @@
     {
       "path": "Chats/New Chat.chat",
       "lastOpenedAt": 1795749048301
-    },
-    {
-      "path": "TaskNotes/Views/tasks-default.base",
-      "lastOpenedAt": 1795745443249
     },
     {
       "path": "AlysonOS/Sans titre.md",
