@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "75070459513de318",
+            "id": "613790d26b53cc73",
             "type": "leaf",
             "state": {
               "type": "bases",
               "state": {
-                "file": "Sans titre.base",
-                "viewName": "Vue"
+                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+                "viewName": "List"
               },
-              "icon": "lucide-table",
+              "icon": "lucide-list",
               "title": "Sans titre"
             }
           }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -160,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sans titre.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +188,10 @@
       "workspaces:Gérer les dispositions des espaces de travail": false
     }
   },
-  "active": "75070459513de318",
+  "active": "ff1f174ccc9b557d",
   "lastOpenFiles": [
-    "Sans titre.base"
+    "Sans titre.base",
+    "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+    "Alyson Directrice Principale/Centrale Alyson"
   ]
 }
