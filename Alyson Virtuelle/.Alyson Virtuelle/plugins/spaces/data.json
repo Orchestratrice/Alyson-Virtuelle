@@ -36,11 +36,11 @@
       "name": "Alyson Orchestratrice",
       "icon": "star",
       "color": "#f1068f",
-      "root": "Alyson Directrice Principale",
+      "root": "Centrale Alyson",
       "members": [
         {
           "kind": "file",
-          "path": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base"
+          "path": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base"
         }
       ]
     }

@@ -242,7 +242,7 @@
   "selectedAgentId": "01a2206c-e5a3-74b9-9c5c-9e727dcb7569",
   "targetFolder": "Chats",
   "attachmentFolder": "",
-  "widgetsFolder": "Widgets",
+  "widgetsFolder": "02_Notifications",
   "agentFolder": "Alyson Virtuelle",
   "agentFolderMigrated": true,
   "coreSkillsSeeded": true,
@@ -284,6 +284,14 @@
   "searchShowMatchContext": true,
   "searchShowKeyboardHints": true,
   "recentNotes": [
+    {
+      "path": "Alyson Virtuelle/Alyson Directrice Principale/Centrale Alyson/Administration.md",
+      "lastOpenedAt": 1795840648551
+    },
+    {
+      "path": "Alyson Virtuelle/Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+      "lastOpenedAt": 1795840640189
+    },
     {
       "path": "Alyson Virtuelle/Alyson Orchestratrice/AGENT.md",
       "lastOpenedAt": 1795840381204

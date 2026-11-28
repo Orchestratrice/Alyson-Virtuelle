@@ -15,16 +15,6 @@
   "folderSortMethods": {},
   "folderManualOrders": {},
   "folderOverrides": {
-    "Alyson Directrice Principale": {
-      "folderPath": "Alyson Directrice Principale",
-      "bannerUrl": "",
-      "showSubs": false
-    },
-    "Alyson Directrice Principale/Centrale Alyson": {
-      "folderPath": "Alyson Directrice Principale/Centrale Alyson",
-      "bannerUrl": "",
-      "showSubs": false
-    },
     "Alyson Virtuelle": {
       "folderPath": "Alyson Virtuelle",
       "bannerUrl": "",
@@ -92,6 +82,16 @@
     },
     "Skills/tasknotes": {
       "folderPath": "Skills/tasknotes",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Centrale Alyson": {
+      "folderPath": "Centrale Alyson",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Centrale Alyson/Centrale Alyson": {
+      "folderPath": "Centrale Alyson/Centrale Alyson",
       "bannerUrl": "",
       "showSubs": false
     }
