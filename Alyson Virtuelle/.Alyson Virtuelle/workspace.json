@@ -44,6 +44,32 @@
             }
           },
           {
+            "id": "288c90f5b0b2a5d6",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "Centrale Alyson"
+            }
+          },
+          {
+            "id": "ed6076e76f0c6a53",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Cerveau Système/Cerveau Système.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "Cerveau Système"
+            }
+          },
+          {
             "id": "c1840fc51933c40c",
             "type": "leaf",
             "state": {
@@ -176,7 +202,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -336,6 +362,18 @@
               "icon": "message-square",
               "title": "New Chat"
             }
+          },
+          {
+            "id": "9664274be5918840",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "Cerveau Système/Cerveau Système.base"
+              },
+              "icon": "lucide-file-signature",
+              "title": "Notes de bas de page"
+            }
           }
         ],
         "currentTab": 5
@@ -346,10 +384,10 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Ouvrir le sélecteur rapide": false,
+      "switcher:Ouvrir le sélecteur rapide": true,
       "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer un nouveau canvas": false,
-      "daily-notes:Ouvrir la note quotidienne": false,
+      "canvas:Créer un nouveau canvas": true,
+      "daily-notes:Ouvrir la note quotidienne": true,
       "templates:Insérer le modèle": false,
       "command-palette:Ouvrir la palette de commandes": false,
       "bases:Créer une nouvelle base": false,
@@ -358,17 +396,19 @@
       "gallery-view-dashboard:Open Library Gallery": false,
       "note-database:Note Database": false,
       "smart-second-brain:Nouveau chat": false,
-      "smart-second-brain:Rechercher dans les notes": false,
-      "smart-second-brain:Ouvrir le graphe intelligent": false
+      "smart-second-brain:Rechercher dans les notes": true,
+      "smart-second-brain:Ouvrir le graphe intelligent": true,
+      "audio-recorder:Démarrer/Arrêter l'enregistrement": false,
+      "zk-prefixer:Créer une nouvelle note unique": true
     }
   },
-  "active": "ac7885efbd1d553c",
+  "active": "ed6076e76f0c6a53",
   "lastOpenFiles": [
+    "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
     "database/records/Task planner/Untitled 1.md",
     "database/records/Task planner/Untitled.md",
     "Cerveau Système/Cerveau Système.base",
     "Cerveau Système/Directrice Générale - Système.md",
-    "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
     "Cerveau Système",
     "Directrice Générale Système/00_À Faire/AGENT 1.md",
     "Directrice Générale Système/00_À Faire/00_À Faire.base",
@@ -399,7 +439,6 @@
     "Agents/Skills/manage-skills/SKILL.md",
     "Agents/Skills/manage-notes/SKILL.md",
     "Agents/Skills/explore-vault/SKILL.md",
-    "Agents/Skills/tasknotes/SKILL.md",
     "database/records/Task planner/artwork/database-cover.svg"
   ]
 }

@@ -82,6 +82,11 @@ database:
     - key: task
       label: Tâche
       type: text
+    - key: Projet lié
+      label: Projet lié
+      type: relation
+      relationConfig:
+        targetDatabaseId: mwzv22ds_rl9oodp
   computedFields: []
   statusPresets:
     - id: general
@@ -164,6 +169,7 @@ database:
         - due
         - effort
         - task
+        - Projet lié
       columnWidths: {}
       hiddenColumns: []
       sortColumnOrder: ""
@@ -241,7 +247,8 @@ database:
       formCoverImage: ""
       formCoverMode: banner
       formRequiredFields: []
-      viewStates: {}
+      viewStates:
+        table: {}
     - id: mwzv22dt_rmugdz5
       name: Calendar view
       viewType: calendar
