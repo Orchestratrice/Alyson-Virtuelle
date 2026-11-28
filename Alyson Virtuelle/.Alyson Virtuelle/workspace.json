@@ -79,9 +79,49 @@
               "icon": "lucide-file",
               "title": "SKILL"
             }
+          },
+          {
+            "id": "af102b64993096ea",
+            "type": "leaf",
+            "state": {
+              "type": "smart-second-brain-release-notes",
+              "state": {
+                "expanded": 1
+              },
+              "icon": "scroll-text",
+              "title": "Nouveautés"
+            }
+          },
+          {
+            "id": "cf94d8a175ef6b78",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://smartsecondbrain.dev/help/troubleshooting/",
+                "title": "Troubleshooting | Smart Second Brain",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Troubleshooting | Smart Second Brain"
+            }
+          },
+          {
+            "id": "810d9b0c8fa592cf",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://github.com/s2b-dev/smart-second-brain",
+                "title": "GitHub - s2b-dev/smart-second-brain: A free, open-source Obsidian plugin that makes your vault smarter: better search, an interactive knowledge graph, and an AI assistant that knows your notes. · GitHub",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "GitHub - s2b-dev/smart-second-brain: A free, open-source Obsidian plugin that makes your vault smarter: better search, an interactive knowledge graph, and an AI assistant that knows your notes. · GitHub"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -247,7 +287,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -267,8 +308,9 @@
       "smart-second-brain:Ouvrir le graphe intelligent": false
     }
   },
-  "active": "c20ced66b9d3ed40",
+  "active": "810d9b0c8fa592cf",
   "lastOpenFiles": [
+    "Chats/New Chat.chat",
     "Agents/Skills/conceptrice-syst-me/SKILL.md",
     "Agents/Skills/conceptrice-syst-me/conceptrice-syst-me.base",
     "Orchestratrice Système/Alyson Suprême.base",

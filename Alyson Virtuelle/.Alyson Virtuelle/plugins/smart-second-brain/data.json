@@ -156,7 +156,7 @@
     "chats": false,
     "data": false
   },
-  "isVerbose": false,
+  "isVerbose": true,
   "showToolIODetails": false,
   "lastActiveChatId": null,
   "onboardingComplete": false,
