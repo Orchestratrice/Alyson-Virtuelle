@@ -183,16 +183,28 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
+      "lastOpenedAt": 1795846734392
+    },
+    {
+      "path": "Bases De Données/records/Tâches/Tâches.base",
+      "lastOpenedAt": 1795846696006
+    },
+    {
+      "path": "Bases De Données/records/records.base",
+      "lastOpenedAt": 1795846691784
+    },
+    {
+      "path": "Bases De Données/database.base",
+      "lastOpenedAt": 1795846689234
+    },
+    {
       "path": "Bases De Données/Suivi Des Tâches.md",
       "lastOpenedAt": 1795846680787
     },
     {
       "path": "Bases De Données/00_Système/Sans titre.base",
       "lastOpenedAt": 1795846676011
-    },
-    {
-      "path": "Bases De Données/database.base",
-      "lastOpenedAt": 1795846664123
     },
     {
       "path": "Bases De Données/Bases De Données.base",

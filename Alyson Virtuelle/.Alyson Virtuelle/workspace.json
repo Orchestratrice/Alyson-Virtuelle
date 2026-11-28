@@ -219,16 +219,82 @@
             "id": "de4f6578fba7b1de",
             "type": "leaf",
             "state": {
-              "type": "note-database-file-view",
+              "type": "bases",
               "state": {
-                "file": "Bases De Données/Suivi Des Tâches.md"
+                "file": "Bases De Données/database.base",
+                "viewName": "List"
               },
-              "icon": "database",
-              "title": "Suivi Des Tâches"
+              "icon": "lucide-list",
+              "title": "database"
+            }
+          },
+          {
+            "id": "615cc1c286184d11",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Bases De Données/Enregistré/records.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "records"
+            }
+          },
+          {
+            "id": "0f338ac4f3b3dd01",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Bases De Données/Enregistré/Tâches/Tâches.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "Tâches"
+            }
+          },
+          {
+            "id": "df8a10fdbbed015f",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "artwork"
+            }
+          },
+          {
+            "id": "4e12381471fa2846",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "artwork"
+            }
+          },
+          {
+            "id": "fbb8da7fd6a19540",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
+                "viewName": "List"
+              },
+              "icon": "lucide-list",
+              "title": "artwork"
             }
           }
         ],
-        "currentTab": 16
+        "currentTab": 21
       }
     ],
     "direction": "vertical"
@@ -395,7 +461,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Bases De Données/Suivi Des Tâches.md"
+                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -463,25 +529,25 @@
       }
     ]
   },
-  "active": "de4f6578fba7b1de",
+  "active": "8cd6cbc62393bb5a",
   "lastOpenFiles": [
-    "Bases De Données/00_Système/Sans titre.base",
+    "Bases De Données/00_Système/Sans titre/Sans titre.base",
+    "Bases De Données/00_Système/Sans titre",
+    "Bases De Données/Enregistré/Tâches/Tâches.base",
+    "Bases De Données/Enregistré/records.base",
     "Bases De Données/database.base",
     "Bases De Données/Suivi Des Tâches.md",
+    "Bases De Données/00_Système/Sans titre.base",
     "Bases De Données/Bases De Données.base",
     "Cerveau Système/Directrice Générale - Système.md",
     "database/records/records.base",
     "Bases De Données/00_Système/00_Système.base",
     "Bases De Données/00_Système",
     "Bases De Données/Sans titre/Sans titre.base",
-    "Bases De Données/Sans titre",
-    "Bases De Données/records/Tâches/artwork/artwork.base",
-    "Bases De Données/records/Tâches/artwork/database-cover.svg",
-    "Bases De Données/records/Tâches/Task planner.base",
-    "Bases De Données/records/Tâches/Untitled.md",
-    "Bases De Données/records/Tâches/Untitled 1.md",
-    "Bases De Données/records/Tâches/Tâches.base",
-    "Bases De Données/records/Tâches/Prepare the next milestone.md",
+    "Bases De Données/Enregistré/Tâches/artwork/database-cover.svg",
+    "Bases De Données/Enregistré/Tâches/Untitled.md",
+    "Bases De Données/Enregistré/Tâches/Untitled 1.md",
+    "Bases De Données/Enregistré/Tâches/Prepare the next milestone.md",
     "database/records/Tâches/artwork/database-cover.svg",
     "database/records/Tâches/Untitled.md",
     "database/records/Tâches/Untitled 1.md",
