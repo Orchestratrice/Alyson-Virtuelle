@@ -135,7 +135,7 @@
     },
     "01a2206c-e5a3-74b9-9c5c-9e727dcb7569": {
       "id": "01a2206c-e5a3-74b9-9c5c-9e727dcb7569",
-      "name": "Alyson Orchestratrice",
+      "name": "Alyson Virtuelle",
       "icon": "brain",
       "chatModel": {
         "provider": "openai",
@@ -146,8 +146,22 @@
           "reasoningEffort": "high"
         }
       },
-      "summarizationModel": null,
-      "titleModel": null,
+      "summarizationModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "modelConfig": {
+          "contextWindow": 272000,
+          "supportsVision": true
+        }
+      },
+      "titleModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "modelConfig": {
+          "contextWindow": 272000,
+          "supportsVision": true
+        }
+      },
       "skills": {},
       "toolsConfig": {
         "search_notes": {
