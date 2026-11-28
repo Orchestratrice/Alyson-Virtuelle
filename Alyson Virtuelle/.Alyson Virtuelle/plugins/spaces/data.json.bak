@@ -17,7 +17,32 @@
     "abbreviateCompactedPaths": true,
     "useThemeIconColor": true,
     "autoAssignColor": true,
-    "customColors": []
+    "customColors": [
+      "#f1068f",
+      "#fa0663"
+    ]
   },
-  "spaces": []
+  "spaces": [
+    {
+      "id": "alyson-virtuelle",
+      "name": "Alyson Virtuelle",
+      "icon": "box",
+      "color": "#fa0663",
+      "root": "Orchestratrice Système",
+      "members": []
+    },
+    {
+      "id": "alyson-orchestratrice",
+      "name": "Alyson Orchestratrice",
+      "icon": "star",
+      "color": "#f1068f",
+      "root": "Centrale Alyson",
+      "members": [
+        {
+          "kind": "file",
+          "path": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base"
+        }
+      ]
+    }
+  ]
 }

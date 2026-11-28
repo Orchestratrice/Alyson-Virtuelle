@@ -43,6 +43,30 @@
           "path": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base"
         }
       ]
+    },
+    {
+      "id": "planification",
+      "name": "Planification",
+      "icon": "cpu",
+      "color": "#f1068f",
+      "root": "Centrale Alyson",
+      "members": []
+    },
+    {
+      "id": "centrale-alyson",
+      "name": "Centrale Alyson",
+      "icon": "shield",
+      "color": "#f1068f",
+      "root": "00_",
+      "members": []
+    },
+    {
+      "id": "espace-personnel",
+      "name": "Espace Personnel",
+      "icon": "key",
+      "color": "#f1068f",
+      "root": "Centrale Alyson",
+      "members": []
     }
   ]
 }
