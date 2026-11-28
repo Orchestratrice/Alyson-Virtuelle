@@ -25,13 +25,14 @@
             "id": "9d764a97003554bb",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
-                "viewName": "List"
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-list",
-              "title": "Centrale Alyson"
+              "icon": "lucide-file",
+              "title": "Administration"
             }
           }
         ],
@@ -113,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -175,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+                "file": "Alyson Directrice Principale/Centrale Alyson/Administration.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -205,8 +206,8 @@
   },
   "active": "9d764a97003554bb",
   "lastOpenFiles": [
-    "Alyson Directrice Principale/Centrale Alyson/Administration.md",
     "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
+    "Alyson Directrice Principale/Centrale Alyson/Administration.md",
     "Alyson Virtuelle/Alyson Virtuelle.base"
   ]
 }

@@ -1,0 +1,111 @@
+{
+  "rootSearchPath": "Alyson Directrice Principale/Centrale Alyson",
+  "lastOpenPath": "",
+  "visibleProperties": [
+    "tags",
+    "status",
+    "todo"
+  ],
+  "showCheckboxes": true,
+  "showFolderProgress": true,
+  "defaultFolderBanner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+  "defaultFileBanner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+  "defaultPdfBanner": "https://cdn-icons-png.flaticon.com/512/337/337946.png",
+  "bannerFit": "cover",
+  "folderSortMethods": {},
+  "folderManualOrders": {},
+  "folderOverrides": {
+    "Alyson Directrice Principale": {
+      "folderPath": "Alyson Directrice Principale",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Alyson Directrice Principale/Centrale Alyson": {
+      "folderPath": "Alyson Directrice Principale/Centrale Alyson",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Alyson Virtuelle": {
+      "folderPath": "Alyson Virtuelle",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Chats": {
+      "folderPath": "Chats",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Memories": {
+      "folderPath": "Memories",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "New Agent": {
+      "folderPath": "New Agent",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice": {
+      "folderPath": "Orchestratrice",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/00-noyau": {
+      "folderPath": "Orchestratrice/00-noyau",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/01-memoire": {
+      "folderPath": "Orchestratrice/01-memoire",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/02-connaissances": {
+      "folderPath": "Orchestratrice/02-connaissances",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/03-procedures": {
+      "folderPath": "Orchestratrice/03-procedures",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/04-decisions": {
+      "folderPath": "Orchestratrice/04-decisions",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Orchestratrice/05-journal": {
+      "folderPath": "Orchestratrice/05-journal",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Skills": {
+      "folderPath": "Skills",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Skills/objectif": {
+      "folderPath": "Skills/objectif",
+      "bannerUrl": "",
+      "showSubs": false
+    },
+    "Skills/tasknotes": {
+      "folderPath": "Skills/tasknotes",
+      "bannerUrl": "",
+      "showSubs": false
+    }
+  },
+  "folderCardSizes": {},
+  "addPropertiesOnCreate": true,
+  "youtubeApiKey": "",
+  "tmdbApiKey": "",
+  "googleBooksApiKey": "",
+  "showYouTubeImport": true,
+  "showBookImport": true,
+  "showGameImport": true,
+  "showMovieImport": true,
+  "showSeriesImport": true,
+  "openMode": "source",
+  "hidePropertiesInReadMode": true
+}
