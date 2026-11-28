@@ -183,16 +183,28 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Bases De Données/database.base",
+      "lastOpenedAt": 1795848285565
+    },
+    {
+      "path": "Agents/Skills/conceptrice-syst-me/SKILL.md",
+      "lastOpenedAt": 1795848284158
+    },
+    {
+      "path": "Orchestratrice Système/Alyson Virtuelle.base",
+      "lastOpenedAt": 1795848281674
+    },
+    {
+      "path": "Orchestratrice Système/AGENT.md",
+      "lastOpenedAt": 1795848279279
+    },
+    {
       "path": "Bases De Données/Directrice Générale Système.md",
       "lastOpenedAt": 1795847762684
     },
     {
       "path": "Bases De Données/Enregistré/records.base",
       "lastOpenedAt": 1795847756775
-    },
-    {
-      "path": "Bases De Données/database.base",
-      "lastOpenedAt": 1795847755043
     },
     {
       "path": "Bases De Données/Enregistré/Tâches/Tâches.base",
@@ -253,10 +265,6 @@
     {
       "path": "Chats/New Chat.chat",
       "lastOpenedAt": 1795841669472
-    },
-    {
-      "path": "Agents/Skills/conceptrice-syst-me/SKILL.md",
-      "lastOpenedAt": 1795841615337
     },
     {
       "path": "Orchestratrice Système/Alyson Suprême.base",
