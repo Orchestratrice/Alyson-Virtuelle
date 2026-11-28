@@ -240,10 +240,10 @@
   },
   "defaultAgentId": "default-agent",
   "selectedAgentId": "01a2206c-e5a3-74b9-9c5c-9e727dcb7569",
-  "targetFolder": "Chats",
+  "targetFolder": "00_Pilotage",
   "attachmentFolder": "",
   "widgetsFolder": "02_Notifications",
-  "agentFolder": "Alyson Virtuelle",
+  "agentFolder": "Alyson Virtuelle/Memories",
   "agentFolderMigrated": true,
   "coreSkillsSeeded": true,
   "manageSkillsFolderMigrated": true,
@@ -285,6 +285,42 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Alyson Virtuelle/Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
+      "lastOpenedAt": 1795842604121
+    },
+    {
+      "path": "Alyson Virtuelle/Directrice Générale Système/00_À Faire/AGENT 1.md",
+      "lastOpenedAt": 1795842602009
+    },
+    {
+      "path": "Alyson Virtuelle/Directrice Générale Système/Alyson Virtuelle.base",
+      "lastOpenedAt": 1795842595910
+    },
+    {
+      "path": "Alyson Virtuelle/Directrice Générale Système/00_À Faire/Sans titre.base",
+      "lastOpenedAt": 1795842591381
+    },
+    {
+      "path": "Alyson Virtuelle/Directrice Générale Système/00_À Faire/00_À Faire.base",
+      "lastOpenedAt": 1795842584501
+    },
+    {
+      "path": "Alyson Virtuelle/Orchestratrice Système/AGENT 1.md",
+      "lastOpenedAt": 1795842550964
+    },
+    {
+      "path": "Alyson Virtuelle/Orchestratrice Système/Alyson Virtuelle.base",
+      "lastOpenedAt": 1795842549800
+    },
+    {
+      "path": "Alyson Virtuelle/Orchestratrice Système/Sans titre.base",
+      "lastOpenedAt": 1795842545464
+    },
+    {
+      "path": "Alyson Virtuelle/Orchestratrice Système/Alyson Suprême.base",
+      "lastOpenedAt": 1795842541716
+    },
+    {
       "path": "Alyson Virtuelle/Agents/Agents.base",
       "lastOpenedAt": 1795842441118
     },
@@ -303,10 +339,6 @@
     {
       "path": "Alyson Virtuelle/Directrice Générale Système/Directrice Générale Système.base",
       "lastOpenedAt": 1795842360794
-    },
-    {
-      "path": "Alyson Virtuelle/Directrice Générale Système/Alyson Virtuelle.base",
-      "lastOpenedAt": 1795842351666
     },
     {
       "path": "Alyson Virtuelle/Directrice Générale Système/Alyson Orchestratrice.base",

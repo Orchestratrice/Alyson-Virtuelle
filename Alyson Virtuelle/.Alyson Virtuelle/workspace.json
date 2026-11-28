@@ -44,19 +44,6 @@
             }
           },
           {
-            "id": "bb0d525dc0ae5c41",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Orchestratrice Système/Alyson Suprême.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "Alyson Suprême"
-            }
-          },
-          {
             "id": "c1840fc51933c40c",
             "type": "leaf",
             "state": {
@@ -121,7 +108,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -309,19 +296,29 @@
   },
   "active": "810d9b0c8fa592cf",
   "lastOpenFiles": [
-    "Chats/New Chat.chat",
+    "Directrice Générale Système/00_À Faire/AGENT 1.md",
+    "Directrice Générale Système/00_À Faire/00_À Faire.base",
+    "Directrice Générale Système/00_À Faire/Sans titre.base",
+    "Directrice Générale Système/00_À Faire",
+    "Directrice Générale Système/Sans titre/Sans titre.base",
+    "Directrice Générale Système/Sans titre",
+    "Memories/Alyson Virtuelle/Alyson Virtuelle.base",
+    "Memories/Alyson Suprême/Alyson Suprême.base",
+    "Memories/Skills/canvas/canvas.base",
+    "Memories/Skills/bases/bases.base",
+    "Memories/Skills/widgets/widgets.base",
+    "Memories/Memories/User.md",
+    "Memories/Alyson Virtuelle/AGENT.md",
+    "Memories/Alyson Suprême/AGENT.md",
+    "Memories/Skills/canvas/SKILL.md",
+    "Memories/Skills/bases/SKILL.md",
+    "Memories/Skills/widgets/SKILL.md",
+    "Memories/Skills/web/SKILL.md",
+    "Memories/Skills/manage-skills/SKILL.md",
+    "Memories/Skills/manage-notes/SKILL.md",
+    "Memories/Skills/explore-vault/SKILL.md",
     "Agents/Skills/conceptrice-syst-me/SKILL.md",
-    "Agents/Skills/conceptrice-syst-me/conceptrice-syst-me.base",
-    "Orchestratrice Système/Alyson Suprême.base",
-    "Agents/Skills/conceptrice-syst-me",
-    "Agents/Skills/spaces/spaces.base",
     "Agents/Skills/spaces/SKILL.md",
-    "Agents/Skills/spaces",
-    "Agents/Memories/Memories.base",
-    "Agents/Alyson En Chef/S2B Agent.base",
-    "Agents/Skills/canvas/canvas.base",
-    "Agents/Skills/bases/bases.base",
-    "Agents/Skills/widgets/widgets.base",
     "Agents/Memories/User.md",
     "Agents/Alyson En Chef/AGENT.md",
     "Agents/Skills/canvas/SKILL.md",
@@ -335,15 +332,6 @@
     "Agents/Skills/objectif/SKILL.md",
     "Directrice Générale Système/AGENT.md",
     "Alyson Directrice Principale/Centrale Alyson/Administration.md",
-    "Alyson Virtuelle/AGENT.md",
-    "Orchestratrice Système/AGENT.md",
-    "Orchestratrice Système/AGENT 1.md",
-    "Alyson Orchestratrice/AGENT.md",
-    "New Agent/AGENT.md",
-    "database/records/Task planner/Review finished work.md",
-    "database/records/Task planner/Prepare the next milestone.md",
-    "database/records/Task planner/Set weekly priorities.md",
-    "database/records/Task planner/artwork/database-cover.svg",
-    "database/Task planner.md"
+    "database/records/Task planner/artwork/database-cover.svg"
   ]
 }
