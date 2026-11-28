@@ -22,7 +22,7 @@
   "agents": {
     "default-agent": {
       "id": "default-agent",
-      "name": "Alyson Virtuelle",
+      "name": "Alyson Suprême",
       "icon": "brain",
       "chatModel": {
         "provider": "openai",
@@ -126,17 +126,26 @@
       },
       "mcpServers": {},
       "subAgentIds": [
-        "default-agent"
+        "default-agent",
+        "01a2206c-e5a3-74b9-9c5c-9e727dcb7569"
       ],
       "pluginExecTools": {
         "exec:tasknotes": true
       }
     },
-    "01a21aa9-9fda-7368-b002-11ca343a4e5d": {
-      "id": "01a21aa9-9fda-7368-b002-11ca343a4e5d",
-      "name": "New Agent",
+    "01a2206c-e5a3-74b9-9c5c-9e727dcb7569": {
+      "id": "01a2206c-e5a3-74b9-9c5c-9e727dcb7569",
+      "name": "Alyson Orchestratrice",
       "icon": "brain",
-      "chatModel": null,
+      "chatModel": {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "modelConfig": {
+          "contextWindow": 272000,
+          "supportsVision": true,
+          "reasoningEffort": "high"
+        }
+      },
       "summarizationModel": null,
       "titleModel": null,
       "skills": {},
@@ -216,7 +225,7 @@
     }
   },
   "defaultAgentId": "default-agent",
-  "selectedAgentId": "01a21aa9-9fda-7368-b002-11ca343a4e5d",
+  "selectedAgentId": "01a2206c-e5a3-74b9-9c5c-9e727dcb7569",
   "targetFolder": "Chats",
   "attachmentFolder": "",
   "widgetsFolder": "Widgets",
@@ -261,6 +270,18 @@
   "searchShowMatchContext": true,
   "searchShowKeyboardHints": true,
   "recentNotes": [
+    {
+      "path": "Alyson Virtuelle/Alyson Orchestratrice/AGENT.md",
+      "lastOpenedAt": 1795840381204
+    },
+    {
+      "path": "Alyson Virtuelle/Chats/New Chat.chat",
+      "lastOpenedAt": 1795840279756
+    },
+    {
+      "path": "Alyson Virtuelle/Alyson Virtuelle/Sans titre.base",
+      "lastOpenedAt": 1795840274646
+    },
     {
       "path": "Constitution et structure universelle.md",
       "lastOpenedAt": 1795838320233
@@ -472,10 +493,6 @@
     {
       "path": "Alyson Virtuelle/Memories/User.md",
       "lastOpenedAt": 1795732182453
-    },
-    {
-      "path": "Alyson Virtuelle/Chats/New Chat.chat",
-      "lastOpenedAt": 1795728961213
     },
     {
       "path": "README.md",

@@ -217,23 +217,28 @@
       "note-database:Note Database": false
     }
   },
-  "active": "ac7885efbd1d553c",
+  "active": "8cd6cbc62393bb5a",
   "lastOpenFiles": [
+    "Alyson Suprême/Alyson Suprême.base",
+    "Alyson Suprême/Sans titre.base",
+    "Alyson Suprême/Alyson Virtuelle.base",
+    "Alyson Suprême/AGENT.md",
+    "Alyson Suprême/AGENT 1.md",
+    "Alyson Suprême",
+    "Alyson Orchestratrice/Alyson Orchestratrice.base",
+    "Alyson Orchestratrice/New Agent.base",
+    "Alyson Orchestratrice/AGENT.md",
+    "Alyson Orchestratrice",
+    "New Agent/New Agent.base",
+    "New Agent/AGENT.md",
+    "New Agent",
     "database/records/Task planner/artwork/artwork.base",
     "database/records/Task planner/Task planner.base",
-    "database/records/records.base",
-    "database/database.base",
     "database/records/Task planner/Review finished work.md",
     "database/records/Task planner/Prepare the next milestone.md",
     "database/records/Task planner/Set weekly priorities.md",
     "database/records/Task planner/artwork/database-cover.svg",
-    "database/records/Task planner/artwork",
-    "database/records/Task planner",
-    "database/records",
     "database/Task planner.md",
-    "database",
-    "Alyson Directrice Principale/Centrale Alyson/Centrale Alyson.base",
-    "Alyson Directrice Principale/Centrale Alyson/Administration.md",
-    "Alyson Virtuelle/Alyson Virtuelle.base"
+    "Alyson Directrice Principale/Centrale Alyson/Administration.md"
   ]
 }
