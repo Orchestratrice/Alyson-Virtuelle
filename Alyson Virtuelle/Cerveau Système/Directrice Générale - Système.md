@@ -2,9 +2,6 @@
 Secteur: 0_Administration
 Fonction: 0_Directrice Générale
 Niveau: 0_Système
-Espace: 0_Orchestratrice
-Mission: 0_
-Responsabilités: 0_Système Agentique Automatisé
+Espace: 0_System OS
 Déclencheur: 0_DG
-Autorité: 0_Absolue
 ---
