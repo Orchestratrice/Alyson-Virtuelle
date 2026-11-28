@@ -18,16 +18,6 @@
             }
           },
           {
-            "id": "c1840fc51933c40c",
-            "type": "leaf",
-            "state": {
-              "type": "smart-second-brain-onboarding",
-              "state": {},
-              "icon": "zap",
-              "title": "Bienvenue"
-            }
-          },
-          {
             "id": "ac8ae9c211f960a2",
             "type": "leaf",
             "state": {
@@ -39,18 +29,6 @@
               },
               "icon": "lucide-file",
               "title": "SKILL"
-            }
-          },
-          {
-            "id": "af102b64993096ea",
-            "type": "leaf",
-            "state": {
-              "type": "smart-second-brain-release-notes",
-              "state": {
-                "expanded": 1
-              },
-              "icon": "scroll-text",
-              "title": "Nouveautés"
             }
           },
           {
@@ -95,55 +73,17 @@
             }
           },
           {
-            "id": "615cc1c286184d11",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Bases De Données/Enregistré/records.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "records"
-            }
-          },
-          {
             "id": "0f338ac4f3b3dd01",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Bases De Données/Enregistré/Tâches/Tâches.base",
-                "viewName": "List"
+                "file": "Bases De Données/Directrice Générale Système.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-list",
-              "title": "Tâches"
-            }
-          },
-          {
-            "id": "df8a10fdbbed015f",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "artwork"
-            }
-          },
-          {
-            "id": "4e12381471fa2846",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "artwork"
+              "icon": "lucide-file",
+              "title": "Directrice Générale Système"
             }
           },
           {
@@ -160,7 +100,7 @@
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -327,7 +267,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Agents/Agents.base"
+                "file": "Bases De Données/Directrice Générale Système.md"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -395,22 +335,24 @@
       }
     ]
   },
-  "active": "fbb8da7fd6a19540",
+  "active": "0f338ac4f3b3dd01",
   "lastOpenFiles": [
+    "Bases De Données/Enregistré/records.base",
+    "Bases De Données/database.base",
+    "Bases De Données/Enregistré/Tâches/Tâches.base",
+    "Bases De Données/Suivi Des Tâches.md",
+    "Agents/Agents.base",
+    "Bases De Données/Enregistré/Tâches/Images/database-cover.svg",
+    "Bases De Données/Enregistré/Tâches/Images/artwork.base",
+    "Bases De Données/Enregistré/Tâches/Images",
+    "Bases De Données/Directrice Générale Système.md",
     "Cerveau Système/Directrice Générale Système.md",
     "Cerveau Système/Directrice Générale Système - Niveau 0.md",
     "Cerveau Système/Directrice Générale - Système.md",
-    "Agents/Agents.base",
     "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
     "Bases De Données/00_Cerveau Système/Sans titre/Sans titre.base",
     "Bases De Données/00_Cerveau Système/Sans titre",
-    "Bases De Données/Enregistré/Tâches/Tâches.base",
-    "Bases De Données/Enregistré/records.base",
-    "Bases De Données/database.base",
-    "Bases De Données/Suivi Des Tâches.md",
     "Bases De Données/00_Cerveau Système/Sans titre.base",
-    "Bases De Données/Bases De Données.base",
-    "database/records/records.base",
     "Bases De Données/Enregistré/Tâches/artwork/database-cover.svg",
     "Bases De Données/Enregistré/Tâches/Untitled.md",
     "Bases De Données/Enregistré/Tâches/Untitled 1.md",
@@ -433,8 +375,6 @@
     "Memories/Skills/widgets/SKILL.md",
     "Memories/Skills/web/SKILL.md",
     "Memories/Skills/manage-skills/SKILL.md",
-    "Memories/Skills/manage-notes/SKILL.md",
-    "Memories/Skills/explore-vault/SKILL.md",
     "database/records/Task planner/artwork/database-cover.svg"
   ]
 }
