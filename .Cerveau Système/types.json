@@ -3,7 +3,7 @@
     "type": "text",
     "statut": "text",
     "phase": "number",
-    "niveau": "number",
+    "niveau": "text",
     "role": "text",
     "fonction": "text",
     "direction": "text",
@@ -24,6 +24,7 @@
     "domaine": "text",
     "ordre": "number",
     "origine": "text",
-    "porte": "text"
+    "porte": "text",
+    "cssclasses": "multitext"
   }
 }
