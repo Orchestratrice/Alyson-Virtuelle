@@ -183,6 +183,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Agents/Agents.base",
+      "lastOpenedAt": 1795846928247
+    },
+    {
       "path": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
       "lastOpenedAt": 1795846734392
     },

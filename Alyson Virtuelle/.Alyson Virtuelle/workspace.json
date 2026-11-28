@@ -8,32 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2da431989bd746d7",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
-                "viewName": "Cards"
-              },
-              "icon": "lucide-layout-grid",
-              "title": "Centrale Alyson"
-            }
-          },
-          {
-            "id": "9d764a97003554bb",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
-                "viewName": "Cards"
-              },
-              "icon": "lucide-layout-grid",
-              "title": "Centrale Alyson"
-            }
-          },
-          {
             "id": "ac7885efbd1d553c",
             "type": "leaf",
             "state": {
@@ -41,32 +15,6 @@
               "state": {},
               "icon": "database",
               "title": "Note database"
-            }
-          },
-          {
-            "id": "288c90f5b0b2a5d6",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "Centrale Alyson"
-            }
-          },
-          {
-            "id": "ed6076e76f0c6a53",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Cerveau Système/Cerveau Système.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "Cerveau Système"
             }
           },
           {
@@ -134,19 +82,6 @@
             }
           },
           {
-            "id": "97dcd1ba97995e50",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Centrale Alyson/Centrale Alyson/Centrale Alyson.base",
-                "viewName": "List"
-              },
-              "icon": "lucide-list",
-              "title": "Centrale Alyson"
-            }
-          },
-          {
             "id": "a662463f5f79aa54",
             "type": "leaf",
             "state": {
@@ -186,19 +121,6 @@
               },
               "icon": "lucide-file",
               "title": "Directrice Générale - Système"
-            }
-          },
-          {
-            "id": "6d9368e324c5491e",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Cerveau Système/Cerveau Système.base",
-                "viewName": "Cards"
-              },
-              "icon": "lucide-layout-grid",
-              "title": "Cerveau Système"
             }
           },
           {
@@ -286,15 +208,15 @@
             "state": {
               "type": "bases",
               "state": {
-                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
+                "file": "Agents/Agents.base",
                 "viewName": "List"
               },
               "icon": "lucide-list",
-              "title": "artwork"
+              "title": "Agents"
             }
           }
         ],
-        "currentTab": 21
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -461,7 +383,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "Bases De Données/Enregistré/Tâches/artwork/artwork.base"
+                "file": "Agents/Agents.base"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -531,6 +453,7 @@
   },
   "active": "8cd6cbc62393bb5a",
   "lastOpenFiles": [
+    "Bases De Données/Enregistré/Tâches/artwork/artwork.base",
     "Bases De Données/00_Cerveau Système/Sans titre/Sans titre.base",
     "Bases De Données/00_Cerveau Système/Sans titre",
     "Bases De Données/Enregistré/Tâches/Tâches.base",
@@ -543,7 +466,6 @@
     "database/records/records.base",
     "Bases De Données/00_Cerveau Système/00_Système.base",
     "Bases De Données/00_Cerveau Système",
-    "Bases De Données/Sans titre/Sans titre.base",
     "Bases De Données/Enregistré/Tâches/artwork/database-cover.svg",
     "Bases De Données/Enregistré/Tâches/Untitled.md",
     "Bases De Données/Enregistré/Tâches/Untitled 1.md",
