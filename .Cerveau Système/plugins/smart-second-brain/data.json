@@ -285,16 +285,24 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "Alyson Virtuelle/database/records/Tâches/artwork/database-cover.svg",
+      "lastOpenedAt": 1795845903738
+    },
+    {
+      "path": "Alyson Virtuelle/database/records/Tâches/artwork/artwork.base",
+      "lastOpenedAt": 1795845902179
+    },
+    {
+      "path": "Alyson Virtuelle/database/database.base",
+      "lastOpenedAt": 1795845858900
+    },
+    {
       "path": "Alyson Virtuelle/database/records/Task planner/Task planner.base",
       "lastOpenedAt": 1795845818390
     },
     {
       "path": "Alyson Virtuelle/database/Suivi Des Tâches.md",
       "lastOpenedAt": 1795845799447
-    },
-    {
-      "path": "Alyson Virtuelle/database/database.base",
-      "lastOpenedAt": 1795845797675
     },
     {
       "path": "Alyson Virtuelle/database/Task planner.md",

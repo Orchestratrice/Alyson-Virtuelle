@@ -3,7 +3,7 @@ filters:
     - file.inFolder("database/records/Task planner")
     - file.ext == "md"
 views:
-  - type: list
+  - type: kanban
     name: List
     groupBy:
       property: file.folder
