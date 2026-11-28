@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "settings": {
+    "globalIgnore": [],
+    "restoreLayouts": false,
+    "revealVisitors": true,
+    "allowReordering": true,
+    "allowReorderingAll": true,
+    "showSpaceHeader": true,
+    "stripPlacement": "bottom",
+    "hideStrip": false,
+    "activeSpaceStyle": "shaded",
+    "dropIndicatorStyle": "box",
+    "pinAllSpace": false,
+    "showPinnedFolder": true,
+    "compactFolderChains": true,
+    "abbreviateCompactedPaths": true,
+    "useThemeIconColor": true,
+    "autoAssignColor": true,
+    "customColors": []
+  },
+  "spaces": []
+}

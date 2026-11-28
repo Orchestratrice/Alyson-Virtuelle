@@ -1,0 +1,1787 @@
+/* Owned by spaces. The classes go on the `.tree-item` wrapper (that is the
+   element the adapter mutates), but a wrapper contains BOTH its own row
+   (`.tree-item-self`) and every descendant row (`.tree-item-children`).
+   De-emphasis must NOT cascade to descendants: `opacity` establishes a
+   stacking context that applies to the whole subtree, and a descendant
+   cannot opt back out of an ancestor's opacity. A member note nested under a
+   scaffold folder was therefore dimmed with no way to undo it. So every
+   de-emphasis rule targets the row's own element only. */
+/* Three states must be distinguishable at a glance (§5.5, §8):
+     member   — full opacity, upright. It belongs to this space.
+     visitor  — dimmed and italic. Revealed by being opened; it does NOT
+                belong to this space. The row lasts as long as the reveal
+                (§5.5.1): it goes when the user closes the file, dismisses
+                the row, becomes a member of this space (then it renders as
+                one), or -- if spaces's own layout restore closed the tab --
+                at the next space switch.
+     scaffold — most dimmed, upright. Structure only, present so a member
+                below it is reachable; not a member itself.
+   Visitor dimming is required by §5.5 ("temporarily reveals its real path,
+   dimmed") and was previously absent — visitors carried only italics and
+   merely inherited the dimming of any scaffold ancestor above them, so a
+   visitor at the vault root looked identical to a member. */
+/* The visitor shade, named because a compacted row borrows it below and the
+   two must not drift apart. A theme can move both by setting this one
+   property, which is the only reason it is on `:root` rather than inline. */
+:root {
+  --spaces-dim-visitor: 0.62;
+}
+
+.spaces-scaffold > .tree-item-self { opacity: 0.45; }
+.spaces-visitor > .tree-item-self {
+  opacity: var(--spaces-dim-visitor);
+  font-style: italic;
+}
+
+/* A compacted row draws at ONE shade, and it is the visitor shade.
+
+   WHY ONE SHADE. The row reads as a single path, so every part of it is the
+   same row and has to look like it. The first version drew the parts at
+   different weights -- the tip at the row's own opacity, the leads and
+   separators multiplied down by 0.6, the `..` gap by 0.45 -- on the argument
+   that the folders a chain only passed through should step back from the
+   folder the row actually IS. Looked at in a real vault that reads as the
+   last folder being a different color from the rest of its own path, which is
+   a distinction the row does not have to make: the tip is already the last
+   thing on the line, and Obsidian's own text element holds it.
+
+   WHY THE VISITOR SHADE. A compacted row is scaffold, but it is the one
+   scaffold row a reader clicks to reach their notes, and at the plain
+   scaffold 0.45 a whole path of it reads at 2.6:1. The visitor shade is the
+   dimming this plugin already uses for "present, but not a member", which is
+   exactly what a compacted chain is, and it is defined once as
+   `--spaces-dim-visitor` so the two cannot drift. `tests/stylesCoupling`
+   pins that they resolve to the same declaration.
+
+   WHAT IT MEASURES. Folder text is #b3b3b3 on #282828 (default dark theme),
+   so every part of the row now lands at 3.6:1 against the pane. Before this,
+   one part of the row was at 4.6:1 and the other two at 2.6:1 and 2.0:1, so
+   the uniform shade raises the floor of the row while lowering only its
+   brightest part. A member note stays at 7.0:1 and a plain scaffold folder at
+   2.6:1, so a compacted row is still visibly neither.
+
+   `.spaces-compacted.spaces-scaffold` rather than `.spaces-compacted` alone:
+   `.spaces-scaffold > .tree-item-self` has the same specificity as
+   `.spaces-compacted > .tree-item-self`, so source order would decide it.
+   The extra class outranks it. A compacted row is always scaffold, since a
+   run is a chain of scaffold folders, so this is accurate and not a hedge.
+
+   It also answers a lookalike: a real folder cannot contain `/`, but one
+   named with a slash lookalike such as U+2044 can imitate a compacted row.
+   This rule does not tell those apart inside a compacted row, where both are
+   drawn by it, but a lookalike sitting in an ORDINARY row is drawn at the
+   scaffold shade and a compacted row is not.
+
+   `.is-cut` is OBSIDIAN's class, not ours (it marks a row the user has cut;
+   we never set it, so do not look for where we do). Obsidian dims it to 0.5 at
+   specificity (0,2,0), which this rule's (0,4,0) would override, so a cut
+   compacted row would lose the cue. The `:not(.is-cut)` stands this rule
+   down on a cut row, which then falls back to the scaffold rule above (0.45,
+   dimmer than Obsidian's 0.5, exactly as a cut plain scaffold row already
+   reads). The class may not exist on every Obsidian version, which costs
+   nothing. */
+.spaces-compacted.spaces-scaffold > .tree-item-self:not(.is-cut) {
+  opacity: var(--spaces-dim-visitor);
+}
+
+/* NO PART OF THE LABEL CARRIES AN OPACITY OF ITS OWN, and that is the rule
+   rather than an omission. An opacity on a role span multiplies with the
+   row's, so any value here draws that part at a different shade from the rest
+   of the path. The roles stay addressable -- a presentation variant is still
+   a style change, and the bidi isolation below is one -- but weight is not
+   what they vary. */
+
+/* Isolate each role span from the text around it. A right-to-left folder name
+   beside a `/` reorders visually without isolation, and the row then reads as
+   a path the vault does not contain. The separator is OUR text, not a path
+   separator the vault supplied, so isolating it loses no information: it
+   exists to join the names, and each name should be read as itself.
+
+   The prefix element is left alone. It is a child of `.tree-item-self`, which
+   Obsidian lays out as a flex row, so it is a flex item and its inline
+   content is already its own bidi paragraph; the spans inside are what mix
+   directions, and they are isolated here. */
+.spaces-compact-lead,
+.spaces-compact-sep,
+.spaces-compact-gap {
+  unicode-bidi: isolate;
+}
+
+/* The prefix element, which is what the measurement measures.
+
+   `white-space: nowrap` is load-bearing, not cosmetic. Whether a compacted
+   label is shortened is decided by comparing the row's content width with its
+   box (`rowOverflows`), and a prefix free to wrap would answer that question
+   by stacking `Research/2026/` onto a second line instead of overflowing --
+   so the row would measure as fitting while reading as a two line folder
+   name. One line, then overflow, then the decision. */
+.spaces-compact-prefix {
+  white-space: nowrap;
+}
+
+/* The elsewhere group's boundary (folder-space design §5). A border on the
+   first row rather than a separator element: the tree is Obsidian's, and a
+   row we already class costs nothing to draw on. Unlike the de-emphasis pair
+   above, this targets the WRAPPER itself, not `> .tree-item-self`: a border/
+   margin/padding does not cascade into a subtree the way `opacity` does, so
+   there is no descendant to protect from it, and the wrapper is the box whose
+   top edge sits at the visual boundary this rule draws. */
+.spaces-elsewhere {
+  border-top: 1px solid var(--background-modifier-border);
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+/* The effective-state override on "Restore tabs when switching spaces" (§9.4).
+   Uses Obsidian's own error tokens so it tracks the active theme in both light
+   and dark rather than hard-coding a red. */
+.spaces-restore-warning {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--text-error);
+  border-radius: 6px;
+  background: var(--background-modifier-error);
+}
+.spaces-restore-warning strong { color: var(--text-error); }
+
+/* §19.2: the row is a fixed frame; only the rail scrolls, so the create
+   control stays reachable no matter how many spaces exist. */
+.spaces-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* The theme's icon weight, captured so the Bold rule below can derive from
+     it. A custom property cannot reference itself: that is a cycle, and CSS
+     resolves a cycle to the guaranteed-invalid value, which would leave the
+     active icon with no stroke at all. Measured in 1.13.7: the self
+     referencing form resolves to empty, this one to `calc(1.75px + 1px)`. */
+  --spaces-base-stroke: var(--icon-stroke);
+  overflow: hidden;
+  padding: 6px 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  flex: 0 0 auto;
+}
+.spaces-switcher-rail {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1 1 auto;
+  /* §9.11: anchors the reorder insertion line, which is positioned in the
+     rail's CONTENT coordinates so it travels with the icons as the rail
+     scrolls. Unlike .nav-files-container, this is not already relative. */
+  position: relative;
+}
+/* §9.11: vertical, because the strip is horizontal — the file tree's line is
+   the same idea rotated. Sized to the icon, not the strip: a full-height rule
+   would read as dividing the pane rather than marking a gap between icons. */
+.spaces-space-drop-line {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 28px;
+  border-radius: 1px;
+  background-color: var(--interactive-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+/* §9.11: the icon being dragged. Obsidian marks its own dragged rows the same
+   way, so the strip reads as part of the app rather than a bolt-on. */
+/* The bottom rung of the opacity ladder, and the only one that has to beat
+   `:hover`: the pointer is by definition over the item being dragged. Scoped
+   and given the `:hover` pair so it wins on specificity rather than on which
+   rule happens to come later in this file. */
+.spaces-switcher .spaces-switcher-item.is-being-dragged,
+.spaces-switcher .spaces-switcher-item.is-being-dragged:hover {
+  opacity: 0.35;
+}
+/* §9.10: the boundary between pinned All and the scrolling rail. Rendered
+   only while something is pinned — a permanent rule that sometimes separates
+   nothing is worse than no rule. `align-self: stretch` rather than a fixed
+   height so it tracks the strip's content box if the icons ever resize. */
+.spaces-switcher-divider {
+  flex: 0 0 auto;
+  width: 1px;
+  align-self: stretch;
+  margin: 2px 2px;
+  /* A step up from `--background-modifier-border`: #555 against #333 in the
+     default dark theme. Still a semantic token, so it tracks the theme
+     rather than pinning a grey. At 1px, squeezed between two icons, the
+     fainter token read as a smudge rather than a rule -- most visible in a
+     vertical strip, where alignment leaves only 2.5px of clearance either
+     side, but the same weight is wanted in every orientation. */
+  background: var(--background-modifier-border-focus);
+}
+/* `clickable-icon` supplies display, centring, color, radius and hover. What
+   stays here is what a theme must not decide: the box's size, its place in the
+   rail, and the opacity ladder that says which space you are in. `padding: 0`
+   because the component class brings `4px 6px`, and on a 28px box with
+   `border-box` that leaves 16px of content for an 18px icon.
+
+   Scoped through `.spaces-switcher` on purpose. Unscoped, `.spaces-switcher-item`
+   and `.clickable-icon` are both one class and tie on every property declared
+   here, leaving the winner to whichever stylesheet the app happens to load
+   last. These are the properties the design calls the plugin's, so they should
+   not depend on load order. Two classes beats one and settles it. */
+.spaces-switcher .spaces-switcher-item {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  opacity: 0.55;
+}
+/* The hover rung of the opacity ladder: 0.55 inactive, 0.85 hovered, 1 active,
+   0.35 dragging. Hover sits inside a ladder that carries meaning, so it is
+   scoped to win rather than tie. The background is deliberately left to the
+   theme; only the rung is ours. */
+.spaces-switcher .spaces-switcher-item:hover { opacity: 0.85; }
+
+.spaces-switcher-item:focus-visible,
+.spaces-switcher-add:focus-visible,
+.spaces-space-header-icon[role="button"]:focus-visible,
+.spaces-space-header-name[role="button"]:focus-visible {
+  outline: 1px solid var(--interactive-accent);
+  outline-offset: -1px;
+}
+/* Shaded, the default of the three ways the strip marks the space you are in.
+   The plugin decides that the active space is marked. The theme decides what a
+   selected control looks like, through the same variable Obsidian's own active
+   rows use. Boxed and Bolded build on this rule rather than replacing it. */
+.spaces-switcher .spaces-switcher-item.is-active,
+.spaces-switcher .spaces-switcher-item.is-active:hover {
+  opacity: 1;
+  background-color: var(--background-modifier-active-hover);
+  /* Obsidian styles `.clickable-icon.is-active` as a toggle that is switched
+     on, and colors it `--text-accent`. Our `is-active` means something else:
+     this is the space you are in. Color here is identity, either the space's
+     own or the theme's icon color when it has none, and state is carried by
+     the shading, the ring or the heavier glyph. Without this line an uncolored active space turns
+     accent-purple and reads as though it had been given a color. A space
+     that HAS a color is unaffected either way, because that color is an
+     inline style and wins over both rules. */
+  color: var(--icon-color);
+}
+/* Boxed: the shading above plus a ring, for anyone who wants the active space
+   to read from further away than a background tint does. `currentColor` rather
+   than a fixed value, so the ring is the space's own color when it has one
+   and the theme's icon color when it does not. The rule above sets that
+   color, so the ring follows a theme without a second variable to keep in
+   step. Inset, so the ring costs no layout and cannot shift the alignment the
+   strip works to hold with the pane beside it. */
+.spaces-switcher.spaces-active-boxed .spaces-switcher-item.is-active,
+.spaces-switcher.spaces-active-boxed .spaces-switcher-item.is-active:hover {
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+/* Bolded: no shading anywhere, a heavier glyph instead.
+   `--icon-stroke` is Obsidian's own token rather than a `stroke-width` of our
+   own, so a theme that restyles icons keeps its say. Opacity is deliberately
+   NOT touched -- the rule above already lifts the active icon to 1 while the
+   rest sit at 0.55, so weight is never the only thing distinguishing it.
+
+   No shading has to mean no shading on EVERY item, not only the active one.
+   The items carry `clickable-icon`, so a theme's `.clickable-icon:hover`
+   paints a background on whichever icon the pointer is over. Left alone, the
+   one item
+   shaded under Bolded would be whichever one you happen to be hovering, which
+   is the opposite of what the option says. */
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item,
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item:hover,
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item.is-active,
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item.is-active:hover {
+  background: transparent;
+  box-shadow: none;
+}
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item.is-active {
+  --icon-stroke: calc(var(--spaces-base-stroke) + 1px);
+}
+
+/* The icon a drop would land on. Drawn from `--interactive-accent`, the same
+   source as the drag box and the picker's covered rows, so the three read as
+   one family. Applied only when `spaceDropFor` says the drop would act, so an
+   icon that lights is an icon that will do something. `opacity: 1` because the
+   base rule dims every non-active icon to 0.55 (0.85 on hover), and a target
+   drawn dimmed would not read as one.
+
+   LAST, and with one selector per active-space style. The opacity ladder is
+   not the only thing it has to beat: all three active-space rules above are
+   about the icon you are STANDING on, which is also an icon you can drop on,
+   and each of them is more specific than a plain
+   `.spaces-switcher .spaces-switcher-item.is-drop-target` would be. What each
+   one WOULD do to this rule if this rule did not match its scope, written as
+   the three failures that were actually observed before it did:
+
+     - Shaded sets `background-color` at an equal weight, so order alone
+       decides between them, and this rule used to come first and lose the
+       tint.
+     - Boxed adds `.spaces-active-boxed` and so outranks an unscoped rule
+       outright, taking both the tint and the ring with it: no feedback at all
+       on the active icon.
+     - Bolded sets `background: transparent; box-shadow: none` on EVERY item,
+       active or not, so under that style no icon in the strip lit up. Bolded is
+       one of three shipped options, so that was a third of users with a dead
+       highlight.
+
+   All three are history, not present behaviour: this rule now sits last and
+   names each scope, so every style lights. They are kept because they are the
+   argument for the selector list, and a reader who deletes a line from it gets
+   the matching failure back.
+
+   Matching each style's scope rather than reaching for `!important` keeps the
+   weight argument visible: a fourth active style added later needs a fourth
+   line here, which is exactly the review this rule should get.
+
+   DASHED, and that is accessibility rather than taste. Under Boxed the active
+   space already wears a 2px inset ring, and if the drop ring were also a solid
+   2px inset ring the only thing separating "the space I am in" from "this will
+   receive the drop" would be HUE -- `currentColor` against
+   `--interactive-accent`. With a low-chroma theme accent, or for a colour-blind
+   reader, that is no difference at all. A dash pattern is a difference in SHAPE
+   and survives both. It is drawn as an `outline` rather than a `box-shadow`
+   because a box shadow cannot be dashed; `outline-offset: -2px` puts it exactly
+   where the solid ring was, and outlines follow `border-radius`. `box-shadow:
+   none` is what takes the Boxed active ring off underneath it, so the two never
+   stack into a double ring. */
+.spaces-switcher .spaces-switcher-item.is-drop-target,
+.spaces-switcher .spaces-switcher-item.is-drop-target:hover,
+.spaces-switcher.spaces-active-boxed .spaces-switcher-item.is-drop-target,
+.spaces-switcher.spaces-active-boxed .spaces-switcher-item.is-drop-target:hover,
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item.is-drop-target,
+.spaces-switcher.spaces-active-bolded .spaces-switcher-item.is-drop-target:hover {
+  opacity: 1;
+  background: color-mix(in oklch, var(--interactive-accent) 22%, transparent);
+  box-shadow: none;
+  outline: 2px dashed var(--interactive-accent);
+  outline-offset: -2px;
+}
+.spaces-switcher-item.is-pending { opacity: 1; animation: spaces-pulse 0.6s ease-in-out infinite; }
+@keyframes spaces-pulse { 50% { opacity: 0.4; } }
+.spaces-switcher-add {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  opacity: 0.55;
+}
+.spaces-switcher-add:hover { opacity: 1; background: var(--background-modifier-hover); }
+
+/* §19.3: an overlay, not a replacement. The host is already
+   position: relative, so this anchors with no host mutation, and being a
+   sibling of .nav-files-container it cannot trip the adapter's health check. */
+.spaces-create-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 12px 12px;
+  background: var(--background-secondary);
+  overflow-y: auto;
+}
+/* The gap is a starting value, not the answer: `alignToRibbon`
+   (CreateSpacePanel.ts) measures the real ribbon and overwrites
+   `--spaces-title-gap` so the name field lands on an icon's centre whatever
+   the theme's pitch and metrics are. This value is what stands when there is
+   no ribbon to measure — hidden from settings, or mobile. */
+.spaces-create-title {
+  font-weight: 600;
+  text-align: center;
+  font-size: 17px;
+  margin-bottom: var(--spaces-title-gap, 22px);
+}
+/* Only the picker may absorb the column's leftover space. Everything else
+   keeps its natural height: `flex-shrink` defaults to 1, so opening the picker
+   used to squeeze the theme button from 30px to 26px and ride every row below
+   it 4px up the pane — a visible jump for a click that should only reveal
+   something. Measured in the fixture, Obsidian 1.13.7. */
+.spaces-create-panel > *:not(.spaces-create-items) {
+  flex: 0 0 auto;
+}
+
+.spaces-create-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+/* The name field takes what the icon button beside it does not. */
+.spaces-create-name { flex: 1 1 auto; }
+/* What a failed Create points at. Obsidian's own error variables, so it reads
+   as an error in any theme rather than a hardcoded red. */
+/* The focus states are listed explicitly, and that is the whole point of this
+   rule rather than a detail of it. `showFault` focuses the control it marks,
+   and Obsidian's `.text-input:focus` carries the same specificity as a bare
+   `.is-invalid` — so the red painted for one frame and the focus ring took it
+   straight back, which read as a flash. Adding the pseudo-class wins the tie
+   and the mark survives until the user acts on the control. */
+.spaces-create-panel .text-input.is-invalid,
+.spaces-create-panel .text-input.is-invalid:focus,
+.spaces-create-panel .text-input.is-invalid:focus-visible,
+.spaces-create-tree.is-invalid,
+.spaces-create-tree.is-invalid:focus,
+.spaces-create-tree.is-invalid:focus-visible {
+  border-color: var(--text-error);
+  box-shadow: 0 0 0 2px var(--text-error);
+}
+
+/* The two kinds, side by side. A segmented pair rather than a checkbox: the
+   choice cannot be changed after creation, so neither option should be the one
+   you get by not noticing. Layout only — the buttons themselves inherit
+   Obsidian's chrome, same as Cancel. */
+.spaces-create-modes {
+  display: flex;
+  gap: 6px;
+}
+.spaces-create-mode {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.spaces-create-mode > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spaces-create-mode.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+.spaces-create-mode.is-active .spaces-create-theme-icon { color: inherit; }
+
+/* The three buttons that choose what the window below them shows, sitting
+   under the filter box they share a column with. The same segmented shape as
+   the Curated / Folder pinned pair above, but the active one is OUTLINED
+   rather than filled: two filled groups on one pane read as one control with
+   five states, and the outline keeps them apart. The ring is an inset box-shadow
+   so it takes no space (a border appearing on the active button would move its
+   neighbour), and it replaces Obsidian's own button shadow, so the inactive
+   button keeps the stock chrome and reads as inactive. Text takes
+   `--text-accent` rather than `--text-on-accent`, because the background is
+   no longer the accent. The accessible state is `aria-pressed`, not this. */
+.spaces-create-bodies {
+  display: flex;
+  gap: 6px;
+}
+/* Sized to the label, then given an equal share of what is left over,
+   rather than three equal thirds (`flex: 1 1 0`). Thirds are even and wrong:
+   the three labels are not the same length, so an equal split starves the
+   longest while the shortest keeps air it has no use for.
+
+   Measured in the left sidebar at Obsidian's own default width of 300px,
+   with the panel mounted in the file-explorer leaf. Each button came out at
+   88px, which is 64px of room inside 12px of padding either side. Vault's
+   icon and word need 51px and Tags 47px, so both had room to spare, while
+   Properties needs 80px and was CUT BY 16px. The word was being clipped at
+   the default width, not merely in a narrowed pane, and `overflow: hidden`
+   on the button is what hid the evidence.
+
+   A minimum width on the panel is not the fix: it is mounted inside
+   Obsidian's sidebar, so a floor wider than the sidebar overflows it and
+   trades a cut word for a cut panel. With `auto` the same 300px gives
+   79 / 76 / 109 and all three words are whole. */
+.spaces-create-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* Narrower than the label and the word is cut mid-letter, which reads as a
+   rendering fault. An ellipsis says the label is shortened. */
+.spaces-create-body-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spaces-create-body.is-active,
+.spaces-create-body.is-active:hover {
+  box-shadow: inset 0 0 0 2px var(--interactive-accent);
+  color: var(--text-accent);
+}
+.spaces-create-body.is-active .spaces-create-theme-icon { color: inherit; }
+
+/* The item picker's view: fills the space between its button and the pinned
+   actions, so the tree gets the whole pane rather than a fixed box. */
+.spaces-create-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+/* The filter box is a fixed-size control, so it must not shrink. It sits in a
+   height-constrained flex column, and `flex-shrink` defaults to 1: when the
+   content below it overflowed the column, the browser shrank the input along
+   with the tree. The Vault list is marginally taller than the Tags list, so
+   the box measured 27.2px in one body and 30px in the other (Obsidian 1.13.7,
+   10,000-note vault). The tree is the child meant to absorb that: it has
+   `flex: 1 1 auto` and its own overflow handling. The Vault / Tags buttons
+   row is not given the same rule because its own content height already
+   serves as its automatic minimum size, and it measured 30px in both bodies. */
+.spaces-create-items > .text-input {
+  flex-shrink: 0;
+}
+
+/* The tree. `flex: 1` rather than a fixed max-height, so it grows into the
+   pane and scrolls only when it runs out of room. */
+/* The picker is a view of the file tree, so it is typeset as one.
+   `--nav-item-size` and `--nav-item-weight` are the variables the explorer's
+   own rows read, which is why they are used here rather than the 13px they
+   happen to resolve to today: a theme that resizes the file tree resizes this
+   with it. Without this the box inherited the pane's `--text-normal` 15px and
+   sat two pixels larger than the tree it mirrors. Set on the container so the
+   rows, the caret and the empty-state message all follow; the filter field
+   above is a sibling, so it keeps Obsidian's input sizing. */
+/* The window: a column of two, the list and the row pinned under it. The
+   border and the typesetting are the window's; the scrolling belongs to the
+   list alone, so the summary row stays put while the rows move under it. */
+.spaces-create-tree {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 80px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s, 4px);
+  font-size: var(--nav-item-size);
+  font-weight: var(--nav-item-weight);
+}
+.spaces-create-tree-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 4px;
+}
+/* One row tall, under a divider, and it does not scroll: the list gives up the
+   height for it rather than the window taking more. */
+.spaces-create-summary {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: 0.9em;
+  font-weight: var(--font-normal, 400);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* `margin-bottom` rather than a `gap` on the list: a gap cannot be removed
+   for one pair, and the rule below removes exactly this margin where two rows
+   belong to the same selection and have to merge into one block. Without the
+   separation, two folders picked separately read as one shape joined at the
+   waist.
+
+   `min-height` and the 3px margin are a pair, and both numbers are measured
+   rather than chosen. A row's natural height is the line box plus padding,
+   which is fractional (20.88px at the default font), so consecutive row edges
+   land on fractional device pixels and each gap rounds independently. At a
+   fractional device pixel ratio that painted a 2px gap as alternating 2 and 3
+   device pixels, which is a 50% swing on a thin dark line and plainly visible
+   down a run of tinted rows. Measured at dpr 1.3693: 20.88px/2px gave
+   2,3,3,2,3,3,2,3,3; 22px/3px gave 4 every time.
+
+   Obsidian's own file explorer has the same artifact — its rows are 24.876px
+   with a 2px margin, and its gaps measure 2.088 and 1.997. It is invisible
+   there because stock rows are transparent, so there is no seam to see. Ours
+   are filled, so a run of them shows every one.
+
+   `min-height` rather than `height`: a theme with a larger font would clip
+   against a fixed height, and a clipped name is worse than an uneven gap. */
+.spaces-create-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  min-height: 22px;
+  margin-bottom: 3px;
+  border-radius: var(--radius-s, 4px);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.spaces-create-tree-row:hover { background: var(--background-modifier-hover); }
+.spaces-create-tree-row:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--text-accent);
+}
+/* Covered by something already picked: a consequence, not a choice.
+
+   The same 10% accent fill the selected row carries, on purpose. A picked
+   folder and the rows it brings in are ONE selection, and the block below
+   draws them as one shape. What separates the two states inside that block is
+   the selected row's accent text and weight 600, which is where the eye lands
+   first in a run that is otherwise uniform.
+
+   Stated plainly, because this was the branch's headline defect and is now a
+   deliberate choice: a theme that narrows `--text-accent` toward
+   `--text-normal` leaves only the weight to tell a picked row from a covered
+   one. The weight is not theme-derived, so something always remains, but the
+   margin is thinner than an edge mark gave. The grouping is what carries the
+   meaning now: the block says "this is your selection", and the bold row says
+   which one you clicked.
+
+   `cursor: default` because the click is a no-op. The hover rule below holds
+   the tint rather than letting the row's generic hover repaint it, so a
+   covered row does not light up under the pointer while saying it is inert. A
+   row that looks clickable and does nothing is worse than one that says so.
+   `:not(.is-selected)` so a row that is both keeps the selected fill.
+
+   No box-shadow here, so the plain `:focus-visible` ring above applies
+   unchanged. Covered rows stay in the tab order, so a keyboard user can reach
+   the title explaining why they are inert, and they need that ring. */
+.spaces-create-tree-row.is-inherited {
+  background: color-mix(in oklch, var(--interactive-accent) 10%, transparent);
+  cursor: default;
+}
+/* One selection is drawn as one block: a picked folder and the rows it brings
+   in merge into a single rectangle, with the corners rounded only where the
+   block starts and ends.
+
+   The join is decided by the NEXT row being COVERED, not merely tinted, and
+   that is the whole rule. A covered row belongs to the selection above it, so
+   it joins. A selected row starts a selection of its own, so it does not:
+   two sibling folders picked separately stay two pills, which is what they
+   are. `toggleItem` keeps the member list minimal, so a selected row can
+   never be a descendant of another selected row, and the two cases are
+   therefore exhaustive.
+
+   The forward look is a class the renderer sets, `is-joined-down`, rather
+   than a forward-looking parent selector. Obsidian's plugin review flags that
+   selector because matching it invalidates style for a far wider set of
+   elements than the selector names, on every recalculation. `markJoinedRows` (pickerBody.ts) decides it while
+   it is already walking the rows in order. `+` below still looks BACK one
+   sibling, which is an ordinary combinator and costs nothing. Anything else
+   ends a block by not being covered, including the overflow row, which should
+   end it: it is not part of the selection.
+
+   The separator is FILLED, not removed. Collapsing the margin to 0 was the
+   obvious way to join two rows and it moved them: a block of N rows lost
+   (N-1) x 3px of height, so picking a parent pulled its children up and
+   deselecting dropped them back. Nothing about a selection should change
+   where a row sits. `box-shadow` paints the 3px below the row in the same
+   tint and takes no part in layout, so the block reads continuous and every
+   row stays exactly where it was.
+
+   Listed before the focus ring's own rule for `.is-inherited`, which restates
+   this shadow alongside the ring: `box-shadow` is one property, so a focused
+   row inside a block has to set both or lose one. */
+.spaces-create-tree-row.is-joined-down {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 3px 0 0 color-mix(in oklch, var(--interactive-accent) 10%, transparent);
+}
+.spaces-create-tree-row.is-joined-down:focus-visible {
+  box-shadow:
+    0 3px 0 0 color-mix(in oklch, var(--interactive-accent) 10%, transparent),
+    inset 0 0 0 2px var(--text-accent);
+}
+.spaces-create-tree-row:is(.is-selected, .is-inherited)
+  + .spaces-create-tree-row.is-inherited {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.spaces-create-tree-row.is-inherited:not(.is-selected):hover {
+  background: color-mix(in oklch, var(--interactive-accent) 10%, transparent);
+}
+.spaces-create-tree-row.is-overflow:hover {
+  background: transparent;
+}
+.spaces-create-tree-row.is-selected {
+  background: var(--background-modifier-active-hover, var(--background-modifier-hover));
+  color: var(--text-accent);
+  font-weight: 600;
+}
+/* Stands in for rows the budget could not draw. Reads as a note, not a row to
+   act on. Sets no box-shadow, so the base `:focus-visible` ring applies
+   unchanged if it ever takes focus. */
+.spaces-create-tree-row.is-overflow {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  cursor: default;
+}
+/* Reserved even on a childless row, so names stay in one column. */
+.spaces-create-tree-caret {
+  flex: 0 0 auto;
+  width: 16px; height: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+}
+.spaces-create-tree-caret svg { width: 14px; height: 14px; }
+.spaces-create-tree-name { overflow: hidden; text-overflow: ellipsis; }
+.spaces-create-tree-icon {
+  flex: 0 0 auto;
+  display: flex; align-items: center;
+  color: var(--text-muted);
+}
+.spaces-create-tree-icon svg { width: 14px; height: 14px; }
+.spaces-create-tree-row.is-selected .spaces-create-tree-icon { color: inherit; }
+.spaces-create-tree-empty {
+  padding: 8px 4px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+/* Stands in for rows a windowed list did not build.
+
+   The Properties body builds only the rows its viewport shows -- about 14 of
+   them for a key holding four thousand values -- and puts one of these above
+   what it drew and one below, each as tall as the rows it replaces. That is
+   what keeps the scrollbar describing the whole list, and every drawn row at
+   the offset it would have had.
+
+   Inert on purpose: it is not a row, so it must not take a pointer, show a
+   hover or draw anything. Its `height` is written per draw and is the only
+   thing about it that varies. */
+.spaces-create-tree-spacer {
+  pointer-events: none;
+  flex: 0 0 auto;
+}
+
+/* §: the tag tree, drawn in the same box as the item tree and reached by the
+   Tags button above it.
+   The row itself is `.spaces-create-tree-row` -- including its caret slot, its
+   indent and the leading-edge `.is-inherited` mark a covering parent gives it -- so only
+   the differences live here: the tag mark and the note count. No
+   `padding-left` of its own, because the panel sets one per row from the
+   depth and the two would be the same rule written twice. */
+.spaces-create-tag-row .spaces-create-tree-name {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+/* A Lucide tag, the same mark the Tags button carries. Muted so the tag's
+   name is what the eye lands on. Its own element, so it takes its own color
+   and the name text stays just the last segment. */
+.spaces-create-tag-sigil {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+.spaces-create-tag-sigil svg { width: 13px; height: 13px; }
+.spaces-create-tag-row.is-selected .spaces-create-tag-sigil { color: inherit; }
+/* How many notes the tag brings in. `margin-left: auto` puts it against the
+   right edge so the numbers line up as a column the eye can skim, and the
+   name keeps the whole of the space left of it. Muted and a size down,
+   because it is a hint beside the name rather than a second name. */
+.spaces-create-tag-count {
+  margin-left: auto;
+  padding-left: 8px;
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  font-weight: var(--font-normal, 400);
+  font-variant-numeric: tabular-nums;
+}
+/* A selected row goes accent-colored and semibold; the count must not follow
+   it there, or the hint becomes the loudest thing on the row it is hinting
+   about. On the ROW class rather than the tag row's own: the property key and
+   value rows draw this same count span, and a selected one was taking the
+   accent, which is the thing this rule exists to stop. */
+.spaces-create-tree-row.is-selected .spaces-create-tag-count { color: var(--text-muted); }
+
+/* The theme button replaces the old swatch row: full width under the name,
+   so it reads as an action rather than seven unexplained circles. The brush
+   carries the current color (set inline from state), so the button shows the
+   choice as well as offering to change it. */
+/* Layout only. Everything else -- background, border, radius, hover, active,
+   focus ring -- is Obsidian's default button chrome, inherited by NOT being
+   overridden, so this matches Cancel exactly and keeps matching it if the
+   theme changes. */
+.spaces-create-theme {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+/* The muted default, shared with the mode buttons' icons and matching the
+   icon placeholder's dashed box (`.spaces-create-iconbtn.is-empty`, below).
+   Nothing overrides it: the brush labels the action and is not a swatch. The
+   chosen color shows on the space's own icon instead, which is the thing
+   being colored. */
+.spaces-create-theme-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+.spaces-create-theme-icon svg { width: 16px; height: 16px; }
+/* The icon button sits inside the name row, left of the input, so the two
+   read as one field. `.is-empty` is the pre-choice state: the dashed plus is
+   drawn by CreateSpacePanel as inline SVG in `currentColor`, so the color
+   decision lives here rather than in the markup. */
+.spaces-create-iconbtn {
+  flex: 0 0 auto;
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  /* An icon, so it takes the color Obsidian gives icons rather than the one
+     it gives body text. `.is-empty` below stays on `--text-muted`, because
+     that says no icon has been chosen yet, which is the plugin expressing a
+     state rather than an icon taking its natural color. */
+  color: var(--icon-color);
+}
+.spaces-create-iconbtn svg { width: 20px; height: 20px; }
+.spaces-create-iconbtn:hover { background: var(--background-modifier-hover); }
+.spaces-create-iconbtn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--text-accent);
+}
+.spaces-create-iconbtn.is-empty { color: var(--text-muted); }
+.spaces-create-iconbtn.is-empty:hover { color: var(--text-normal); }
+
+/* Pinned to the bottom, as in the reference. */
+/* Fix round 2, Important 5: margin-top: auto only pins to the bottom while
+   content fits. .spaces-create-panel scrolls (overflow-y: auto), and a
+   title + name row + theme + two mode buttons + an open item picker in a
+   narrow sidebar is a real, computed-layout case (§10.5.1) where it doesn't —
+   the buttons scroll out of view with it. position: sticky keeps them pinned to the
+   viewport of the scroll container instead of the document flow, and the
+   background stops scrolled content showing through underneath. */
+.spaces-create-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  bottom: 0;
+  padding-top: 6px;
+  background: var(--background-secondary);
+}
+
+/* §20.7: an ordering seam that this Obsidian version does not expose is said
+   out loud next to its toggle, the same treatment §9.4 gives a blocked restore. */
+.spaces-setting-warning {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  color: var(--text-error);
+  background-color: var(--background-modifier-error);
+}
+
+/* Backlog Q: the switch flicker. Obsidian rebuilds the explorer during a space
+   switch and paints the COMPLETE UNFILTERED tree ~43ms before spaces can class
+   it (measured). Hiding the tree for the duration replaces a flash of the wrong
+   content with a brief blank.
+
+   `visibility`, not `display`: no layout thrash, and the scroll position survives
+   (I4). Scoped to the tree only, so the nav header and the switcher strip stay
+   put and the pane does not blink as a whole.
+
+   SJ-32: and scoped to the FILE EXPLORER's tree. `.nav-files-container` is a
+   class other views and plugins wear to look native, and the mask has nothing
+   to say about them — the flicker being covered is Obsidian rebuilding the
+   file explorer, and the class on `document.body` (see setSwitchMask: every
+   element inside the pane is replaced during a switch, so the body is the only
+   node that cannot go stale) is what makes the rule window-wide unless the
+   selector narrows it. The pane selector is `SEL.fileExplorerPane`; this file
+   cannot import it, which is the coupling `tests/stylesCoupling.test.ts`
+   exists to hold.
+
+   **Scoped by pane TYPE, and deliberately still plural.** SJ-09 binds, patches
+   and filters EVERY file-explorer leaf in the main window, so there is more
+   than one tree to cover and every one of them flashes. Narrowing this to
+   "the" explorer container — a `:first-of-type`, or a rule written against a
+   single element — would put the flash back in the second pane. A descendant
+   combinator under the pane type is what gets both properties at once, and
+   `tests/stylesCoupling.test.ts` holds each half separately. */
+body.spaces-switching
+  .workspace-leaf-content[data-type="file-explorer"]
+  .nav-files-container {
+  visibility: hidden;
+}
+
+/* §20.4: the insertion line. Absolute inside .nav-files-container, which is
+   already position:relative (measured) — no host style needed to anchor it. */
+.spaces-drop-line {
+  position: absolute;
+  /* left and width are set inline from the target row's .tree-item WRAPPER box
+     (§20.4): the line belongs to the row it describes, and an indented row's
+     bubble does not start at the pane's edge. The wrapper is what carries the
+     indent — `.tree-item-self` is deliberately stretched back to the pane edge
+     by Obsidian, so measuring it drew a pane-wide line at every depth. */
+  height: 2px;
+  margin-top: -1px;
+  background-color: var(--interactive-accent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* The other indicator: a slot the rows have opened, rather than a rule drawn
+   between them. The SAME element as the line above wears this instead, because
+   the indicator is created once at `bind` and never inserted or removed during
+   a drag.
+
+   The fill is the theme's accent mixed down to a wash, so a theme that
+   restyles `--interactive-accent` restyles this too.
+
+   No `margin-top`: the line above pulls itself up by half its 2px so it
+   straddles the boundary, and a box sits below the boundary rather than
+   across it. */
+.spaces-drop-box {
+  position: absolute;
+  background-color: color-mix(in srgb, var(--interactive-accent) 22%, transparent);
+  border-radius: var(--radius-s);
+  pointer-events: none;
+  z-index: 1;
+  /* Arrives as the space does. The rows take 100ms to slide apart, and a box
+     drawn at full strength on the first frame spends that 100ms sitting on top
+     of a row that has not moved yet, which reads as the indicator landing ON
+     an item instead of between two. Measured: sweeping the pointer across the
+     pane, 40 of 45 positions had the box overlapping a painted row while the
+     slide ran, and 0 of 45 with the slide disabled. Fading in over the same
+     duration means it reaches full strength exactly as the gap finishes
+     opening. */
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+.spaces-drop-box.is-open {
+  opacity: 1;
+}
+
+/* On the container only while a gap is open, so rows are not carrying a
+   transition for the rest of their life. The transform itself is written
+   inline per row, which is also how Obsidian animates its own ribbon reorder:
+   no selector in `app.css` carries a transform for it. */
+.nav-files-container.spaces-gap-drag [data-path] {
+  transition: transform 100ms ease;
+}
+
+/* While spaces owns the drop, Obsidian's own answer to the same pointer is
+   wrong and has to stop being shown.
+
+   `intentFor` treats the top and bottom quarter of a folder row as "between,
+   in the parent". Obsidian has no bands and reads the whole row as "into this
+   folder", so in those pixels it tints the row and captions the drag "Move
+   into <folder>" while spaces draws an insertion point above or below it. The
+   drop goes to spaces and reorders, so the caption was describing something
+   that would not happen, and its 10% accent tint under our 22% box also read
+   as a second, denser box.
+
+   Neutralised rather than removed. Obsidian sets `is-being-dragged-over` only
+   on a transition, so stripping the class means the real highlight never
+   comes back when the pointer returns to the folder's middle. Leaving its
+   state alone and hiding the paint reverses the moment the body class goes.
+
+   The class sits on the WRAPPER and Obsidian colours a child of it
+   (`.nav-folder.is-being-dragged-over > .nav-folder-title`), so a rule aimed
+   only at the element carrying the class left the folder name highlighted.
+   That read as a second, almost identical folder state: name lit up for a
+   drop going to the root, name lit up AND a box for one going inside.
+
+   The destination mark is excluded. Hiding Obsidian's answer and drawing our
+   own are different jobs, and without the exclusion the first one out-
+   specified the second and erased the only signal saying which folder the row
+   was going into. */
+body.spaces-claims-drop .nav-files-container .is-being-dragged-over:not(.spaces-drop-parent),
+body.spaces-claims-drop
+  .nav-files-container
+  .is-being-dragged-over
+  > .nav-folder-title:not(.spaces-drop-parent),
+body.spaces-claims-drop .nav-files-container .is-being-dragged-over .collapse-icon {
+  background: transparent;
+  color: inherit;
+}
+body.spaces-claims-drop .drag-ghost-action {
+  display: none;
+}
+
+/* The folder a drop is going to land inside.
+   Deliberately the same wash Obsidian uses for its own drop-into-folder
+   highlight, because it means the same thing to the person dragging. The
+   difference is when it appears: Obsidian shows it whenever the pointer is
+   over the folder's row, and this shows it whenever the ROW WILL LAND IN
+   THAT FOLDER, including when the pointer is well below the folder among its
+   children. */
+.nav-files-container .spaces-drop-parent {
+  background: color-mix(in oklch, var(--interactive-accent) 10%, transparent);
+}
+
+/* §9.7: the icon picker. A small popover anchored above the switcher strip,
+   NOT a centred modal — see IconPickerPopover's header for why. On body with
+   position:fixed, because the sidebar clips its own overflow and a popover
+   above the bottom strip is exactly what would be cut off. */
+.spaces-icon-popover {
+  position: fixed;
+  z-index: var(--layer-menu);
+  width: 296px;
+  padding: 8px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+.spaces-icon-popover .spaces-icon-search {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.spaces-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.spaces-icon-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+.spaces-icon-cell:hover,
+.spaces-icon-cell:focus-visible {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.spaces-icon-cell.is-selected {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.spaces-icon-empty {
+  grid-column: 1 / -1;
+  padding: 10px 4px;
+  color: var(--text-normal);
+  font-size: var(--font-ui-smaller);
+}
+
+/* §9.8: the color picker. Same shell as the icon picker (AnchoredPopover). */
+.spaces-color-popover {
+  position: fixed;
+  z-index: var(--layer-menu);
+  width: 224px;
+  padding: 8px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+.spaces-color-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.spaces-color-cell {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.spaces-color-cell:hover,
+.spaces-color-cell:focus-visible {
+  border-color: var(--background-modifier-border-hover);
+}
+
+.spaces-color-cell.is-selected {
+  border-color: var(--text-normal);
+}
+
+/* The + reads as one more slot in the palette, not a control beside it. */
+.spaces-color-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-normal);
+  background-color: var(--background-modifier-hover);
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* §9.8: deleting a custom chip. Palette colors never get one — they are
+   immutable, and the picker's floor. */
+.spaces-color-cell {
+  position: relative;
+}
+
+.spaces-color-remove {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-on-accent);
+  background-color: var(--background-modifier-error);
+  cursor: pointer;
+  /* Slightly smaller than the badge so the glyph reads as sitting inside it
+     rather than filling it. Sized here rather than by font metrics: the icon
+     is an SVG, so this is its actual painted size. */
+  --icon-size: 9px;
+  --icon-stroke: 2.5px;
+}
+
+.spaces-color-remove .svg-icon {
+  /* Belt and braces: some themes override --icon-size on descendants. */
+  width: 9px;
+  height: 9px;
+}
+
+/* `:focus-visible`, never `:focus-within`. A right-click (or any click) focuses
+   the chip, since it carries tabindex="0" — with `:focus-within` the × stayed
+   lit after the pointer moved away, and only clicking elsewhere cleared it.
+   `:focus-visible` matches keyboard focus and not mouse focus, which is exactly
+   the distinction wanted: tabbing to a chip should reveal its delete badge,
+   clicking one should not leave it stuck on. */
+.spaces-color-cell:hover .spaces-color-remove,
+.spaces-color-cell:focus-visible .spaces-color-remove,
+.spaces-color-remove:focus-visible {
+  display: flex;
+}
+
+.spaces-color-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* §9.8: the embedded picker. Painted here rather than delegated to
+   <input type="color">, which opens the OS dialog in a second window. */
+.spaces-sv-field {
+  position: relative;
+  height: 110px;
+  border-radius: var(--radius-s);
+  margin-bottom: 8px;
+  cursor: crosshair;
+  touch-action: none;
+  background-image:
+    linear-gradient(to top, #000, rgba(0, 0, 0, 0)),
+    linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+
+.spaces-hue-bar {
+  position: relative;
+  height: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: ew-resize;
+  touch-action: none;
+  background-image: linear-gradient(
+    to right,
+    #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%
+  );
+}
+
+.spaces-picker-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  top: 50%;
+}
+
+.spaces-sv-field .spaces-picker-dot {
+  top: 0;
+}
+
+.spaces-color-preview {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.spaces-color-hex {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.spaces-color-hex.is-invalid {
+  border-color: var(--text-error);
+}
+
+.spaces-color-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* §21: the space header, directly above the file tree and below Obsidian's
+   own .nav-header. `flex: 0 0 auto` like the switcher strip, so the tree below
+   simply gets shorter rather than overflowing. The space's color is set
+   inline on the ICON only -- see SpaceHeaderView for why the name must stay
+   themed. The padding is asymmetric on purpose: it sits tight to the rows it
+   labels and keeps its distance from the buttons above. */
+.spaces-space-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-height: 24px;
+  padding: 2px 12px 4px;
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+}
+
+/* An icon, so with no color of its own it takes the one the theme gives
+   icons rather than the one it gives body text. A space that HAS a color
+   gets it inline from `iconColorFor`, which wins over this. */.spaces-space-header-icon {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--icon-color);
+}
+
+.spaces-space-header-icon .svg-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* The negative margin cancels the padding, so the hover background reads as a
+   target around the name without the name itself shifting when it appears. */
+/* §21.7's pin: pushed to the right edge, and a FIXED width that never shrinks
+   or grows, so the space's own name keeps the rest of the row. That is the
+   whole reason this is an icon rather than the folder's name in text — a long
+   space name and a long folder name were fighting over one narrow row.
+   Muted, because it annotates the row rather than titling it. */
+.spaces-space-header-pin {
+  margin-left: auto;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+.spaces-space-header-pin .svg-icon { width: 14px; height: 14px; }
+
+.spaces-space-header-name {
+  color: var(--text-normal);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 1px 4px;
+  margin-left: -4px;
+  border-radius: var(--radius-s);
+}
+
+/* Only when renameable — All's label carries no role and stays inert text
+   (§9.9). `text`, not `pointer`: the click opens an editor, not a command. */
+.spaces-space-header-name[role="button"] {
+  cursor: text;
+}
+
+.spaces-space-header-name[role="button"]:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Inherits font and color so swapping the label for the input does not make
+   the row jump. */
+.spaces-space-header-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: auto;
+  padding: 1px 4px;
+  margin-left: -4px;
+  border-radius: var(--radius-s);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* §9.9: the switcher context menu's rename, anchored like §9.7's and §9.8's
+   pickers. */
+.spaces-rename-popover {
+  position: fixed;
+  z-index: var(--layer-menu);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 260px;
+  padding: 8px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+.spaces-rename-popover .spaces-rename-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* §7 fix round 2: the "Change folder…" affordance opened from the
+   missing-root Notice. Same shape as `.spaces-rename-popover` above —
+   `AnchoredPopover` positions and dismisses it identically. */
+.spaces-folder-picker-popover {
+  position: fixed;
+  z-index: var(--layer-menu);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 280px;
+  padding: 8px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+.spaces-folder-picker-popover .spaces-folder-picker-input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* §21.6: the space list, opened from the header's icon. Anchored below the
+   header because AnchoredPopover prefers above and there is no room there. */
+.spaces-spaces-popover {
+  position: fixed;
+  z-index: var(--layer-menu);
+  min-width: 180px;
+  max-width: 280px;
+  padding: 4px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+}
+
+/* Capped and scrollable: a vault with many spaces must not produce a popover
+   taller than the window. AnchoredPopover's outside-scroll dismissal already
+   ignores scrolls that happen inside itself. */
+.spaces-spaces-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.spaces-spaces-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  font-size: var(--font-ui-small);
+}
+
+.spaces-spaces-row:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* Distinct from hover, and not color alone (§9.6): the active row keeps a
+   background AND carries aria-current. */
+.spaces-spaces-row.is-active {
+  background-color: var(--background-modifier-active-hover);
+  font-weight: var(--font-semibold);
+}
+
+.spaces-spaces-row:focus-visible {
+  outline: 1px solid var(--interactive-accent);
+  outline-offset: -1px;
+}
+
+/* An icon, so with no color of its own it takes the one the theme gives
+   icons rather than the one it gives body text. A space that HAS a color
+   gets it inline from `iconColorFor`, which wins over this. */.spaces-spaces-row-icon {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  color: var(--icon-color);
+}
+
+.spaces-spaces-row-icon .svg-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.spaces-spaces-row-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* The header icon is now a control, so it needs to look like one. */
+.spaces-space-header-icon[role="button"] {
+  cursor: pointer;
+  border-radius: var(--radius-s);
+  padding: 2px;
+  margin-left: -2px;
+}
+
+.spaces-space-header-icon[role="button"]:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* §9.4/R2: member rows, indented under their space so the list reads as
+   belonging to it rather than as more top-level settings. */
+.spaces-member-row {
+  padding-left: 2em;
+  border-top: none;
+}
+
+.spaces-member-row .setting-item-name {
+  font-size: var(--font-ui-small);
+  font-family: var(--font-monospace);
+}
+
+/* A missing entry is dimmed rather than colored: it is not an error, just an
+   entry whose file has gone (§7.1). Color is never the only signal (§9.6) —
+   the description says "Missing" in words. */
+.spaces-member-row.is-missing .setting-item-name {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* ---------------------------------------------------------------------------
+   SJ-31 — touch.
+
+   `manifest.json` still declares `isDesktopOnly: true`, and nothing here
+   changes that: R11 judged the flag conservative but defensible, and narrowing
+   it is a release decision rather than a fix. What these rules remove is one of
+   the reasons it could NOT be narrowed — every spaces control was sized for a
+   mouse, and one of them was reachable only by hovering.
+
+   Both queries describe the POINTER, not the viewport. A desktop window
+   narrowed to phone width is therefore untouched: the icon strip's density is a
+   deliberate desktop choice (§19.2), and a width query would have thrown it
+   away on a split screen.
+   --------------------------------------------------------------------------- */
+
+/* §9.8's delete badge waits for `:hover`/`:focus-visible`, and a pointer that
+   cannot hover produces neither on the way to a tap — so a custom color could
+   not be deleted on touch at all. Shown permanently instead: there is no hover
+   state here for it to be the reward of. Enlarged in the same breath — 14px is
+   under a third of the ~44px guideline, and it sits at the chip's corner where
+   a fingertip also covers the chip it is deleting. */
+@media (hover: none) {
+  .spaces-color-remove {
+    display: flex;
+    width: 22px;
+    height: 22px;
+    top: -6px;
+    right: -6px;
+    --icon-size: 13px;
+  }
+
+  .spaces-color-remove .svg-icon {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* ~44px is the guideline; these are 28px. Enlarged only for a coarse pointer,
+   so the desktop strip keeps its density. The rail scrolls (§19.2), so the
+   extra width costs scroll distance and nothing else. */
+@media (pointer: coarse) {
+  .spaces-switcher-item,
+  .spaces-switcher-add {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Sized to the icon, not the strip (§9.11), so it grows with it. */
+  .spaces-space-drop-line {
+    height: 44px;
+  }
+}
+
+/* §19.6: the settings tab.
+
+   It owns no furniture of its own: every row is one of Obsidian's, and the
+   two classes it does carry (`.spaces-setting-warning` and
+   `.spaces-restore-warning`) are defined with the other warnings above. What
+   is recorded here is a decision NOT to add any.
+
+   There is deliberately NO visual treatment for a subordinate setting. Two
+   were tried against §20.7's "Allow reordering in All" and both were worse
+   than nothing: indenting the `.setting-item` shifted the whole row, and
+   themes that draw each setting as a bounded card then showed a bubble whose
+   left edge did not line up with the row above — a broken grid reads louder
+   than a hierarchy. Moving the indent and an accent spine inside the row kept
+   the bubbles flush but still singled the row out for no benefit the copy was
+   not already giving.
+
+   The relationship is carried by behaviour and words instead, which survive
+   every theme: the child is DISABLED while its parent is off, and its
+   description says so ("Reordering is off above, so this has no effect").
+   Rows stay full width, like every other setting. */
+
+/* ---------- Space strip placement ----------------------------------------
+   One class on the explorer pane decides where the strip paints. The strip
+   itself never moves in the DOM, so nothing here depends on child order
+   beyond what flexbox already gives us.
+
+   `--spaces-strip-size` is the vertical placements' WIDTH and the pane
+   padding that reserves room for it. The two must never disagree, so they
+   read one value. Horizontal height stays content-driven: 41px at bottom and
+   42px at top, from the 28px icon plus padding and borders, and forcing a
+   number on it would fight the existing rule. */
+.spaces-dock-top,
+.spaces-dock-left,
+.spaces-dock-right {
+  --spaces-strip-size: 38px;
+}
+
+/* TOP: between Obsidian's toolbar row and the space header. The toolbar takes
+   -2 and the strip -1; everything else defaults to 0 and keeps DOM order, so
+   a node another plugin adds still lands below both. */
+.spaces-dock-top > .nav-header {
+  order: -2;
+}
+.spaces-dock-top > .spaces-switcher {
+  order: -1;
+  /* Both edges: neither neighbour draws one. `.nav-header` computes
+     `0px none` on its bottom and the space header has no top border, so a
+     single divider would leave the strip merged into one side. */
+  border-top: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* LEFT / RIGHT: a full-height ribbon. Absolute positioning plus pane padding
+   rather than a wrapper element, because `changeLayout()` destroys and
+   recreates `.nav-files-container` and a wrapper would have to survive that. */
+.spaces-dock-left,
+.spaces-dock-right {
+  position: relative;
+  box-sizing: border-box;
+}
+.spaces-dock-left {
+  padding-left: var(--spaces-strip-size);
+}
+.spaces-dock-right {
+  padding-right: var(--spaces-strip-size);
+}
+.spaces-dock-left > .spaces-switcher,
+.spaces-dock-right > .spaces-switcher {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--spaces-strip-size);
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  /* Top padding is solved at runtime by `stripAlign.ts` so the pinned *All*
+     control centres on Obsidian's toolbar row. The fallback is the design
+     value, used whenever there is no toolbar to align to. */
+  padding: var(--spaces-strip-pad-top, 6px) 4px 6px;
+  border-top: none;
+}
+.spaces-dock-left > .spaces-switcher {
+  left: 0;
+  border-right: 1px solid var(--background-modifier-border);
+}
+.spaces-dock-right > .spaces-switcher {
+  right: 0;
+  border-left: 1px solid var(--background-modifier-border);
+}
+
+/* A left strip that hides itself and slides out on hover. The WHOLE block,
+   padding included, sits inside `(hover: hover)`: a device that cannot hover
+   has no way to reveal the strip, so it never hides it, whatever is stored.
+   Only `transform` animates. Measured values: 6px lip, 16px zone, 120ms
+   ease-out open, 90ms ease-in close. The strip needs an opaque background
+   and a shadow because it now overlays the tree. */
+/* The query must match `deviceHasHover()` in src/ui/canHideStrip.ts, which
+   decides whether Settings offers the hide setting. Edit both together. */
+@media (hover: hover) {
+  .spaces-dock-left.spaces-strip-hidden {
+    padding-left: 6px;
+  }
+  .spaces-dock-left.spaces-strip-hidden > .spaces-switcher {
+    transform: translateX(calc(-100% + 6px));
+    transition: transform 90ms ease-in;
+    will-change: transform;
+    background: var(--background-secondary);
+    /* Obsidian's own shadow color, which its drag ghost and its popovers use
+       at this same 8px blur, so a theme that retints shadows retints ours
+       too. It also carries the light/dark difference a fixed rgba() could
+       not: 0.1 light, 0.3 dark. The geometry stays ours, and the offset is
+       sideways because the strip casts to the right, over the tree. */
+    box-shadow: 2px 0 8px var(--background-modifier-box-shadow);
+    z-index: 2;
+  }
+  /* Two ways out: the pointer (the open class) and keyboard focus (the focus
+     class). Both are plain classes on the pane, set from JS.
+
+     The focus one was a structural `has` selector on the switcher in 0.14.0,
+     which the plugin scan flags: that selector ties an element's style to its
+     descendants, so the browser re-checks matching ancestors on any change
+     inside them. Written without the literal here, so a scan that reads
+     comments does not flag this explanation of why it is gone. `stripReveal.ts` asks `matches(":focus-visible")` on
+     `focusin` instead, which keeps the same keyboard/mouse distinction at no
+     per-keystroke cost. It must stay a keyboard-only test: clicking a space
+     focuses its icon, and revealing on that left the strip stuck out with no
+     pointer gesture able to dismiss it. */
+  .spaces-dock-left.spaces-strip-hidden.spaces-strip-open > .spaces-switcher,
+  .spaces-dock-left.spaces-strip-hidden.spaces-strip-focus > .spaces-switcher {
+    transform: translateX(0);
+    transition: transform 120ms ease-out;
+  }
+  .spaces-dock-left.spaces-strip-hidden > .spaces-strip-zone {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    z-index: 1;
+  }
+}
+.spaces-dock-left > .spaces-switcher > .spaces-switcher-rail,
+.spaces-dock-right > .spaces-switcher > .spaces-switcher-rail {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Without this the rail refuses to shrink below its content and pushes the
+     + button out of the strip entirely on a short pane. */
+  min-height: 0;
+}
+/* The divider's margins carry the whole pinned-to-rail gap, so that one
+   number positions the rail's first icon AND keeps the divider centred in
+   whatever space is left. The strip's own 4px flex gap sits either side of
+   the divider and its 1px, hence the -9: at the 17px fallback the margins
+   work out to the 4px they have always been, and at the 1px floor they reach
+   -4px, which exactly cancels the flex gaps and never overlaps a sibling. */
+.spaces-dock-left > .spaces-switcher > .spaces-switcher-divider,
+.spaces-dock-right > .spaces-switcher > .spaces-switcher-divider {
+  /* Spans the icon column rather than an inset 60%, the same way the
+     horizontal divider stretches to the strip's content height. Alignment
+     leaves it only 2.5px of clearance either side -- the 6px gap is what
+     puts the first icon on the header row, so the clearance cannot grow --
+     and a 17px hairline in that little space stopped reading as a rule at
+     all. Color is shared with the base rule; length is this rule's half. */
+  align-self: stretch;
+  width: auto;
+  height: 1px;
+  min-height: 1px;
+  margin: calc((var(--spaces-strip-rail-gap, 17px) - 9px) / 2) 0;
+}
+/* §9.11, vertical rail: the insertion line becomes a horizontal bar, so its
+   thickness and length swap and it anchors to the rail's left edge instead
+   of its top. Static, so it lives here rather than as an inline style next
+   to the one coordinate (`top`) that actually moves with the drag. */
+.spaces-dock-left .spaces-space-drop-line,
+.spaces-dock-right .spaces-space-drop-line {
+  top: auto;
+  left: 0;
+  width: 28px;
+  height: 2px;
+}
+
+/* The grab handle, present only while unlocked. Nothing hover-revealed: a
+   handle that appears under the pointer would reflow the strip every time
+   the pointer crossed it. */
+.spaces-strip-grip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 24px;
+  margin-right: 2px;
+  border-radius: var(--radius-s);
+  color: var(--text-faint);
+  cursor: grab;
+}
+.spaces-strip-grip:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-muted);
+}
+.spaces-strip-grip:active {
+  cursor: grabbing;
+}
+.spaces-dock-left > .spaces-switcher > .spaces-strip-grip,
+.spaces-dock-right > .spaces-switcher > .spaces-strip-grip {
+  width: 24px;
+  height: 18px;
+  margin-right: 0;
+  margin-bottom: 2px;
+}
+/* `is-unlocked` is set on the strip while the mode is active, but carries no
+   appearance of its own: the grab handle appearing is the cue, and tinting the
+   whole strip on top of that reads as an error state rather than an
+   affordance. The class stays as a hook for themes that want their own. */
+
+/* The drag preview: one translucent band per candidate placement, the
+   nearest one lit. Coordinates are set inline per drag frame -- they are
+   computed from the pane's live rect, not static, so that is not a
+   `no-static-styles-assignment` violation. */
+.spaces-strip-drop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--layer-popover);
+  pointer-events: none;
+}
+.spaces-strip-drop-zone {
+  position: fixed;
+  background: var(--interactive-accent);
+  opacity: 0;
+  border-radius: var(--radius-s);
+  transition: opacity 80ms ease-in-out;
+}
+.spaces-strip-drop-zone.is-active {
+  opacity: 0.35;
+}
+
+/* The properties body. A key row is the tree row's own layout with a
+   disclosure button in the caret slot and a "Has property" button at the right
+   edge; a value row is one button across the row. Both buttons are bare so the
+   row's hover and selected marks are what show. */
+.spaces-create-property-row .spaces-create-property-disclose,
+.spaces-create-property-row .spaces-create-property-select,
+.spaces-create-property-row .spaces-create-property-value {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+.spaces-create-property-row .spaces-create-property-disclose { padding: 0; height: auto; }
+.spaces-create-property-row .spaces-create-property-select {
+  flex: 0 0 auto;
+  height: auto;
+  padding: 0 6px;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+.spaces-create-property-row .spaces-create-property-select:hover { color: var(--text-normal); }
+.spaces-create-property-row .spaces-create-property-value {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  text-align: left;
+}
+/* A long key or value name SHRINKS; the count and the button do not.
+
+   A flex item's `min-width` is `auto`, which is its own content, so the
+   `overflow: hidden` and `text-overflow: ellipsis` the name already carries
+   could never fire inside a row: the name never got small enough to overflow
+   itself, and a long one pushed the count and the "Has property" button out of
+   the row instead. The same defect the mode buttons had, with the same fix.
+   The count and both buttons stay `flex: 0 0 auto` above, so the name is what
+   gives. Scoped to this body, exactly as the tag rows scope their own. */
+.spaces-create-property-row .spaces-create-tree-name { min-width: 0; }
+.spaces-create-property-row.is-note { cursor: default; color: var(--text-muted); }
+.spaces-create-tree-name.is-empty-label { font-style: italic; color: var(--text-muted); }

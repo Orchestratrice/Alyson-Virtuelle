@@ -1,0 +1,202 @@
+{
+  "workspaces": {
+    "Centrale Alyson": {
+      "main": {
+        "id": "a431990086bffef5",
+        "type": "split",
+        "children": [
+          {
+            "id": "f34e54ad8c22e58b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "613790d26b53cc73",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "Sans titre.canvas",
+                    "viewState": {
+                      "x": 0,
+                      "y": 0,
+                      "zoom": 0
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "Sans titre"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "d7f142ab7e287987",
+        "type": "split",
+        "children": [
+          {
+            "id": "cba584509e3b29f0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ff1f174ccc9b557d",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Explorateur de fichiers"
+                }
+              },
+              {
+                "id": "ffc2fe9dbe5253d3",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Rechercher"
+                }
+              },
+              {
+                "id": "a3deac4d5ef117a2",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-bookmark",
+                  "title": "Signets"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "4c729d0399a7cd58",
+        "type": "split",
+        "children": [
+          {
+            "id": "6414ab01f47b8d5a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9ce9239acfd5d269",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Sans titre.canvas",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Rétroliens"
+                }
+              },
+              {
+                "id": "e97c401215a2d879",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Sans titre.canvas",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Liens sortants"
+                }
+              },
+              {
+                "id": "99df931ce675df07",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Mots-clés"
+                }
+              },
+              {
+                "id": "8fe1caf474c5559a",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-archive",
+                  "title": "Toutes les propriétés"
+                }
+              },
+              {
+                "id": "2038741c0964e7c1",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Sans titre.canvas",
+                    "followCursor": false,
+                    "showSearch": false,
+                    "searchQuery": ""
+                  },
+                  "icon": "lucide-list",
+                  "title": "Plan"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Ouvrir le sélecteur rapide": false,
+          "graph:Ouvrir la vue graphique": false,
+          "canvas:Créer un nouveau canvas": false,
+          "daily-notes:Ouvrir la note quotidienne": false,
+          "templates:Insérer le modèle": false,
+          "command-palette:Ouvrir la palette de commandes": false,
+          "bases:Créer une nouvelle base": false,
+          "workspaces:Gérer les dispositions des espaces de travail": false
+        }
+      },
+      "active": "613790d26b53cc73",
+      "mtime": "2026-11-27T21:58:26-05:00"
+    }
+  },
+  "active": "Centrale Alyson"
+}

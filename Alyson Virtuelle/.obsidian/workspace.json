@@ -11,12 +11,16 @@
             "id": "613790d26b53cc73",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "canvas",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
-                "viewName": "List"
+                "file": "Sans titre.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-list",
+              "icon": "lucide-layout-dashboard",
               "title": "Sans titre"
             }
           }
@@ -98,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+                "file": "Sans titre.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+                "file": "Sans titre.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -160,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+                "file": "Sans titre.canvas",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,10 +192,12 @@
       "workspaces:Gérer les dispositions des espaces de travail": false
     }
   },
-  "active": "ff1f174ccc9b557d",
+  "active": "613790d26b53cc73",
   "lastOpenFiles": [
-    "Sans titre.base",
+    "Alyson Virtuelle/Sans titre.base",
+    "Sans titre.canvas",
     "Alyson Directrice Principale/Centrale Alyson/Sans titre.base",
+    "Sans titre.base",
     "Alyson Directrice Principale/Centrale Alyson"
   ]
 }
