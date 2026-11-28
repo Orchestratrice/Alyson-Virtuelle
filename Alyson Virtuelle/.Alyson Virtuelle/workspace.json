@@ -200,9 +200,35 @@
               "icon": "lucide-layout-grid",
               "title": "Cerveau Système"
             }
+          },
+          {
+            "id": "14e98bb914cd6155",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cerveau Système/Directrice Générale - Système.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Directrice Générale - Système"
+            }
+          },
+          {
+            "id": "de4f6578fba7b1de",
+            "type": "leaf",
+            "state": {
+              "type": "note-database-file-view",
+              "state": {
+                "file": "Bases De Données/Suivi Des Tâches.md"
+              },
+              "icon": "database",
+              "title": "Suivi Des Tâches"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 16
       }
     ],
     "direction": "vertical"
@@ -369,7 +395,7 @@
             "state": {
               "type": "footnotes",
               "state": {
-                "file": "database/records/records.base"
+                "file": "Bases De Données/Suivi Des Tâches.md"
               },
               "icon": "lucide-file-signature",
               "title": "Notes de bas de page"
@@ -437,24 +463,25 @@
       }
     ]
   },
-  "active": "c1840fc51933c40c",
+  "active": "de4f6578fba7b1de",
   "lastOpenFiles": [
-    "Bases De Données/00_Système/00_Système.base",
     "Bases De Données/00_Système/Sans titre.base",
+    "Bases De Données/database.base",
+    "Bases De Données/Suivi Des Tâches.md",
+    "Bases De Données/Bases De Données.base",
+    "Cerveau Système/Directrice Générale - Système.md",
+    "database/records/records.base",
+    "Bases De Données/00_Système/00_Système.base",
     "Bases De Données/00_Système",
     "Bases De Données/Sans titre/Sans titre.base",
     "Bases De Données/Sans titre",
     "Bases De Données/records/Tâches/artwork/artwork.base",
-    "Bases De Données/Bases De Données.base",
     "Bases De Données/records/Tâches/artwork/database-cover.svg",
     "Bases De Données/records/Tâches/Task planner.base",
     "Bases De Données/records/Tâches/Untitled.md",
     "Bases De Données/records/Tâches/Untitled 1.md",
     "Bases De Données/records/Tâches/Tâches.base",
-    "Bases De Données/records/Tâches/artwork",
     "Bases De Données/records/Tâches/Prepare the next milestone.md",
-    "Bases De Données/records/Tâches",
-    "Bases De Données/Suivi Des Tâches.md",
     "database/records/Tâches/artwork/database-cover.svg",
     "database/records/Tâches/Untitled.md",
     "database/records/Tâches/Untitled 1.md",
@@ -464,7 +491,6 @@
     "database/Tâches.md",
     "database/records/Task planner/Untitled 1.md",
     "database/records/Task planner/Untitled.md",
-    "Cerveau Système/Directrice Générale - Système.md",
     "Directrice Générale Système/00_À Faire/AGENT 1.md",
     "Memories/Memories/User.md",
     "Memories/Alyson Virtuelle/AGENT.md",

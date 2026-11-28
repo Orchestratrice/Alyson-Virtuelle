@@ -285,6 +285,10 @@
   "searchShowKeyboardHints": true,
   "recentNotes": [
     {
+      "path": "TaskNotes/Start Here.md",
+      "lastOpenedAt": 1795846627430
+    },
+    {
       "path": "TaskNotes/Views/tasks-default.base",
       "lastOpenedAt": 1795846613028
     },
