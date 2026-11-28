@@ -31,7 +31,7 @@
   ],
   "folderColorOverrides": {
     "Alyson Virtuelle": {
-      "color": "#02b6f2",
+      "color": "#f20282",
       "bgOpacity": 1,
       "inherit": true,
       "borderEnabled": false,
@@ -50,7 +50,10 @@
     }
   },
   "folderIconOverrides": {},
-  "fileColorOverrides": {},
+  "fileColorOverrides": {
+    "Alyson Virtuelle/AGENT.md": null,
+    "Alyson Virtuelle/AGENT 1.md": "#fc0388"
+  },
   "fileIconOverrides": {},
   "folderTextColorOverrides": {},
   "fileTextColorOverrides": {},

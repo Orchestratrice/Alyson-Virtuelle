@@ -11,10 +11,13 @@
             "id": "e2873f7ac3bab8cc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "type": "bases",
+              "state": {
+                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
+                "viewName": "Cards"
+              },
+              "icon": "lucide-layout-grid",
+              "title": "Alyson Virtuelle"
             }
           }
         ]
@@ -95,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -155,6 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Alyson Virtuelle/Alyson Virtuelle.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,5 +188,7 @@
     }
   },
   "active": "e2873f7ac3bab8cc",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Alyson Virtuelle/Alyson Virtuelle.base"
+  ]
 }

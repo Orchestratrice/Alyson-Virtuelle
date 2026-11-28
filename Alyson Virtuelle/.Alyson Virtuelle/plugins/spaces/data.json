@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "settings": {
+    "globalIgnore": [],
+    "restoreLayouts": false,
+    "revealVisitors": true,
+    "allowReordering": true,
+    "allowReorderingAll": true,
+    "showSpaceHeader": true,
+    "stripPlacement": "bottom",
+    "hideStrip": false,
+    "activeSpaceStyle": "shaded",
+    "dropIndicatorStyle": "box",
+    "pinAllSpace": false,
+    "showPinnedFolder": true,
+    "compactFolderChains": true,
+    "abbreviateCompactedPaths": true,
+    "useThemeIconColor": true,
+    "autoAssignColor": true,
+    "customColors": [
+      "#fa0663"
+    ]
+  },
+  "spaces": [
+    {
+      "id": "alyson-virtuelle",
+      "name": "Alyson Virtuelle",
+      "icon": "box",
+      "color": "#fa0663",
+      "root": "Alyson Virtuelle",
+      "members": []
+    }
+  ]
+}
