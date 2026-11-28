@@ -3,7 +3,7 @@
   "clickTrigger": "click",
   "modifierKey": "ctrl",
   "createOnModifierClick": true,
-  "autoCreateOnNewFolder": true,
+  "autoCreateOnNewFolder": false,
   "autoCreateMinNotes": 0,
   "collapseOnOpen": true,
   "templateSource": "inline",
